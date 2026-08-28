@@ -7,9 +7,19 @@
     --fundoClaro: #E5DACA;
     --header: #F6EDE6;
     --headerFont: #5D3722;
+    --problemaColor: #563930;
+    --diferencialColor: #4A2319;
+    --divsColor: #965827;
+    --divPublicoAlvo: #CEB185;
+
 }
 body{
     background-color: var(--fundoClaro);
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
 }
 header{
     background-color: var(--header);
@@ -75,14 +85,105 @@ div.cabecalho{
     padding-top: 1rem ;
     img{
         width: 25rem;
+        height: 20rem;
     }
     .textoEmPe{
         margin-right: 2.6rem;
         h1{
             margin-block: 3rem;
+            color: var(--problemaColor);
         }
         p{
             font-size: 1.5rem;
         }
     }
+}
+.diferencial{
+    h1 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: var(--diferencialColor);
+}
+}
+.divs{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-inline: 4rem;
+    div{
+        margin-bottom: 1rem;
+
+        
+    }
+    .primeira, .segunda, .terceira{
+            div{
+                height: 10rem;
+                width: 26rem;
+                border-radius: 0.8rem;
+                background-color: var(--divsColor);
+                padding: 3rem;
+                p{
+                    color: #fff;
+                }
+            }
+        }
+}
+
+.publicoAlvo{
+    display: flex;
+    justify-content: flex-start;
+    gap: 5rem;
+    margin-top: 3rem;
+    align-items: center;
+    img{
+        height: 25rem;
+
+    }
+    div{
+        margin-right: 4rem;
+        background-color: var(--divPublicoAlvo);
+        opacity: 80%;
+        color: white;
+        height: 20rem;
+        padding-inline: 5rem;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        border-radius: 3rem;
+        
+        h1{
+            margin-bottom: 2rem;
+        }
+    }
+}
+.objetivo{
+    background-color: white;
+    padding-top: 4rem;
+    margin-top: 2rem;
+    p{
+        margin-inline: 3rem;
+    }
+}
+.flecha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.cheks{
+    display: flex;
+    align-items: center;
+
+}
+.alinhar{
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
 }
