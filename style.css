@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --fundoClaro: #E5DACA;
+    --header: #F6EDE6;
+    --headerFont: #5D3722;
+}
+body{
+    background-color: var(--fundoClaro);
+}
+header{
+    background-color: var(--header);
+    h2{
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--headerFont);
+    }
+}
+div.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    div.anitrace{
+        display: flex;
+        margin-left: 3rem;
+    }
+    .anitrace{
+        display: flex;
+        justify-content: space-between;
+        gap: 0.4rem;
+        img{
+            width: 1.5rem;
+            height: 2rem;
+            margin-top: 0;
+        }
+    }
+    div.palavras{
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    div.tema{
+        display: flex;
+        margin-right: 3rem;
+        margin-left: 1rem;
+        justify-content: space-between;
+        gap: 0.6rem;
+
+        img{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+.topHome{
+    width: 100%;
+    position: relative;
+    display: block;
+    
+}
+.topHome::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.problema{
+    display: flex;
+    background-color: #fff;
+    justify-content: flex-start;
+    gap: 5rem;
+    padding-top: 1rem ;
+    img{
+        width: 25rem;
+    }
+    .textoEmPe{
+        margin-right: 2.6rem;
+        h1{
+            margin-block: 3rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+    }
+}
