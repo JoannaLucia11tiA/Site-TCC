@@ -33,10 +33,12 @@ header{
 div.cabecalho{
     display: flex;
     justify-content: space-between;
-    padding-top: 1rem;
+    padding-block: 1rem;
+    align-items: center;
     div.anitrace{
         display: flex;
         margin-left: 3rem;
+        align-items: center;
     }
     .anitrace{
         display: flex;
@@ -66,30 +68,84 @@ div.cabecalho{
         }
     }
 }
-.topHome{
-    width: 100%;
+.imagem {
     position: relative;
-    display: block;
-    
+    width: 100%;
+    overflow: hidden;
 }
-.topHome::after {
+
+.topHome {
+    width: 100%;
+    display: block;width: 100%;
+   
+}
+
+/* camada escura sobre a imagem */
+.imagem::after {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
+
+/* conteúdo centralizado */
+.imagem h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding-bottom: 0;
+}
+
+.imagem h3 {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.imagem .botao {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background-color: var(--quadrados);
+    font-size: 1.6rem;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    border-radius: 0.7rem;
+}
+
+.imagem .botao a {
+    color: white;
+    text-decoration: none;
+}
+
 .problema{
     display: flex;
     background-color: #fff;
     justify-content: flex-start;
     gap: 5rem;
     padding-top: 1rem ;
+    align-items: center;
     img{
         width: 25rem;
         height: 20rem;
     }
     .textoEmPe{
         margin-right: 2.6rem;
+        padding-bottom: 2rem;
         h1{
             margin-block: 3rem;
             color: var(--problemaColor);
@@ -146,7 +202,7 @@ div.cabecalho{
         background-color: var(--divPublicoAlvo);
         opacity: 80%;
         color: white;
-        height: 20rem;
+        
         padding-inline: 5rem;
         padding-top: 3rem;
         padding-bottom: 2rem;
@@ -154,6 +210,9 @@ div.cabecalho{
         
         h1{
             margin-bottom: 2rem;
+        }
+        p{
+            padding-bottom: 2rem;
         }
     }
 }
@@ -226,8 +285,89 @@ div.cabecalho{
     font-weight: 550;
     font-size: 3rem;
 }
-
+.comoFunciona{
+    h2{
+        color: var(--diferencialColor);
+    }
+}
 .textoMotivador{
     text-align: center;
     margin-top: 2rem;
+}
+
+.textoNos{
+    display: flex;
+    margin-left: 8rem;
+    overflow: hidden;
+    img {
+    margin-left: auto;
+    width: 250px;
+    position: relative;
+    right: -5px;
+    bottom: -40px;
+}
+align-items: center;
+}
+
+.rodape{
+    display: flex;
+    background-color: var(--headerFont);
+    justify-content: space-between;
+    padding-inline: 7rem;
+    padding-block: 3rem;
+    .anitrace{
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        h1{
+            font-weight: 400;
+        }
+        color: var(--fundoClaro);
+        img{
+            width: 3.5rem;
+            
+        }
+    }
+    .links{
+        color: var(--fundoClaro);
+        font-weight: 300;
+        h2{
+            margin-bottom: 0.5rem;
+        }
+    }
+    .redes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        color: var(--fundoClaro);
+        div{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+}
+
+/*RESPONSIVIDADE INICIO*/
+
+
+@media (max-width: 768px) {
+
+    /* Imagem principal */
+    .topHome {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    /* Conteúdo da imagem */
+    .conteudoHome h1 {
+        font-size: 32px;
+    }
+
+    .conteudoHome h3 {
+        font-size: 18px;
+        max-width: 90%;
+    }
+
 }
