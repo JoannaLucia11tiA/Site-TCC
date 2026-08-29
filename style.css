@@ -11,6 +11,7 @@
     --diferencialColor: #4A2319;
     --divsColor: #965827;
     --divPublicoAlvo: #CEB185;
+    --quadrados: #CF912A;
 
 }
 body{
@@ -186,4 +187,47 @@ div.cabecalho{
     gap: 1rem;
     margin-bottom: 4rem;
     padding-bottom: 4rem;
+}
+
+.quadrados{
+    display: flex;
+    gap: 2rem;
+    margin-right: 4rem;
+    margin-left: 2.5rem;    
+    div{
+        background-color: var(--quadrados);
+        
+        text-align: center;
+        border-radius: 8rem 8rem 0 0;
+        img{
+            margin-bottom: 1.5rem;
+            margin-top: 4rem;
+            width: 11rem;
+            height: 100px;
+            object-fit: contain;
+            margin-inline: 2.5rem;
+        }
+        h2{
+            font-size: 32px;
+            padding-inline: 1.5rem;
+            text-align: start;
+            margin-bottom: 1rem;
+        }
+        p{
+            margin-inline: 1.8rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+.comoFunciona H1{
+    text-align: center;
+    color: var(--diferencialColor);
+    margin-bottom: 3rem;
+    font-weight: 550;
+    font-size: 3rem;
+}
+
+.textoMotivador{
+    text-align: center;
+    margin-top: 2rem;
 }
