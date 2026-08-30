@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mega Strike</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
 </head>
+
 <body>
+
     <header class="pc">
         <div class="cabecalho">
 
@@ -24,179 +28,353 @@
             </div>
 
             <div class="tema">
-                <img src="./images/Sol.png" alt="Tema claro">
-                <img src="./images/Lua.png" alt="Tema escuro">
-            </div>
+    <img class="claro" src="./images/Sol.png" alt="Tema claro" onclick="temaClaro()">
+    <img class="escuro" src="./images/Lua.png" alt="Tema escuro" onclick="temaEscuro()">
+</div>
+
         </div>
     </header>
+
 
     <header class="mobile">
         <div class="conteudo">
-        <div class="anitrace">
+
+            <div class="anitrace">
                 <img src="./images/Logo.png" alt="Logo site">
                 <h2>AniTrace</h2>
             </div>
+
             <div class="pins">
                 <img src="./images/lupa.png" alt="Lupa">
-                <img src="./images/3traco.png" alt="3 traços">
-            </div>
-            </div>
-    </header>
-<div class="imagem">
-    <img class="topHome" src="./images/Foto.png" alt="foto home">
-    <div class="central">
-    <h1>ANITRACE</h1>
-    <h3>Monitoramento inteligente de rebanho</h3>
 
-    <div class="botao">
-        <a href="">Saiba mais</a>
-    </div>
-    </div>
-    </div>
-    <div class="problema">
-        <img src="./images/fazenda.png" alt="fazenda verde">
-        <div class="textoEmPe">
-        <h1>Problema</h1>
-        <p>Muitos produtores rurais enfrentam dificuldades para monitorar seus animais em áreas extensas. A perda de animais, a demora na localização e a falta de informações em tempo real podem gerar prejuízos financeiros e comprometer a eficiência da propriedade. Além disso, métodos tradicionais de identificação e acompanhamento nem sempre oferecem a precisão necessária para uma gestão moderna do rebanho.</p>
+                <img class="menuBotao" src="./images/3traco.png" alt="Menu" onclick="abrirMenu()">
+            </div>
+
         </div>
+    </header>
+
+
+    <div class="menuMobile" id="menuMobile">
+
+        <div class="menuCabecalho">
+            <h2>Menu</h2>
+            <button onclick="fecharMenu()">✕</button>
+        </div>
+
+        <a href="#">Montagem</a>
+        <a href="#">Peças</a>
+        <a href="#">Sobre nós</a>
+        <a href="#">Referências</a>
+
+
+        <div class="tema">
+    <img class="claro" src="./images/Sol.png" alt="Tema claro" onclick="temaClaro()">
+    <img class="escuro" src="./images/Lua.png" alt="Tema escuro" onclick="temaEscuro()">
+</div>
     </div>
+
+
+    <div class="imagem">
+
+        <img class="topHome" src="./images/Foto.png" alt="foto home">
+
+        <div class="central">
+
+            <h1>ANITRACE</h1>
+
+            <h3>Monitoramento inteligente de rebanho</h3>
+
+            <div class="botao">
+                <a href="">Saiba mais</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="problema">
+
+        <img src="./images/fazenda.png" alt="fazenda verde">
+
+        <div class="textoEmPe">
+
+            <h1>Problema</h1>
+
+            <p>
+                Muitos produtores rurais enfrentam dificuldades para monitorar seus animais em áreas extensas. A perda de animais, a demora na localização e a falta de informações em tempo real podem gerar prejuízos financeiros e comprometer a eficiência da propriedade. Além disso, métodos tradicionais de identificação e acompanhamento nem sempre oferecem a precisão necessária para uma gestão moderna do rebanho.
+            </p>
+
+        </div>
+
+    </div>
+
 
     <div class="diferencial">
+
         <h1>Diferencial</h1>
+
         <div class="divs">
+
             <div class="primeira">
+
                 <div>
                     <p>Tecnologias utilizadas: 
 IoT, geolocalização e monitoramento em tempo real.</p>
                 </div>
+
                 <div>
                     <p>Acesso remoto:
  o produtor pode acompanhar os animais à distância.</p>
                 </div>
+
             </div>
+
             <div class="segunda">
+
                 <div>
                     <p>Localização precisa:
  permite acompanhar onde os animais estão.</p>
                 </div>
+
                 <div>
                     <p>Agilidade:
  acesso rápido às informações.</p>
                 </div>
+
             </div>
+
             <div class="terceira">
+
                 <div>
                     <p>Centralização dos dados: 
 todas as informações ficam em um único ambiente digital.</p>
                 </div>
+
                 <div>
                     <p>Maior segurança: 
 facilita o controle e o monitoramento do rebanho.</p>
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 
     <div class="publicoAlvo">
+
         <img src="./images/Vaca PNG.png" alt="Vaca">
+
         <div>
+
             <H1>Público-alvo:</H1>
-            <p>A solução é destinada principalmente a produtores rurais, pecuaristas, fazendas de pequeno, médio e grande porte, além de instituições e profissionais que necessitam monitorar animais de forma eficiente. 
-            A plataforma também pode auxiliar pesquisadores e organizações ligadas ao manejo animal e à gestão agropecuária.</p>
+
+            <p>
+                A solução é destinada principalmente a produtores rurais, pecuaristas, fazendas de pequeno, médio e grande porte, além de instituições e profissionais que necessitam monitorar animais de forma eficiente. 
+                A plataforma também pode auxiliar pesquisadores e organizações ligadas ao manejo animal e à gestão agropecuária.
+            </p>
+
         </div>
+
     </div>
+
 
     <div class="objetivo">
+
         <div class="flecha">
+
             <img src="./images/Vector.png" alt="Alvo">
+
             <h1>Objetivo:</h1>
+
         </div>
-        <p>Desenvolver uma plataforma inteligente de monitoramento e gerenciamento de animais que integre tecnologia, dados e usabilidade para promover:</p>
-<div class="alinhar">
-        <div class="cheks">
-            <img src="./images/check.png" alt="check">
-            <p>Mais controle e segurança sobre o rebanho</p>
+
+        <p>
+            Desenvolver uma plataforma inteligente de monitoramento e gerenciamento de animais que integre tecnologia, dados e usabilidade para promover:
+        </p>
+
+        <div class="alinhar">
+
+            <div class="cheks">
+                <img src="./images/check.png" alt="check">
+                <p>Mais controle e segurança sobre o rebanho</p>
+            </div>
+
+            <div class="cheks">
+                <img src="./images/check.png" alt="check">
+                <p>Melhoria no bem-estar animal</p>
+            </div>
+
+            <div class="cheks">
+                <img src="./images/check.png" alt="check">
+                <p>Otimização de processos e redução de perdas</p>
+            </div>
+
+            <div class="cheks">
+                <img src="./images/check.png" alt="check">
+                <p>Apoio à tomada de decisões baseadas em dados</p>
+            </div>
+
+            <div class="cheks">
+                <img src="./images/check.png" alt="check">
+                <p>Aumento da produtividade e da rentabilidade</p>
+            </div>
+
         </div>
-        <div class="cheks">
-            <img src="./images/check.png" alt="check">
-            <p>Melhoria no bem-estar animal</p>
-        </div>
-        <div class="cheks">
-            <img src="./images/check.png" alt="check">
-            <p>Otimização de processos e redução de perdas</p>
-        </div>
-        <div class="cheks">
-            <img src="./images/check.png" alt="check">
-            <p>Apoio à tomada de decisões baseadas em dados</p>
-        </div>
-        <div class="cheks">
-            <img src="./images/check.png" alt="check">
-            <p>Aumento da produtividade e da rentabilidade</p>
-        </div>
+
     </div>
-    </div>
+
 
     <div class="comoFunciona">
+
         <h1>Como funciona:</h1>
+
         <div class="quadrados">
+
             <div class="redondos">
+
                 <img src="./images/coleira.png" alt="Coleira">
+
                 <div>
-                <h2>1- Coleta de <br> dados</h2>
-                <p>Dispositivos instalados nos animais coletam informações de localização, atividade e saúde em tempo real.</p>
+
+                    <h2>1- Coleta de <br> dados</h2>
+
+                    <p>
+                        Dispositivos instalados nos animais coletam informações de localização, atividade e saúde em tempo real.
+                    </p>
+
                 </div>
+
             </div>
+
+
             <div class="redondos">
+
                 <img src="./images/transmissao.png" alt="Wifi">
+
                 <div class="espaco">
-                <h2>2- transmissão</h2>
-                <p>Os dados são enviados automaticamente para a plataforma por meio de tecnologias seguras e estáveis.</p></div>
+
+                    <h2>2- transmissão</h2>
+
+                    <p>
+                        Os dados são enviados automaticamente para a plataforma por meio de tecnologias seguras e estáveis.
+                    </p>
+
+                </div>
+
             </div>
+
+
             <div class="redondos">
+
                 <img src="./images/nuvem.png" alt="Nuvem">
+
                 <div class="espaco">
-                <h2>3- Armazena<span class="traco">-</span>mento na nuvem</h2>
-                <p>As informações são armazenadas com segurança em nuvem, garantindo acesso rápido e confiável.</p></div>
+
+                    <h2>3- Armazena<span class="traco">-</span>mento na nuvem</h2>
+
+                    <p>
+                        As informações são armazenadas com segurança em nuvem, garantindo acesso rápido e confiável.
+                    </p>
+
+                </div>
+
             </div>
+
+
             <div class="redondos">
+
                 <img src="./images/analise.png" alt="Dados">
+
                 <div class="espaco">
-                <h2>4- Análise e 
+
+                    <h2>4- Análise e 
 monitoramento</h2>
-                <p>A plataforma transforma os dados em informações úteis, com painéis intuitivos e alertas inteligentes.</p></div>
+
+                    <p>
+                        A plataforma transforma os dados em informações úteis, com painéis intuitivos e alertas inteligentes.
+                    </p>
+
+                </div>
+
             </div>
+
+
             <div class="redondos">
+
                 <img src="./images/pessoa.png" alt="Pessoa">
+
                 <div>
-                <h2>5- Decisão e ação</h2>
-                <p>Com dados precisos na palma da mão, você toma decisões mais rápidas e assertivas para cuidar melhor do seu rebanho.</p></div>
+
+                    <h2>5- Decisão e ação</h2>
+
+                    <p>
+                        Com dados precisos na palma da mão, você toma decisões mais rápidas e assertivas para cuidar melhor do seu rebanho.
+                    </p>
+
+                </div>
+
             </div>
+
         </div>
-        <p class="textoMotivador">Nosso propósito é usar a tecnologia para transformar o cuidado com os animais <br> e o futuro do agronegócio.</p>
+
+        <p class="textoMotivador">
+            Nosso propósito é usar a tecnologia para transformar o cuidado com os animais <br> e o futuro do agronegócio.
+        </p>
+
     </div>
 
+
     <div class="textoNos">
-        <p>O AniTrace é mais do que um sistema. É tecnologia que conecta, informa <br> e transforma o cuidado com os animais em resultados reais.</p>
+
+        <p>
+            O AniTrace é mais do que um sistema. É tecnologia que conecta, informa <br> e transforma o cuidado com os animais em resultados reais.
+        </p>
+
         <img src="./images/vacapg1.png" alt="vaca logo">
+
     </div>
-    
+
+
     <div class="rodape">
+
         <div class="anitrace">
+
             <img src="./images/Logo.svg" alt="logo">
+
             <h1>AniTrace</h1>
+
         </div>
+
+
         <div class="links">
+
             <h2>Montagem</h2>
             <h2>Peças</h2>
             <h2>Sobre nós</h2>
             <h2>Referências</h2>
+
         </div>
+
+
         <div class="redes">
-            <div><img src="./images/insta.png" alt="Instagram">
-                <a href=""></a>@AniTrace5</div>
-            <div><img src="./images/email.png" alt="Email">
-                <a href=""></a>@AniTrace.TCC@gmail.com</div>
+
+            <div>
+                <img src="./images/insta.png" alt="Instagram">
+                <a href=""></a>@AniTrace5
+            </div>
+
+            <div>
+                <img src="./images/email.png" alt="Email">
+                <a href=""></a>@AniTrace.TCC@gmail.com
+            </div>
+
         </div>
+
     </div>
+
 </body>
+
 </html>

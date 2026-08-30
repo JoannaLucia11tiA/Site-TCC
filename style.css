@@ -7,16 +7,45 @@
 html, body{
     overflow-x: hidden;
 }
-
+.menuMobile {
+    display: none;
+}
 :root {
     --fundoClaro: #E5DACA;
     --header: #F6EDE6;
     --headerFont: #5D3722;
+    --rodape: #5D3722;
     --problemaColor: #563930;
     --diferencialColor: #4A2319;
     --divsColor: #965827;
     --divPublicoAlvo: #CEB185;
     --quadrados: #CF912A;
+    --fundoTema: #C9BDBA;
+    --branco: white;
+    --preto: black;
+}
+body.escuro {
+    --fundoClaro: #03221C;
+    --header: #8C4A10;
+    --headerFont: #F6EDE6;
+    --rodape: #8C4A10;
+    --problemaColor: #F6EDE6;
+    --diferencialColor: #F6EDE6;
+    --divsColor: #245448;
+    --divPublicoAlvo: #A7ABB1;
+    --quadrados: #9191E9;
+    --branco: black;
+    --preto: white;
+}
+
+body.escuro .pc .anitrace img,
+body.escuro .mobile .anitrace img,
+body.escuro .mobile .pins img,
+body.escuro .flecha img,
+body.escuro .cheks img,
+body.escuro .quadrados .redondos img,
+body.escuro .textoNos img {
+    filter: brightness(0) invert(1);
 }
 
 .mobile{
@@ -84,6 +113,9 @@ div.cabecalho{
             height: 1.5rem;
         }
     }
+
+
+
 }
 
 .imagem {
@@ -152,7 +184,7 @@ div.cabecalho{
 
 .problema{
     display: flex;
-    background-color: #fff;
+    background-color: var(--branco);
     justify-content: flex-start;
     gap: 5rem;
     padding-top: 1rem;
@@ -174,6 +206,7 @@ div.cabecalho{
 
         p{
             font-size: 1.5rem;
+            color: var(--preto);
         }
     }
 }
@@ -244,12 +277,14 @@ div.cabecalho{
 }
 
 .objetivo{
-    background-color: white;
+    background-color: var(--branco);
     padding-top: 4rem;
     margin-top: 2rem;
+    color: var(--preto);
 
     p{
         margin-inline: 3rem;
+        color: var(--preto);
     }
 }
 
@@ -330,12 +365,14 @@ div.cabecalho{
 .textoMotivador{
     text-align: center;
     margin-top: 2rem;
+    color: var(--preto);
 }
 
 .textoNos{
     display: flex;
     margin-left: 8rem;
     overflow: hidden;
+    color: var(--preto);
 
     img {
         margin-left: auto;
@@ -350,7 +387,7 @@ div.cabecalho{
 
 .rodape{
     display: flex;
-    background-color: var(--headerFont);
+    background-color: var(--rodape);
     justify-content: space-between;
     padding-inline: 7rem;
     padding-block: 3rem;
@@ -364,7 +401,7 @@ div.cabecalho{
             font-weight: 400;
         }
 
-        color: var(--fundoClaro);
+        color: var(--preto);
 
         img{
             width: 3.5rem;
@@ -372,7 +409,7 @@ div.cabecalho{
     }
 
     .links{
-        color: var(--fundoClaro);
+        color: var(--preto);
         font-weight: 300;
 
         h2{
@@ -385,7 +422,7 @@ div.cabecalho{
         flex-direction: column;
         justify-content: center;
         gap: 1.5rem;
-        color: var(--fundoClaro);
+        color: var(--preto);
 
         div{
             display: flex;
@@ -398,6 +435,87 @@ div.cabecalho{
 /* RESPONSIVIDADE INICIO */
 
 @media (max-width: 768px) {
+    .menuBotao {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.menuMobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background-color: var(--branco);
+    z-index: 10;
+    padding: 2rem;
+    transition: right 0.3s ease;
+
+    .tema {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--fundoTema);
+    width: fit-content;
+    padding: 0.35rem;
+    border-radius: 2rem;
+}
+
+.tema img {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tema .claro {
+    background-color: var(--divsColor);
+    padding: 0.4rem;
+}
+.tema.escuro .claro {
+    background-color: transparent;
+}
+
+.tema.escuro .escuro {
+    background-color: var(--divsColor);
+}
+}
+
+.menuMobile.aberto {
+    right: 0;
+}
+
+.menuCabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.menuCabecalho h2 {
+    color: var(--headerFont);
+}
+
+.menuCabecalho button {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    color: var(--headerFont);
+    cursor: pointer;
+}
+
+.menuMobile a {
+    display: block;
+    color: var(--headerFont);
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
 
     .mobile .pins img {
         width: 1rem;
@@ -420,6 +538,10 @@ div.cabecalho{
     }
     .imagem h3 {
         top: 40%;
+        padding-inline: 1rem;
+    }
+    .botao{
+        text-align: center;
     }
     /* Conteúdo da imagem */
     .conteudoHome h1 {
@@ -471,15 +593,21 @@ div.cabecalho{
         gap: 0.7rem;
     }
 
-    .mobile .pins img {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
+    .mobile .pins > img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.mobile .pins .menuBotao {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
 
     .problema{
         flex-direction: column;
         gap: 0;
-        padding-inline: 4rem;
+        padding-inline: 2rem;
 
         .textoEmPe{
             margin: 0;
@@ -636,6 +764,7 @@ div.cabecalho{
         padding-inline: 2rem;
         gap: 1rem;
         flex-direction: column;
+        background-color: var(--rodape);
         h1, h2, a{
             color: white;
         }
@@ -660,6 +789,7 @@ div.cabecalho{
             align-items: center;
             justify-content: center;
             gap: 1rem;
+            color: var(--branco);
         }
     }
  .textoNos{
