@@ -594,4 +594,34 @@ div.cabecalho{
             z-index: 2;
         }
     }
+    .rodape{
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 2rem;
+        gap: 1rem;
+        h1, h2, a{
+            color: white;
+        }
+        .anitrace{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
