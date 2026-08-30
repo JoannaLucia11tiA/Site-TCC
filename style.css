@@ -442,6 +442,19 @@ div.cabecalho{
     cursor: pointer;
 }
 
+.imagem .botao {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background-color: var(--quadrados);
+    font-size: 1.6rem;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    border-radius: 0.7rem;
+}
+
 .menuMobile {
     display: block;
     position: fixed;
@@ -789,7 +802,7 @@ div.cabecalho{
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            color: var(--branco);
+            color: white;
         }
     }
  .textoNos{
