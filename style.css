@@ -605,7 +605,8 @@ div.cabecalho{
         }
         .links{
             display: flex;
-            justify-content: space-between;
+            gap: 1rem;
+            justify-content: center;
         }
         .anitrace{
             display: flex;
@@ -614,13 +615,13 @@ div.cabecalho{
         .redes{
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 1rem;
         }
     }
-
-
-
-
+ .textoNos{
+            margin-left: 4rem;
+        }
 
 
 
