@@ -599,12 +599,22 @@ div.cabecalho{
         justify-content: space-between;
         padding-inline: 2rem;
         gap: 1rem;
+        flex-direction: column;
         h1, h2, a{
             color: white;
+        }
+        .links{
+            display: flex;
+            justify-content: space-between;
         }
         .anitrace{
             display: flex;
             flex-direction: column;
+        }
+        .redes{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
         }
     }
 
