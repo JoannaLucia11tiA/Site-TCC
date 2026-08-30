@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html, body{
+    overflow-x: hidden;
+}
 :root {
     --fundoClaro: #E5DACA;
     --header: #F6EDE6;
@@ -373,25 +376,47 @@ align-items: center;
         max-width: 90%;
     }
 
-    .pc{
+    .pc {
         display: none;
     }
-    .mobile{
-       
-        .conteudo{
 
-        display: flex;
-        padding: 1rem;
-        justify-content: space-between;
-        .anitrace{
-            display: flex;
-            align-items: center;
-        }
-        .pins{
-            display: flex;
-        }
-        }
+    .mobile {
+        display: block;
+        width: 100%;
+        background-color: var(--header);
     }
+
+    .mobile .conteudo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        margin: 0;
+        width: 100%;
+    }
+
+    .mobile .anitrace {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .mobile .anitrace img {
+        width: 1.5rem;
+        height: 2rem;
+    }
+
+    .mobile .pins {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .mobile .pins img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
     .problema{
         flex-direction: column;
         gap: 0;
@@ -401,21 +426,31 @@ align-items: center;
             margin: 0;
         }
     }
+  .divs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-inline: 0;
+}
+.diferencial{
+    margin: 0;
     .divs{
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-       .primeira, .segunda, .terceira{
-        margin-bottom: 0;
-        width: 0;
-        justify-content: center;
-        align-items: center;
-       }
+        margin: 0;
+        .primeira, .segunda, .terceira{
+            margin: 0;
+            div{
+                width: 80%;
+                margin-inline: 4rem;
+            }
+        }
     }
+}
 
     .quadrados{
         display: flex;
         flex-direction: column;
+        
         .redondos{
             display: flex;
             border-radius: 8rem 0 0 8rem;
@@ -460,7 +495,7 @@ align-items: center;
                 }
             }
         }
-}
+
 
 .publicoAlvo{
     gap: 0;
