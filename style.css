@@ -399,12 +399,28 @@ div.cabecalho{
 
 @media (max-width: 768px) {
 
+    .mobile .pins img {
+        width: 1rem;
+        height: 1rem;
+        filter: brightness(0) saturate(100%)
+                invert(21%) sepia(17%) saturate(1100%)
+                hue-rotate(348deg) brightness(90%)
+                contrast(90%);
+    }
+    .mobile h2{
+        color: var(--headerFont);
+        font-weight: 400;
+    }
     /* Imagem principal */
     .topHome {
         height: 500px;
         object-fit: cover;
-    }
 
+        
+    }
+    .imagem h3 {
+        top: 40%;
+    }
     /* Conteúdo da imagem */
     .conteudoHome h1 {
         font-size: 32px;
@@ -413,6 +429,10 @@ div.cabecalho{
     .conteudoHome h3 {
         font-size: 18px;
         max-width: 90%;
+        
+        .imagem h3 {
+        top: 40%;
+    }
     }
 
     .pc {
@@ -476,7 +496,7 @@ div.cabecalho{
 
     .diferencial{
         margin: 0;
-
+        padding-inline: 2rem;
         .divs{
             margin: 0;
 
@@ -486,6 +506,9 @@ div.cabecalho{
                 div{
                     width: 100%;
                     margin-right: 4rem;
+                    padding: 2rem;
+                    display: flex;
+                    align-items: center;
                 }
             }
         }
@@ -585,15 +608,28 @@ div.cabecalho{
     
     }
 
-    .publicoAlvo{
+    .publicoAlvo {
         gap: 0;
+        width: 100%;
+        height: auto;
+        position: relative;
 
-        div{
-            position: relative;
-            margin-left: -250px;
-            z-index: 2;
-        }
+    img {
+        height: 25rem;
     }
+
+    div {
+        position: relative;
+        z-index: 2;
+        margin-left: -250px;
+        margin-right: 2rem;
+
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+    }
+
+
     .rodape{
         display: flex;
         justify-content: space-between;
@@ -603,26 +639,41 @@ div.cabecalho{
         h1, h2, a{
             color: white;
         }
-        .links{
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
+        .links {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        width: 100%;
+
+        h2 {
+        font-size: 1.1rem;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+    }
         .anitrace{
             display: flex;
             flex-direction: column;
         }
         .redes{
             display: flex;
-            flex-direction: row;
+            align-items: center;
             justify-content: center;
             gap: 1rem;
         }
     }
  .textoNos{
             margin-left: 4rem;
+            p{
+                margin-block: 3rem;
+            }
         }
-
+        .objetivo{
+            padding-inline: 2rem;
+            p{
+                margin: 0;
+            }
+        }
 
 
 
