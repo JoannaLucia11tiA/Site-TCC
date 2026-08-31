@@ -8,6 +8,7 @@
     --fundoClaro: #E5DACA;
     --header: #F6EDE6;
     --headerFont: #5D3722;
+    --instrucoesFont: #502F1D;
     --rodape: #5D3722;
     --problemaColor: #563930;
     --diferencialColor: #4A2319;
@@ -23,6 +24,7 @@ body.escuro {
     --fundoClaro: #03221C;
     --header: #8C4A10;
     --headerFont: #F6EDE6;
+    --instrucoesFont: #fff;
     --rodape: #8C4A10;
     --problemaColor: #F6EDE6;
     --diferencialColor: #F6EDE6;
@@ -32,6 +34,337 @@ body.escuro {
     --branco: black;
     --preto: white;
 }
+body.escuro .mancha1,
+body.escuro .mancha4 {
+    filter: brightness(0) saturate(100%) 
+            invert(27%) sepia(15%) saturate(1000%) 
+            hue-rotate(115deg) brightness(85%);
+}
+
+body.escuro .mancha2,
+body.escuro .mancha3 {
+    filter: brightness(0) invert(1);
+}
+.mobile, .menuMobile {
+    display: none;
+}
+body.escuro .pc .anitrace img,
+body.escuro .mobile .anitrace img {
+    filter: brightness(0) invert(1);
+}
+body{
+    background-color: var(--fundoClaro);
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    a{
+            text-decoration: none;
+        }
+}
+
+.pc{
+    background-color: var(--header);
+
+    h2{
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--headerFont);
+    }
+}
+
+div.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+    align-items: center;
+
+    div.anitrace{
+        display: flex;
+        margin-left: 3rem;
+        align-items: center;
+        
+    }
+
+    .anitrace{
+        display: flex;
+        justify-content: space-between;
+        gap: 0.4rem;
+
+        img{
+            width: 1.5rem;
+            height: 2rem;
+            margin-top: 0;
+        }
+        
+    }
+
+    div.palavras{
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    div.tema{
+        display: flex;
+        margin-right: 3rem;
+        margin-left: 1rem;
+        justify-content: space-between;
+        gap: 0.6rem;
+
+        img{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+}
+
+.manchas {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.manchas img {
+    position: absolute;
+    
+}
+
+.mancha1 {
+    top: -3.9rem;
+    right: 0rem;
+    height: 390px;
+    object-fit: cover;
+    object-position: center bottom;
+
+    clip-path: inset(62px 0 0 0);
+}
+
+.mancha2 {
+    top: 47rem;
+    right: 0rem;
+    width: 12rem;
+}
+
+.mancha3 {
+    top: 20rem;
+    left: 0;
+    width: 15rem;
+}
+
+.mancha4 {
+    width: 30rem;
+    top: 64.5rem;
+    left: 0rem;
+    
+    height: 14rem;
+    object-fit: cover;
+    object-position: center top;
+}
+.imagem{
+    img{
+        width: 100%;
+    }
+}
+
+.instrucoes {
+    position: relative;
+    z-index: 2;
+
+    h1{
+        margin-block: 3rem;
+        margin-left: 4.3rem;
+        color: var(--instrucoesFont);
+        font-weight: 400;
+    }
+}
+
+.instrucoes .quadrados {
+    position: relative;
+    z-index: 3;
+
+    
+}
+
+.quadrados {
+    display: flex;
+    margin-inline: 4rem;
+    gap: 4rem;
+
+    .esquerda, .direita{
+        
+        display: flex;
+        flex-direction: column;
+
+        div {
+            background-color: var(--quadrados);
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 1.3rem;
+            height: 13rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+           
+            
+            h2{
+                padding-bottom: 1rem;
+                font-size: 1.3rem;
+                font-weight: 400;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+.video {
+    position: relative;
+    z-index: 2;
+    width: 25rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 3.1rem;
+}
+
+.video .foto {
+    width: 100%;
+    display: block;
+}
+
+.video .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    z-index: 3;
+}
+
+   .rodape{
+    display: flex;
+    background-color: var(--rodape);
+    justify-content: space-between;
+    padding-inline: 7rem;
+    padding-block: 3rem;
+
+    .anitrace{
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        h1{
+            font-weight: 400;
+        }
+
+        color: white;
+
+        img{
+            width: 3.5rem;
+        }
+    }
+
+    .links{
+        color: white;
+        font-weight: 300;
+
+        h2{
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .redes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        color: white;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+}
+
+.imagem {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.imagem .topHome {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.imagem .central {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    border-radius: 2rem;
+    transform: translate(-50%, -50%);
+max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--divMontagem);
+
+    width: 90%;
+    padding: 2rem;
+    padding-block: 3rem;
+
+    text-align: center;
+    z-index: 2;
+}
+
+.imagem .central h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    
+}
+
+.imagem .central h3 {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    max-width: 90%;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 
 
@@ -71,6 +404,9 @@ body.escuro {
         display: block;
         width: 100%;
         background-color: var(--header);
+        h2{
+            color: white;
+        }
     }
 
     .mobile .conteudo {
@@ -269,20 +605,20 @@ body.escuro {
 }
 
 .mancha2 {
-    top: 47rem;
+    top: 76rem;
     right: 0rem;
     width: 12rem;
 }
 
 .mancha3 {
-    top: 20rem;
+    top: 50rem;
     left: 0;
     width: 15rem;
 }
 
 .mancha4 {
     width: 30rem;
-    top: 70rem;
+    top: 116.7rem;
     left: 0rem;
     
     height: 14rem;
@@ -337,7 +673,7 @@ body.escuro {
 .video {
     position: relative;
     z-index: 2;
-    width: 30rem;
+    width: 25rem;
     margin: 0 auto;
     margin-top: 5rem;
 }
@@ -364,7 +700,7 @@ body.escuro {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-margin-top: 7.5rem;
+margin-top: 10.3rem;
     padding: 2rem;
     background-color: var(--rodape);
 
@@ -411,3 +747,4 @@ margin-top: 7.5rem;
 
 
 }
+

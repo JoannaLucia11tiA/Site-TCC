@@ -6,6 +6,9 @@
 
 html, body{
     overflow-x: hidden;
+    a{
+            text-decoration: none;
+        }
 }
 .menuMobile {
     display: none;
@@ -839,16 +842,4 @@ div.cabecalho{
                 margin: 0;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
 }
