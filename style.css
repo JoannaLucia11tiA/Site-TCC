@@ -9,6 +9,31 @@ html, body{
     a{
             text-decoration: none;
         }
+
+    body {
+    font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+h2, h3 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
 }
 .menuMobile {
     display: none;
@@ -338,7 +363,7 @@ div.cabecalho{
         }
 
         h2{
-            font-size: 32px;
+            font-size: 22px;
             padding-inline: 1.5rem;
             text-align: start;
             margin-bottom: 1rem;
@@ -347,6 +372,7 @@ div.cabecalho{
         p{
             margin-inline: 1.8rem;
             margin-bottom: 1rem;
+            font-size: 1rem;
         }
     }
 }
@@ -404,7 +430,7 @@ div.cabecalho{
             font-weight: 400;
         }
 
-        color: var(--preto);
+        color: white;
 
         img{
             width: 3.5rem;
@@ -412,7 +438,7 @@ div.cabecalho{
     }
 
     .links{
-        color: var(--preto);
+        color: white;
         font-weight: 300;
 
         h2{
@@ -425,7 +451,7 @@ div.cabecalho{
         flex-direction: column;
         justify-content: center;
         gap: 1.5rem;
-        color: var(--preto);
+        color: white;
 
         div{
             display: flex;
@@ -433,6 +459,12 @@ div.cabecalho{
             gap: 0.5rem;
         }
     }
+
+
+
+
+
+
 }
 
 /* RESPONSIVIDADE INICIO */
