@@ -181,7 +181,7 @@ body {
 header,
 main,
 footer,
-body > *:not(.site-background) {
+body > *:not(.site-background):not(.menuMobile) {
   position: relative;
   z-index: 1;
 }
