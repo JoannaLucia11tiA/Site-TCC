@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de peças do projeto AniTrace">
+    <title>AniTrace | Peças</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet" href="pecas.css">
+<script src="./pecas.js" defer></script>
+
+
+</head>
+
+<body>
+
+<div class="site-background" aria-hidden="true"></div>
+
+<!-- ================= HEADER PC ================= -->
+
+<header class="pc">
+    <div class="cabecalho">
+
+        <div class="anitrace">
+            <img src="/images/Logo.png" alt="Logo AniTrace">
+            <h2>AniTrace</h2>
+        </div>
+
+        <div class="palavras">
+            <a href="/Montagem/montagem.html">
+                <h2>Montagem</h2>
+            </a>
+
+            <a href="/mega2/Anitrace/pecas.html">
+                <h2>Peças</h2>
+            </a>
+
+            <a href="#">
+                <h2>Sobre nós</h2>
+            </a>
+
+            <a href="#referencias">
+                <h2>Referências</h2>
+            </a>
+        </div>
+
+        <div class="tema">
+
+            <img
+                class="claro"
+                src="/images/Sol.png"
+                alt="Tema claro"
+                onclick="temaClaro()"
+            >
+
+            <img
+                class="escuro"
+                src="/images/Lua.png"
+                alt="Tema escuro"
+                onclick="temaEscuro()"
+            >
+
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ================= HEADER MOBILE ================= -->
+
+<header class="mobile">
+
+    <div class="conteudo">
+
+        <div class="anitrace">
+            <img src="/images/Logo.png" alt="Logo AniTrace">
+            <h2>AniTrace</h2>
+        </div>
+
+        <div class="pins">
+
+            <img
+                src="/images/lupa.png"
+                alt="Pesquisar"
+            >
+
+            <img
+                class="menuBotao"
+                src="/images/3traco.png"
+                alt="Abrir menu"
+                onclick="abrirMenu()"
+            >
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MENU MOBILE ================= -->
+
+<div class="menuMobile" id="menuMobile">
+
+    <div class="menuCabecalho">
+
+        <h2>Menu</h2>
+
+        <button
+            type="button"
+            onclick="fecharMenu()"
+            aria-label="Fechar menu"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <a href="/Montagem/montagem.html">Montagem</a>
+    <a href="/mega2/Anitrace/pecas.html">Peças</a>
+    <a href="#">Sobre nós</a>
+    <a href="#referencias">Referências</a>
+
+    <div class="tema">
+
+        <img
+            class="claro"
+            src="/images/Sol.png"
+            alt="Tema claro"
+            onclick="temaClaro()"
+        >
+
+        <img
+            class="escuro"
+            src="/images/Lua.png"
+            alt="Tema escuro"
+            onclick="temaEscuro()"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- ================= CONTEÚDO ================= -->
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="pecas">
+
+        <div class="hero-content container">
+
+            <div class="hero-text">
+
+                <h1>Peças</h1>
+
+                <p>
+                    Venha ver como essas peças<br>
+                    funcionam e descubra seus<br>
+                    preços, trazendo praticidade e<br>
+                    eficiência para o projeto
+                </p>
+
+            </div>
+
+            <div class="hero-image-area">
+
+                <img
+                    src="bufalo.png"
+                    alt="Búfalo e imagens do projeto em engrenagens"
+                    class="hero-image"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIAS -->
+
+    <section
+        class="category-section"
+        aria-label="Categorias"
+    >
+
+        <div class="category-buttons container">
+
+            <div
+                class="category-bg"
+                aria-hidden="true"
+            ></div>
+
+            <button
+                class="category-button active"
+                type="button"
+                data-category="coleira"
+            >
+                Coleira
+            </button>
+
+            <button
+                class="category-button"
+                type="button"
+                data-category="porteira"
+            >
+                Porteira
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUTOS -->
+
+    <section
+        class="products-section"
+        aria-label="Lista de peças"
+    >
+
+        <div
+            class="products-decor"
+            aria-hidden="true"
+        >
+            <span class="shape shape-top"></span>
+            <span class="shape shape-mid"></span>
+            <span class="shape shape-bottom"></span>
+        </div>
+
+        <div
+            class="products-list container"
+            id="productsList"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+    <div class="rodape">
+
+        <div class="anitrace">
+
+            <img src="/images/Logo.svg" alt="logo">
+
+            <h1>AniTrace</h1>
+
+        </div>
+
+
+        <div class="links">
+
+            <h2>Montagem</h2>
+            <h2>Peças</h2>
+            <h2>Sobre nós</h2>
+            <h2>Referências</h2>
+
+        </div>
+
+
+        <div class="redes">
+
+            <div>
+                <img src="/images/insta.png" alt="Instagram">
+                <a href=""></a>@AniTrace5
+            </div>
+
+            <div>
+                <img src="/images/email.png" alt="Email">
+                <a href=""></a>@AniTrace.TCC@gmail.com
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
