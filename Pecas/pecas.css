@@ -1,0 +1,518 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundoClaro: #E5DACA;
+    --headerBg: #FFFFFF;
+    --headerFont: #5D3722;
+    --heroBg: #BEBD9E;
+    --heroFont: #03221C;
+    --rodape: #5D3722;
+    --catAtivo: #AE7A23;
+    --catInativo: #CF912A;
+    --cardBg: #F3F3F3;
+    --cardTitulo: #000000;
+    --cardTexto: #202020;
+    --comprarBg: #CF912A;
+    --comprarTexto: #2C2C2C;
+    --fundoTema: #C9BDBA;
+    --branco: white;
+    --preto: black;
+}
+body.escuro {
+    --fundoClaro: #03221C;
+    --headerBg: #8C4A10;
+    --headerFont: #F6EDE6;
+    --heroBg: #245448;
+    --heroFont: #F6EDE6;
+    --rodape: #A55E32;
+    --catAtivo: #7373B9;
+    --catInativo: #9191E9;
+    --cardBg: #000000;
+    --cardTitulo: #FFFFFF;
+    --cardTexto: #E5E5E5;
+    --comprarBg: #9191E9;
+    --comprarTexto: #29234F;
+    --branco: black;
+    --preto: white;
+}
+body.escuro .pc .anitrace img,
+body.escuro .mobile .anitrace img {
+    filter: brightness(0) invert(1);
+}
+.mobile, .menuMobile {
+    display: none;
+}
+body{
+    background-color: var(--fundoClaro);
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.pc{
+    background-color: var(--headerBg);
+
+    h2{
+        font-family: "Imprima", serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: var(--headerFont);
+    }
+}
+
+div.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+    align-items: center;
+
+    div.anitrace{
+        display: flex;
+        margin-left: 3rem;
+        align-items: center;
+
+        h2{
+            font-family: "Nunito", sans-serif;
+        }
+    }
+
+    .anitrace{
+        display: flex;
+        justify-content: space-between;
+        gap: 0.4rem;
+
+        img{
+            width: 1.5rem;
+            height: 2rem;
+            margin-top: 0;
+        }
+    }
+
+    div.palavras{
+        display: flex;
+        justify-content: space-between;
+        gap: 2.5rem;
+    }
+
+    div.tema{
+        display: flex;
+        margin-right: 3rem;
+        margin-left: 1rem;
+        justify-content: space-between;
+        gap: 0.6rem;
+
+        img{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+.hero{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 4.5rem;
+    padding-block: 4rem;
+    background-color: var(--heroBg);
+}
+
+.heroTexto{
+    max-width: 34rem;
+
+    h1{
+        font-family: "Raleway", sans-serif;
+        font-size: 5rem;
+        font-weight: 400;
+        color: var(--heroFont);
+        margin-bottom: 1.5rem;
+    }
+
+    p{
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.35rem;
+        color: var(--heroFont);
+        line-height: 1.6;
+    }
+}
+
+.heroImagem{
+    width: 24rem;
+    max-width: 40%;
+}
+
+.categorias{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-block: 2.2rem;
+    background-color: var(--fundoClaro);
+}
+
+.categoriaBotao{
+    width: 21.4rem;
+    height: 6.1rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--catInativo);
+    color: white;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 2.19rem;
+    cursor: pointer;
+}
+
+.categoriaBotao.ativo{
+    background-color: var(--catAtivo);
+}
+
+.produtos{
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+    max-width: 74.6rem;
+    margin-inline: auto;
+    padding: 2.6rem 1rem 4rem;
+}
+
+.produtoCard{
+    background-color: var(--cardBg);
+    color: var(--cardTitulo);
+    border-radius: 1.9rem;
+    padding: 2rem 2.4rem;
+
+    h2{
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 1.4rem;
+    }
+}
+
+.produtoConteudo{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    img{
+        width: 22rem;
+        height: 14rem;
+        object-fit: contain;
+        background-color: white;
+        border-radius: 0.6rem;
+        padding: 0.8rem;
+    }
+}
+
+.produtoInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    p{
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.2rem;
+        color: var(--cardTexto);
+        line-height: 1.7;
+    }
+}
+
+.comprarBotao{
+    width: 17.6rem;
+    height: 4.7rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--comprarBg);
+    color: var(--comprarTexto);
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.6rem;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.rodape{
+    display: flex;
+    background-color: var(--rodape);
+    justify-content: space-between;
+    padding-inline: 7rem;
+    padding-block: 3rem;
+
+    .anitrace{
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        h1{
+            font-family: "Imprima", serif;
+            font-weight: 400;
+        }
+
+        color: #E5DACA;
+
+        img{
+            width: 3.5rem;
+        }
+    }
+
+    .links{
+        color: #E5DACA;
+        font-family: "Konkhmer Sleokchher", sans-serif;
+        font-weight: 300;
+
+        h2{
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .redes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        color: #E5DACA;
+        font-family: "Imprima", serif;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+        width: 100%;
+        background-color: var(--headerBg);
+        h2{
+            color: white;
+        }
+    }
+
+    .mobile .conteudo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        margin: 0;
+        width: 100%;
+    }
+
+    .mobile .anitrace {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .mobile .anitrace img {
+        width: 1.5rem;
+        height: 2rem;
+    }
+
+    .mobile .pins {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .mobile .pins > img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .mobile .pins .menuBotao {
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+
+    .menuMobile {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: var(--branco);
+        z-index: 10;
+        padding: 2rem;
+        transition: right 0.3s ease;
+    }
+
+    .menuMobile.aberto {
+        right: 0;
+    }
+
+    .menuCabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .menuCabecalho h2 {
+        color: var(--headerFont);
+    }
+
+    .menuCabecalho button {
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+        color: var(--headerFont);
+        cursor: pointer;
+    }
+
+    .menuMobile a {
+        display: block;
+        color: var(--headerFont);
+        text-decoration: none;
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .menuMobile .tema {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--fundoTema);
+        width: fit-content;
+        padding: 0.35rem;
+        border-radius: 2rem;
+    }
+
+    .menuMobile .tema img {
+        width: 1.8rem;
+        height: 1.8rem;
+        padding: 0.3rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .menuMobile .tema .claro {
+        background-color: var(--catInativo);
+        padding: 0.4rem;
+    }
+
+    .menuMobile .tema.escuro .claro {
+        background-color: transparent;
+    }
+
+    .menuMobile .tema.escuro .escuro {
+        background-color: var(--catInativo);
+    }
+
+    .hero{
+        flex-direction: column;
+        text-align: center;
+        padding-inline: 1.5rem;
+        padding-block: 2.5rem;
+        gap: 1.5rem;
+    }
+
+    .heroTexto{
+        max-width: 100%;
+
+        h1{
+            font-size: 2.6rem;
+        }
+
+        p{
+            font-size: 1rem;
+        }
+    }
+
+    .heroImagem{
+        width: 12rem;
+        max-width: 60%;
+    }
+
+    .categorias{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .categoriaBotao{
+        width: 100%;
+        max-width: 20rem;
+        height: 3.4rem;
+        font-size: 1.2rem;
+    }
+
+    .produtos{
+        padding: 2rem 1.2rem;
+        gap: 1.6rem;
+    }
+
+    .produtoCard{
+        padding: 1.4rem;
+    }
+
+    .produtoConteudo{
+        flex-direction: column;
+
+        img{
+            width: 100%;
+            height: 11rem;
+        }
+    }
+
+    .comprarBotao{
+        width: 100%;
+        height: 3.2rem;
+        font-size: 1.1rem;
+    }
+
+    .rodape{
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 2rem;
+        gap: 1rem;
+        flex-direction: column;
+        background-color: var(--rodape);
+
+        h1, h2, a{
+            color: #E5DACA;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            justify-content: center;
+            width: 100%;
+
+            h2 {
+                font-size: 1.1rem;
+                font-weight: 400;
+                white-space: nowrap;
+                margin-bottom: 0;
+            }
+        }
+
+        .anitrace{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .redes{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: #E5DACA;
+        }
+    }
+}

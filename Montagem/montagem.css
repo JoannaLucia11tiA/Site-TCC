@@ -213,9 +213,12 @@ div.cabecalho{
             
             h2{
                 padding-bottom: 1rem;
-                font-size: 1.3rem;
-                font-weight: 400;
                 font-size: 1.4rem;
+                font-weight: 400;
+            }
+
+            p{
+                font-size: 1.1rem;
             }
         }
     }
@@ -665,6 +668,10 @@ max-width: 500px;
                 padding-bottom: 1rem;
                 font-size: 1.3rem;
                 font-weight: 400;
+            }
+
+            p{
+                font-size: 1rem;
             }
         }
     }
