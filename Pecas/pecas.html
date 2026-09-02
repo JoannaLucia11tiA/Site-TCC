@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANITRACE</title>
-    <link rel="stylesheet" href="montagem.css">
-    <script src="./montagem.js" defer></script>
+    <title>AniTrace</title>
+    <link rel="stylesheet" href="pecas.css">
+    <script src="./pecas.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Imprima&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Konkhmer+Sleokchher&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="pc">
@@ -17,8 +20,8 @@
             </div>
 
             <div class="palavras">
-                <a href="./montagem.html"><h2>Montagem</h2></a>
-                <a href="../Pecas/pecas.html"><h2>Peças</h2></a>
+                <a href="../Montagem/montagem.html"><h2>Montagem</h2></a>
+                <h2>Peças</h2>
                 <h2>Sobre nós</h2>
                 <h2>Referências</h2>
             </div>
@@ -57,8 +60,8 @@
             <button onclick="fecharMenu()">✕</button>
         </div>
 
-        <a href="./montagem.html">Montagem</a>
-        <a href="../Pecas/pecas.html">Peças</a>
+        <a href="../Montagem/montagem.html">Montagem</a>
+        <a href="#">Peças</a>
         <a href="#">Sobre nós</a>
         <a href="#">Referências</a>
 
@@ -69,64 +72,23 @@
 </div>
     </div>
 
-<div class="imagem">
+<div class="hero">
 
-        <img class="topHome" src="./Imgs/Fundo vacas.png" alt="foto home">
-
-        <div class="central">
-
-            <h1>Montagem</h1>
-            <h3>Aprenda, em poucos passos, como configurar e utilizar o sistema de monitoramento remoto.</h3>
-
-        </div>
-
+    <div class="heroTexto">
+        <h1>Peças</h1>
+        <p>Venha ver como essas peças funcionam e descubra seus preços, trazendo praticidade e eficiência para o projeto.</p>
     </div>
 
-    <div class="manchas">
-
-    <img class="mancha1" src="./Imgs/top.png">
-    <img class="mancha2" src="./Imgs/left.png">
-    <img class="mancha3" src="./Imgs/right.png">
-    <img class="mancha4" src="./Imgs/bottom.png">
+    <img class="heroImagem" src="./Imgs/bufalo.png" alt="Búfalo e peças do projeto">
 
 </div>
 
-<div class="instrucoes">
-
-<h1>Instruções</h1>
-<div class="quadrados">
-<div class="esquerda">
-    <div>
-        <h2>Inicialização: Ligue o sistema</h2>
-        <p>O sistema realizará a verificação automática dos componentes.</p>
-    </div>
-    <div>
-        <h2>Ativação: Inicie o monitoramento</h2>
-        <p>Após a ativação, os dados começam a ser coletados e transmitidos.</p>
-    </div>
-    <div><h2>Encerramento: Finalize com segurança</h2>
-    <p>Desative o sistema e desligue a alimentação corretamente.</p>
-    </div>
-</div>
-<div class="direita">
-    <div><h2>Conexão: Estabeleça a comunicação</h2>
-    <p>O indicador de conexão confirmará o pareamento.</p>
-    </div>
-    <div>
-        <h2> Acompanhamento: Visualize as informações</h2>
-        <p>Acompanhe também a transmissão visual integrada.</p>
-    </div>
-</div>
+<div class="categorias">
+    <button class="categoriaBotao ativo" data-categoria="coleira">Coleira</button>
+    <button class="categoriaBotao" data-categoria="porteira">Porteira</button>
 </div>
 
-
-
-</div>
-
-<div class="video">
-    <img class="foto" src="./Imgs/video.png" alt="Imagem de um video">
-    <img class="play" src="./Imgs/Play.png" alt="play">
-</div>
+<div class="produtos" id="listaProdutos"></div>
 
 <div class="rodape">
 

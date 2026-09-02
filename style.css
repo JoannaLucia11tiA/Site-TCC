@@ -260,11 +260,13 @@ div.cabecalho{
 
     .primeira, .segunda, .terceira{
         div{
-            height: 10rem;
+            min-height: 10rem;
             width: 26rem;
             border-radius: 0.8rem;
             background-color: var(--divsColor);
             padding: 3rem;
+            display: flex;
+            align-items: center;
 
             p{
                 color: #fff;
@@ -733,6 +735,7 @@ div.cabecalho{
 }
 .quadrados .redondos img {
     margin-left: 3rem;
+    margin-right: 0;
     margin-top: 2rem;
     width: 6rem;
 }
