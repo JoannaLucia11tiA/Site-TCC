@@ -17,7 +17,7 @@ html, body{
 h1 {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 h2, h3 {
@@ -89,16 +89,22 @@ body{
     }
 }
 
-.pc{
+.pc {
     background-color: var(--header);
-
-    h2{
-        font-size: 1.1rem;
-        font-weight: 500;
-        color: var(--headerFont);
-    }
 }
 
+.pc h2 {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--headerFont);
+}
+
+div.palavras {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
 div.cabecalho{
     display: flex;
     justify-content: space-between;
@@ -589,14 +595,7 @@ div.cabecalho{
     margin-bottom: 1.5rem;
 }
 
-    .mobile .pins img {
-        width: 1rem;
-        height: 1rem;
-        filter: brightness(0) saturate(100%)
-                invert(21%) sepia(17%) saturate(1100%)
-                hue-rotate(348deg) brightness(90%)
-                contrast(90%);
-    }
+    
     .mobile h2{
         color: var(--headerFont);
         font-weight: 400;
@@ -632,7 +631,6 @@ div.cabecalho{
     .pc {
         display: none;
     }
-
     .mobile {
         display: block;
         width: 100%;
@@ -877,4 +875,32 @@ div.cabecalho{
                 margin: 0;
             }
         }
+
+body:not(.escuro) .mobile .anitrace h2 {
+    color: #502F1D;
+}
+
+/* Logo */
+body:not(.escuro) .mobile .anitrace img {
+    filter: brightness(0) saturate(100%)
+            invert(20%) sepia(20%) saturate(1000%)
+            hue-rotate(345deg) brightness(88%)
+            contrast(92%);
+}
+
+/* Lupa e 3 tracinhos */
+body:not(.escuro) .mobile .pins img {
+    filter: brightness(0) saturate(100%)
+            invert(20%) sepia(20%) saturate(1000%)
+            hue-rotate(345deg) brightness(88%)
+            contrast(92%);
+}
+
+
+
+
+
+
+
+
 }

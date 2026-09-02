@@ -39,6 +39,36 @@ body.escuro {
     --branco: black;
     --preto: white;
 }
+html, body{
+    overflow-x: hidden;
+    a{
+            text-decoration: none;
+        }
+
+    body {
+    font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+h2, h3 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
 body.escuro .pc .anitrace img,
 body.escuro .mobile .anitrace img {
     filter: brightness(0) invert(1);
@@ -54,17 +84,22 @@ body{
     }
 }
 
-.pc{
-    background-color: var(--headerBg);
-
-    h2{
-        font-family: "Imprima", serif;
-        font-size: 1.3rem;
-        font-weight: 400;
-        color: var(--headerFont);
-    }
+.pc {
+    background-color: var(--header);
 }
 
+.pc h2 {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--headerFont);
+}
+
+div.palavras {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.1rem;
+}
 div.cabecalho{
     display: flex;
     justify-content: space-between;
@@ -76,9 +111,7 @@ div.cabecalho{
         margin-left: 3rem;
         align-items: center;
 
-        h2{
-            font-family: "Nunito", sans-serif;
-        }
+        
     }
 
     .anitrace{
@@ -96,7 +129,7 @@ div.cabecalho{
     div.palavras{
         display: flex;
         justify-content: space-between;
-        gap: 2.5rem;
+        gap: 1rem;
     }
 
     div.tema{
@@ -149,21 +182,22 @@ div.cabecalho{
 
 .categorias{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
     gap: 2rem;
     padding-block: 2.2rem;
-    background-color: var(--fundoClaro);
+    background-color: white;
 }
 
 .categoriaBotao{
-    width: 21.4rem;
-    height: 6.1rem;
+    width: 11.4rem;
+    height: 3.1rem;
     border: none;
     border-radius: 999px;
     background-color: var(--catInativo);
     color: white;
     font-family: "Instrument Sans", sans-serif;
-    font-size: 2.19rem;
+    font-size: 1.19rem;
     cursor: pointer;
 }
 
@@ -252,7 +286,7 @@ div.cabecalho{
             font-weight: 400;
         }
 
-        color: #E5DACA;
+        color: white;
 
         img{
             width: 3.5rem;
@@ -260,7 +294,7 @@ div.cabecalho{
     }
 
     .links{
-        color: #E5DACA;
+        color: white;
         font-family: "Konkhmer Sleokchher", sans-serif;
         font-weight: 300;
 
@@ -274,7 +308,7 @@ div.cabecalho{
         flex-direction: column;
         justify-content: center;
         gap: 1.5rem;
-        color: #E5DACA;
+        color: white;
         font-family: "Imprima", serif;
 
         div{
@@ -292,14 +326,29 @@ div.cabecalho{
     }
 
     .mobile {
-        display: block;
-        width: 100%;
-        background-color: var(--headerBg);
-        h2{
-            color: white;
-        }
-    }
+    display: block;
+    width: 100%;
+    background-color: var(--headerBg);
 
+    h2 {
+        color: var(--headerFont);
+    }
+}
+
+.mobile .anitrace img,
+.mobile .pins img {
+    filter: brightness(0) saturate(100%)
+            invert(22%) sepia(20%)
+            saturate(1000%)
+            hue-rotate(345deg)
+            brightness(85%)
+            contrast(90%);
+}
+
+body.escuro .mobile .anitrace img,
+body.escuro .mobile .pins img {
+    filter: brightness(0) invert(1);
+}
     .mobile .conteudo {
         display: flex;
         align-items: center;
@@ -401,18 +450,17 @@ div.cabecalho{
     }
 
     .menuMobile .tema .claro {
-        background-color: var(--catInativo);
-        padding: 0.4rem;
-    }
+    background-color: #965827;
+    padding: 0.4rem;
+}
 
-    .menuMobile .tema.escuro .claro {
-        background-color: transparent;
-    }
+body.escuro .menuMobile .tema .claro {
+    background-color: transparent;
+}
 
-    .menuMobile .tema.escuro .escuro {
-        background-color: var(--catInativo);
-    }
-
+body.escuro .menuMobile .tema .escuro {
+    background-color: #245448;
+}
     .hero{
         flex-direction: column;
         text-align: center;
@@ -515,4 +563,5 @@ div.cabecalho{
             color: #E5DACA;
         }
     }
+}
 }

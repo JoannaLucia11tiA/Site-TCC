@@ -34,6 +34,37 @@ body.escuro {
     --branco: black;
     --preto: white;
 }
+
+html, body{
+    overflow-x: hidden;
+    a{
+            text-decoration: none;
+        }
+
+    body {
+    font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+h2, h3 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
 body.escuro .mancha1,
 body.escuro .mancha4 {
     filter: brightness(0) saturate(100%) 
@@ -64,14 +95,21 @@ body{
         }
 }
 
-.pc{
+.pc {
     background-color: var(--header);
+}
 
-    h2{
-        font-size: 1.1rem;
-        font-weight: 500;
-        color: var(--headerFont);
-    }
+.pc h2 {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--headerFont);
+}
+
+div.palavras {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 div.cabecalho{
@@ -755,3 +793,4 @@ margin-top: 10.3rem;
 
 }
 
+}
