@@ -7,6 +7,7 @@
 :root {
     --fundoClaro: #E5DACA;
     --headerBg: #FFFFFF;
+    --header: #F6EDE6;
     --headerFont: #5D3722;
     --heroBg: #BEBD9E;
     --heroFont: #03221C;
@@ -25,6 +26,7 @@
 body.escuro {
     --fundoClaro: #03221C;
     --headerBg: #8C4A10;
+    --header: #8C4A10;
     --headerFont: #F6EDE6;
     --heroBg: #245448;
     --heroFont: #F6EDE6;
@@ -105,7 +107,7 @@ div.cabecalho{
     justify-content: space-between;
     padding-block: 1rem;
     align-items: center;
-
+    background-color: var(--header);
     div.anitrace{
         display: flex;
         margin-left: 3rem;
@@ -186,7 +188,7 @@ div.cabecalho{
     padding-left: 1.5rem;
     gap: 2rem;
     padding-block: 2.2rem;
-    background-color: white;
+    background-color: var(--branco);
 }
 
 .categoriaBotao{
@@ -195,7 +197,7 @@ div.cabecalho{
     border: none;
     border-radius: 999px;
     background-color: var(--catInativo);
-    color: white;
+    color: var(--branco);
     font-family: "Instrument Sans", sans-serif;
     font-size: 1.19rem;
     cursor: pointer;

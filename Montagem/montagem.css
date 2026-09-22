@@ -215,7 +215,7 @@ div.cabecalho{
 
     h1{
         margin-block: 3rem;
-        margin-left: 4.3rem;
+        margin-left: 20rem;
         color: var(--instrucoesFont);
         font-weight: 400;
     }
@@ -232,6 +232,7 @@ div.cabecalho{
     display: flex;
     margin-inline: 4rem;
     gap: 4rem;
+    justify-content: center;
 
     .esquerda, .direita{
         
