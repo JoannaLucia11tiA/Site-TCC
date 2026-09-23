@@ -51,6 +51,7 @@ a {
     --fundoTema: #C9BDBA;
     --branco: white;
     --preto: black;
+    --aberta: #FC6C1D;
 }
 body.escuro {
     --fundoClaro: #03221C;
@@ -64,6 +65,7 @@ body.escuro {
     --quadrados: #9191E9;
     --branco: black;
     --preto: white;
+    --aberta: #FFA305;
 }
 
 body.escuro .pc .anitrace img,
@@ -133,6 +135,9 @@ div.cabecalho{
         display: flex;
         justify-content: space-between;
         gap: 1rem;
+        .aberta{
+    color: var(--aberta);
+}
     }
 
     div.tema{

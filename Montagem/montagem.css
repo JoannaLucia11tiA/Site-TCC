@@ -19,6 +19,7 @@
     --branco: white;
     --preto: black;
     --divMontagem: #03221C;
+    --aberta: #FC6C1D;
 }
 body.escuro {
     --fundoClaro: #03221C;
@@ -33,6 +34,7 @@ body.escuro {
     --quadrados: #9191E9;
     --branco: black;
     --preto: white;
+    --aberta: #FFA305;
 }
 
 html, body{
@@ -110,6 +112,9 @@ div.palavras {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    .aberta{
+    color: var(--aberta);
+}
 }
 
 div.cabecalho{
@@ -315,6 +320,7 @@ div.cabecalho{
 
         h2{
             margin-bottom: 0.5rem;
+            color: white;
         }
     }
 

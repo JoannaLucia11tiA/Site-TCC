@@ -22,6 +22,7 @@
     --fundoTema: #C9BDBA;
     --branco: white;
     --preto: black;
+    --aberta: #FC6C1D;
 }
 body.escuro {
     --fundoClaro: #03221C;
@@ -40,6 +41,7 @@ body.escuro {
     --comprarTexto: #29234F;
     --branco: black;
     --preto: white;
+    --aberta: #FFA305;
 }
 html, body{
     overflow-x: hidden;
@@ -101,6 +103,9 @@ div.palavras {
     display: flex;
     justify-content: space-between;
     gap: 0.1rem;
+    .aberta{
+    color: var(--aberta);
+}
 }
 div.cabecalho{
     display: flex;
@@ -301,6 +306,7 @@ div.cabecalho{
         font-weight: 300;
 
         h2{
+            color: white;
             margin-bottom: 0.5rem;
         }
     }
