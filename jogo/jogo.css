@@ -151,120 +151,67 @@ div.cabecalho{
 
 
 }
+button{
+    padding-block: 1rem;
+    padding-inline: 5rem;
+     display: block;
+    margin: 0 auto;
+    margin-top: 4rem;
+    background-color: var(--quadrados);
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.6rem;
+    color: white;
+}
+.imagens {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
 
-.referencias{
-    display: flex;
-    margin-inline: 4rem;
-    margin-top: 2rem;
-    gap: 10rem;
-    justify-content: center;
-    color: var(--preto);
+.fundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.por-cima {
+   position: absolute;
+    bottom: 80px;
+    right: 90px;
+}
+
+.gosma{
+    margin-left: 1rem;
+    position: relative;
+    top: -10px;
+}
+.textao{
+    background-color: #567958;
+    margin-inline: 12rem;
+    padding: 5rem;
+    margin-bottom: 2rem;
+    transform: translateY(-130px); 
     
-    div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
-        p{
-            font-size: 2rem;
-        }
-        h1{
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            align-self: flex-start;
-        }
-    }
-}
-body.escuro .referencias img {
-    filter: brightness(0) invert(1);
 }
 
-.artCientificos, .sitesConsultados{
-    display: flex;
-    margin-inline: 4rem;
-    font-size: 1.8rem;
-    margin-top: 3rem;
-    gap: 2rem;
-    color: var(--preto);
-    h3{
-        font-weight: 400;
-    }
-    img{
-        width: 3rem;
-    }
-}
-.artigos {
-    display: flex;
-    gap: 30px;
-    width: 90%;
-    margin: auto;
-    margin-top: 2.5rem;
-}
+video {
+    width: 94rem;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
 
-.metade,
-.outrametade{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    flex: 1;
-}
-.dois{
-    display: flex;
-    gap: 30px;
-    margin-inline: 6rem;
-    width: 90%;
-    margin: 2.5rem auto;
-    a{
-        color: #FC7E01;
-    }
-}
-.dois .art {
-    flex: 1;
-    height: 200px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    font-size: 1.5rem;
-}
-.art {
-    height: 200px;
-    box-sizing: border-box;
-    color: var(--branco);
-    padding: 20px;
-
-    background-color: var(--preto);
-    border-radius: 15px;
-
-    display: flex;
-    flex-direction: column;
-    h3{
-        color: #FC7E01;
-        margin-block: 1rem;
-        font-weight: 400;
-        font-size: 1.2rem;
-        margin-left: 1.2rem;
-    }
-    p{
-        text-align: center;
-    }
-}
-.boi{
-    width: 60rem;
-    margin-inline: 8rem;
-    margin-top: 8rem;
-    margin-bottom: 10rem;
     display: block;
-    margin-inline: auto;
+    margin: 0 auto;
 }
+
 .rodape{
     display: flex;
     background-color: var(--rodape);
     justify-content: space-between;
     padding-inline: 7rem;
     padding-block: 3rem;
+    margin-top: 2rem;
 
     .anitrace{
         display: flex;
@@ -305,6 +252,16 @@ body.escuro .referencias img {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -425,7 +382,34 @@ body.escuro .referencias img {
         color: var(--headerFont);
         font-weight: 400;
     }
-   
+    /* Imagem principal */
+    .topHome {
+        height: 500px;
+        object-fit: cover;
+
+        
+    }
+    .imagem h3 {
+        top: 40%;
+        padding-inline: 1rem;
+    }
+    .botao{
+        text-align: center;
+    }
+    /* Conteúdo da imagem */
+    .conteudoHome h1 {
+        font-size: 32px;
+    }
+
+    .conteudoHome h3 {
+        font-size: 18px;
+        max-width: 90%;
+        
+        .imagem h3 {
+        top: 40%;
+    }
+    }
+
     .pc {
         display: none;
     }
@@ -471,26 +455,6 @@ body.escuro .referencias img {
     height: 1.5rem;
     cursor: pointer;
 }
-
-    .problema{
-        flex-direction: column;
-        gap: 0;
-        padding-inline: 2rem;
-
-        .textoEmPe{
-            margin: 0;
-        }
-    }
-
-    .divs {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        margin-inline: 0;
-    }
-
-    
 
     .rodape{
         display: flex;
@@ -559,29 +523,19 @@ body:not(.escuro) .mobile .pins img {
             contrast(92%);
 }
 
-.referencias{
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    gap: 0;
-    p{
-        margin-bottom: 3rem;
-    }
+.textao{
+    margin-inline: 4rem
 }
-.artigos, .dois{
-    display: flex;
-    flex-direction: column;
-    margin-inline: 2rem;
+
+video{
+    width: 34rem;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+
+    display: block;
+    margin: 0 auto;
 }
-.dois .art {
-        width: 100%;
-        height: 200px;
-    }
-
-    .boi{
-        width: 80%;
-    }
-
 
 
 }
