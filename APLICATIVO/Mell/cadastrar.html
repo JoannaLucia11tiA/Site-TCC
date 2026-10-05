@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="cadastrar.css">
+</head>
+<body>
+    <div class="retangulo">
+
+    <!-- LOGO -->
+    <div class="anitrace">
+        <img src="/images/Logo.png" alt="Logo site">
+        <h2 class="aberta">AniTrace</h2>
+    </div>
+
+    <!-- TÍTULO -->
+    <h1>Criar uma conta</h1>
+
+    <!-- LOGIN -->
+    <h2>
+        Já tem uma conta?
+        <a href="../Ju/login.html">log in</a>
+    </h2>
+
+    <!-- VACA E SETA -->
+    <img src="/images/Vaca.png" alt="Vaca" class="imgvaca">
+    <img src="/images/Seta.png" alt="Seta" class="Seta">
+
+    <!-- CADASTRO -->
+    <div class="cadastro">
+
+        <form action="processar_cadastro.php" method="POST">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <h2>
+                Eu concordo com os
+                <a href="./Termos.html">termos e condições</a>
+            </h2>
+
+            <button type="submit">Criar Conta</button>
+
+        </form>
+
+    </div>
+
+    <!-- OUTRAS FORMAS -->
+    <div class="outrasformas">
+
+        <h3>ou registrar com</h3>
+
+        <div>
+            <a href="#">
+                <img src="/images/Google.png" alt="Google">
+            </a>
+
+            <a href="#">
+                <img src="/images/Apple.png" alt="Apple">
+            </a>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
