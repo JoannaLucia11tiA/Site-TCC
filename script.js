@@ -1,4 +1,4 @@
-fetch("../componentes/header.html")
+fetch("/componentes/header.html")
     .then(resposta => {
         if (!resposta.ok) {
             throw new Error("Erro ao carregar header: " + resposta.status);
