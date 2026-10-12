@@ -63,14 +63,10 @@ p {
     --textoSobreCor: #FFFFFF;
     --textoSobreImagem: #FFFFFF;
     --sombraImagem: rgba(0, 0, 0, 0.2);
-
-    /* Cores das ondas */
-    --onda1: #CDAE99;
-    --onda2: #B47E60;
 }
 
 body.escuro {
-    --fundoClaro: #03221C;
+    --fundoClaro: #0A0B0C;
     --header: #A55E32;
     --headerFont: #F6EDE6;
     --rodape: #8C4A10;
@@ -85,10 +81,6 @@ body.escuro {
     --textoSobreCor: #F6EDE6;
     --textoSobreImagem: #FFFFFF;
     --sombraImagem: rgba(0, 0, 0, 0.2);
-
-    /* Ondas no tema escuro */
-    --onda1: #262626;
-    --onda2: #111111;
 }
 
 /* ===== CABEÇALHO DESKTOP ===== */
@@ -302,6 +294,37 @@ body.escuro .imagem .central h3 {
     font-size: 2.5rem;
 }
 
+/* ===== FUNDO DEGRADÊ DA PÁGINA MONTAGEM ===== */
+
+.pagina-montagem {
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #C5957B 50%,
+        #B47E60 100%,
+        #CDAE99 50%
+    );
+}
+
+body.escuro.pagina-montagem {
+    background: linear-gradient(
+        180deg,
+        #3B3B3B 50%,
+        #151515 100%,
+        #363636 50%
+    );
+}
+
+/* Mantém o degradê visível atrás das instruções */
+.pagina-montagem .instrucoes {
+    background-color: transparent;
+}
+
+/* Título Instruções no modo escuro */
+body.escuro.pagina-montagem .instrucoes > h1 {
+    color: white;
+}
+
 /* ===== POSICIONAMENTO DOS CARTÕES ===== */
 
 .quadrados {
@@ -414,21 +437,91 @@ body.escuro .imagem .central h3 {
 .video {
     position: relative;
     z-index: 2;
-    width: 25rem;
-    margin: 2rem auto 3.1rem;
+    width: 45rem;
+    margin: 9rem auto 7rem;
+    isolation: isolate;
 }
+
+/* Retângulo com gradiente animado */
+.video::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 120%;
+    height: 115%;
+    top: -7.5%;
+    left: -10%;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #5E3722,
+        #874C2C,
+        #5E3722,
+        #874C2C
+    );
+
+    background-size: 300% 300%;
+    animation: moverGradiente 6s ease infinite;
+}
+
+/* Animação das cores */
+@keyframes moverGradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.escuro.pagina-montagem .video::before {
+    background: linear-gradient(
+        135deg,
+        #D3862B,
+        #CD9233,
+        #e48f26,
+        #e2a543
+    );
+
+    background-size: 300% 300%;
+}
+
 
 .video .foto {
     width: 100%;
     display: block;
+    border: 3px solid var(--branco);
+    border-radius: 30px;
+    box-sizing: border-box;
 }
 
-.video .play {
+/* Círculo preto atrás do play */
+.video::after {
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 5rem;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Ícone de play */
+.video .play {
+    position: absolute;
+    top: 50%;
+    left: 50.6%;
+    transform: translate(-50%, -50%);
+    width: 2.3rem;
     z-index: 3;
 }
 
