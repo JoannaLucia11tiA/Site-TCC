@@ -1,43 +1,46 @@
-*{
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     overflow-x: hidden;
-        
-    a{
-        text-decoration: none;
-    }
-
-    body {
-        font-family: "Noto Sans", sans-serif;
-    }
-
-    h1 {
-        font-family: "Raleway", sans-serif;
-        font-weight: 700;
-        font-size: 2rem;
-    }
-
-    h2, h3 {
-        font-family: "Rubik", sans-serif;
-        font-weight: 500;
-    }
-
-    p {
-        font-family: "Noto Sans", sans-serif;
-        font-weight: 400;
-    }
-
-   a {
-        font-family: "Rubik", sans-serif;
-        font-weight: 500;
-   }
 }
 
-.menuMobile {
+a {
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+h2,
+h3 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+}
+
+.menuMobile,
+.mobile {
     display: none;
 }
 
@@ -60,6 +63,10 @@ html, body{
     --textoSobreCor: #FFFFFF;
     --textoSobreImagem: #FFFFFF;
     --sombraImagem: rgba(0, 0, 0, 0.2);
+
+    /* Cores das ondas */
+    --onda1: #CDAE99;
+    --onda2: #B47E60;
 }
 
 body.escuro {
@@ -78,13 +85,14 @@ body.escuro {
     --textoSobreCor: #F6EDE6;
     --textoSobreImagem: #FFFFFF;
     --sombraImagem: rgba(0, 0, 0, 0.2);
+
+    /* Ondas no tema escuro */
+    --onda1: #262626;
+    --onda2: #111111;
 }
 
-.mobile{
-    display: none;
-}
+/* ===== CABEÇALHO DESKTOP ===== */
 
-/* CABEÇALHO DESKTOP */
 .fundoHeader {
     width: 100%;
     background-color: var(--header);
@@ -96,7 +104,7 @@ body.escuro {
 
 .pagina-montagem .anitrace h2 {
     font-size: 1.1rem;
-    font-family: "Rubik",sans-serif;
+    font-family: "Rubik", sans-serif;
     justify-content: space-between;
     font-weight: 690;
     transform: translateX(-45px);
@@ -135,7 +143,7 @@ body.escuro {
 
 .pagina-montagem .menuDesktop h2 {
     font-size: 1.09rem;
-    font-family: "Raleway",sans-serif;
+    font-family: "Raleway", sans-serif;
     justify-content: space-between;
     font-weight: 690;
 }
@@ -150,17 +158,17 @@ body.escuro {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    
-    a {
+}
+
+.menuDesktop a {
     text-decoration: none;
     color: #452714;
-    }
-    
-    h2 {
+}
+
+.menuDesktop h2 {
     margin: 0;
     font-size: 1rem;
     font-weight: 600;
-    }
 }
 
 .tema img {
@@ -171,157 +179,243 @@ body.escuro {
 }
 
 .menuCabecalho {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 3rem;
-        padding-block: 1rem;
-    }
-
-    .menuCabecalho h2 {
-        color: var(--headerFont);
-    }
-
-    .menuCabecalho button {
-        border: none;
-        background: none;
-        font-size: 1.5rem;
-        color: var(--headerFont);
-        cursor: pointer;
-    }
-
-    .menuMobile a {
-        display: block;
-        color: var(--headerFont);
-        text-decoration: none;
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-    }
-  
-    .mobile h2{
-        color: var(--headerFont);
-        font-weight: 400;
-    }
-
-
-
-/* MOBILE */
-.mobile,
-.menuMobile {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-block: 1rem;
 }
 
-.manchas {
-    position: absolute;
-    z-index: 1;
+.menuCabecalho h2 {
+    color: var(--headerFont);
+}
+
+.menuCabecalho button {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    color: var(--headerFont);
+    cursor: pointer;
+}
+
+.menuMobile a {
+    display: block;
+    color: var(--headerFont);
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.mobile h2 {
+    color: var(--headerFont);
+    font-weight: 400;
+}
+
+
+.imagem {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+}
+
+.imagem .topHome {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Camada preta exclusiva da página Montagem */
+
+.pagina-montagem .imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
     pointer-events: none;
 }
 
-.manchas img {
+.imagem .central {
     position: absolute;
-    
-}
-
-.mancha1 {
-    top: -3.9rem;
-    right: 0rem;
-    height: 390px;
-    object-fit: cover;
-    object-position: center bottom;
-
-    clip-path: inset(62px 0 0 0);
-}
-
-.mancha2 {
-    top: 47rem;
-    right: 0rem;
-    width: 12rem;
-}
-
-.mancha3 {
-    top: 20rem;
-    left: 0;
-    width: 15rem;
-}
-
-.mancha4 {
-    width: 30rem;
-    top: 64.5rem;
-    left: 0rem;
-    
-    height: 14rem;
-    object-fit: cover;
-    object-position: center top;
-}
-.imagem{
-    img{
-        width: 100%;
-    }
-}
-
-.instrucoes {
-    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
-
-    h1{
-        margin-block: 3rem;
-        margin-left: 20rem;
-        color: var(--instrucoesFont);
-        font-weight: 400;
-    }
+    width: 90%;
+    max-width: 750px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: none;
+    border-radius: 0;
+    padding: 1rem;
+    margin: 0;
 }
 
-.instrucoes .quadrados {
-    position: relative;
-    z-index: 3;
-
-    
+.imagem .central h1 {
+    margin: 0;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.1;
 }
+
+.imagem .central h3 {
+    margin: 0;
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 650px;
+}
+
+body.escuro .imagem {
+    background-color: #000;
+}
+
+body.escuro .imagem .central h1 {
+    color: #d3e6d6;
+    text-shadow: 0 0 14px rgba(25, 131, 57, 0.5);
+}
+
+body.escuro .imagem .central h3 {
+    color: #f5fff7;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== TÍTULO DAS INSTRUÇÕES ===== */
+
+.instrucoes > h1 {
+    margin: 2rem 0 3rem;
+    text-align: center;
+    color: var(--instrucoesFont, #000);
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+/* ===== POSICIONAMENTO DOS CARTÕES ===== */
 
 .quadrados {
+    position: relative;
     display: flex;
-    margin-inline: 4rem;
-    gap: 4rem;
     justify-content: center;
-
-    .esquerda, .direita{
-        
-        display: flex;
-        flex-direction: column;
-
-        div {
-            background-color: var(--quadrados);
-            margin-bottom: 4rem;
-            padding: 2rem;
-            border-radius: 1.3rem;
-            height: 13rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-           
-            
-            h2{
-                padding-bottom: 1rem;
-                font-size: 1.4rem;
-                font-weight: 400;
-            }
-
-            p{
-                font-size: 1.1rem;
-            }
-        }
-    }
+    align-items: flex-start;
+    gap: 9rem;
+    margin-inline: auto;
+    max-width: 1100px;
 }
+
+.quadrados .esquerda,
+.quadrados .direita {
+    display: flex;
+    flex-direction: column;
+    gap: 9rem;
+    width: 440px;
+}
+
+/* Deslocamento da coluna direita */
+
+.quadrados .direita {
+    padding-top: 11rem;
+}
+
+/* ===== CARTÕES ===== */
+
+.quadrados .etapa {
+    position: relative;
+    width: 100%;
+    min-height: 160px;
+    padding: 0;
+    overflow: visible;
+    border-radius: 14px;
+    background: #d99a32;
+    box-shadow: 0 5px 8px rgba(70, 37, 17, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Cabeçalho dos cartões */
+
+.quadrados .etapa > h2 {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border-radius: 12px 12px 0 0;
+    background: #f4b66d;
+    color: #713b1d;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Texto interno */
+
+.quadrados .etapa .conteudo {
+    padding: 1.2rem 1rem;
+    text-align: center;
+}
+
+.quadrados .etapa .conteudo h3 {
+    margin: 0 0 0.5rem;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.quadrados .etapa .conteudo p {
+    margin: 0;
+    color: #754820;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Círculos numerados */
+
+.quadrados .numero {
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid #9a4b16;
+    background: #f5bd7a;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 800;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.quadrados .direita .numero {
+    left: auto;
+    right: -14px;
+}
+
+.quadrados .etapa2,
+.quadrados .etapa4 {
+    margin-left: 0;
+}
+
+/* ===== VÍDEO ===== */
 
 .video {
     position: relative;
     z-index: 2;
     width: 25rem;
-    margin: 0 auto;
-    margin-top: 2rem;
-    margin-bottom: 3.1rem;
+    margin: 2rem auto 3.1rem;
 }
 
 .video .foto {
@@ -338,124 +432,56 @@ body.escuro {
     z-index: 3;
 }
 
-   .rodape{
+/* ===== RODAPÉ ===== */
+
+.rodape {
     display: flex;
     background-color: var(--rodape);
     justify-content: space-between;
     padding-inline: 7rem;
     padding-block: 3rem;
-
-    .anitrace{
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-
-        h1{
-            font-weight: 400;
-        }
-
-        color: white;
-
-        img{
-            width: 3.5rem;
-        }
-    }
-
-    .links{
-        color: white;
-        font-weight: 300;
-
-        h2{
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-    }
-
-    .redes{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1.5rem;
-        color: white;
-
-        div{
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-    }
 }
 
-.imagem {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    background-color: #fff;
-}
-
-body.escuro .imagem {
-    background-color: #000;
-}
-
-.imagem .topHome {
-    position: absolute;
-    top: 20px;
-    left: 5%;
-    width: 90%;
-    height: calc(100% - 40px);
-    object-fit: contain;
-    display: block;
-    z-index: 0;
-}
-
-.imagem::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 1;
-}
-
-.imagem .central {
-    position: absolute;
-    right: 9%;
-    bottom: 390px;
-    top: auto;
-    left: auto;
-    transform: none;
-
-    border-radius: 9rem 0 0 9rem;
-    max-width: 500px;
-    bottom: 30px;
-    width: 70rem;
-    margin: 2.3rem;
-
-    background-color: rgba(36, 84, 72, 0.75);
-    padding: 2rem;
-    padding-block: 3rem;
-
-    text-align: center;
-    z-index: 2;
-}
-
-.imagem .central h1 {
+.rodape .anitrace {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     color: white;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
 }
 
-.imagem .central h3 {
+.rodape .anitrace h1 {
+    font-weight: 400;
+}
+
+.rodape .anitrace img {
+    width: 3.5rem;
+}
+
+.rodape .links {
     color: white;
-    font-size: 1.1rem;
-    line-height: 1.4;
-    max-width: 90%;
-    font-weight: 500;
+    font-weight: 300;
 }
 
+.rodape .links h2 {
+    margin-bottom: 0.5rem;
+    color: white;
+}
 
+.rodape .redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    color: white;
+}
 
+.rodape .redes div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
 
 @media (max-width: 768px) {
     .pc {
@@ -505,5 +531,45 @@ body.escuro .imagem {
         gap: 1rem;
         padding: 1rem;
         background-color: #f7eee7;
+    }
+
+    .quadrados {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-inline: 1.5rem;
+    }
+
+    .quadrados .esquerda,
+    .quadrados .direita {
+        width: min(100%, 440px);
+        gap: 2rem;
+        padding-top: 0;
+    }
+
+    .quadrados .etapa {
+        min-height: 145px;
+    }
+
+    .quadrados .etapa > h2 {
+        font-size: 1.15rem;
+    }
+
+    .quadrados .etapa .conteudo h3 {
+        font-size: 1.05rem;
+    }
+
+    .quadrados .etapa .conteudo p {
+        font-size: 0.9rem;
+    }
+
+    .rodape {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .video {
+        width: min(25rem, 90%);
     }
 }

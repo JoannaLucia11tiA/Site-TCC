@@ -196,11 +196,11 @@ body.escuro .imagem {
 
 .imagem .videoHome {
     position: absolute;
-    top: 20px;
-    left: 5%;
-    width: 90%;
-    height: 400% - 900px;
-    object-fit: contain;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 40px);
+    object-fit: cover;
     z-index: 0;
     pointer-events: none;
 }
@@ -299,13 +299,13 @@ body.escuro .imagem {
 }
 
 body.escuro .imagem .central h1 {
-    color: #d3e6d6;
+    color: #d8ebda;
     text-shadow: 0 0 14px rgba(25, 131, 57, 0.507);
 }
 
 body.escuro .imagem .central h3 {
-    color: #f5fff7;
-    text-shadow: 0 0 10px rgba(0, 255, 76, 0.25);
+    color: #eaf8ed;
+    text-shadow: 0 0 10px rgba(2, 139, 43, 0.25);
 }
 
 
