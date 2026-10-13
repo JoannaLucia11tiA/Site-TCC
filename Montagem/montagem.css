@@ -1,59 +1,35 @@
-*{
-    margin: 0;
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --fundoClaro: #E5DACA;
-    --header: #F6EDE6;
-    --headerFont: #5D3722;
-    --instrucoesFont: #502F1D;
-    --rodape: #5D3722;
-    --problemaColor: #563930;
-    --diferencialColor: #4A2319;
-    --divsColor: #965827;
-    --divPublicoAlvo: #CEB185;
-    --quadrados: #CF912A;
-    --fundoTema: #C9BDBA;
-    --branco: white;
-    --preto: black;
-    --divMontagem: #03221C;
-    --aberta: #FC6C1D;
-}
-body.escuro {
-    --fundoClaro: #03221C;
-    --header: #8C4A10;
-    --headerFont: #F6EDE6;
-    --instrucoesFont: #fff;
-    --rodape: #8C4A10;
-    --problemaColor: #F6EDE6;
-    --diferencialColor: #F6EDE6;
-    --divsColor: #245448;
-    --divPublicoAlvo: #A7ABB1;
-    --quadrados: #9191E9;
-    --branco: black;
-    --preto: white;
-    --aberta: #FFA305;
-}
-
-html, body{
+html,
+body {
     overflow-x: hidden;
-    a{
-            text-decoration: none;
-        }
+}
 
-    body {
+a {
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+body {
     font-family: "Noto Sans", sans-serif;
 }
 
 h1 {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: "Rubik", sans-serif;
     font-weight: 500;
 }
@@ -63,286 +39,175 @@ p {
     font-weight: 400;
 }
 
-a {
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
-}
-body.escuro .mancha1,
-body.escuro .mancha4 {
-    filter: brightness(0) saturate(100%) 
-            invert(27%) sepia(15%) saturate(1000%) 
-            hue-rotate(115deg) brightness(85%);
-}
-
-body.escuro .mancha2,
-body.escuro .mancha3 {
-    filter: brightness(0) invert(1);
-}
-.mobile, .menuMobile {
+.menuMobile,
+.mobile {
     display: none;
 }
-body.escuro .pc .anitrace img,
-body.escuro .mobile .anitrace img {
-    filter: brightness(0) invert(1);
-}
-body{
-    background-color: var(--fundoClaro);
 
-    p{
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-    a{
-            text-decoration: none;
-        }
+/* ===== TEMA E CORES ===== */
+
+:root {
+    --fundoClaro: #E5DACA;
+    --header: #F6EDE6;
+    --headerFont: #5D3722;
+    --rodape: #5D3722;
+    --problemaColor: #563930;
+    --diferencialColor: #4A2319;
+    --divsColor: #965827;
+    --divPublicoAlvo: #CEB185;
+    --quadrados: #CF912A;
+    --fundoTema: #C9BDBA;
+    --branco: white;
+    --preto: black;
+    --aberta: #FC6C1D;
+    --textoSobreCor: #FFFFFF;
+    --textoSobreImagem: #FFFFFF;
+    --sombraImagem: rgba(0, 0, 0, 0.2);
 }
 
-.pc {
+body.escuro {
+    --fundoClaro: #0A0B0C;
+    --header: #A55E32;
+    --headerFont: #F6EDE6;
+    --rodape: #8C4A10;
+    --problemaColor: #F6EDE6;
+    --diferencialColor: #F6EDE6;
+    --divsColor: #245448;
+    --divPublicoAlvo: #A7ABB1;
+    --quadrados: #9191E9;
+    --branco: black;
+    --preto: white;
+    --aberta: #FFA305;
+    --textoSobreCor: #F6EDE6;
+    --textoSobreImagem: #FFFFFF;
+    --sombraImagem: rgba(0, 0, 0, 0.2);
+}
+
+/* ===== CABEÇALHO DESKTOP ===== */
+
+.fundoHeader {
+    width: 100%;
     background-color: var(--header);
 }
 
-.pc h2 {
-    font-family: "Rubik", sans-serif;
+.pagina-montagem .menuDesktop a[href="/Montagem/montagem.html"] h2 {
+    color: var(--aberta);
+}
+
+.pagina-montagem .anitrace h2 {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-family: "Rubik", sans-serif;
+    justify-content: space-between;
+    font-weight: 690;
+    transform: translateX(-45px);
+}
+
+.pagina-montagem .pc .anitrace h2.aberta {
+    color: var(--headerFont) !important;
+}
+
+.pagina-montagem .anitrace {
+    transform: translateX(-2px);
+}
+
+.pagina-montagem .anitrace img {
+    width: 3rem;
+    height: 3.5rem;
+    object-fit: contain;
+    position: relative;
+    left: -45.3px;
+}
+
+.pagina-montagem .cabecalho {
+    display: flex;
+    margin-right: 5.7rem;
+    margin-left: 3rem;
+    justify-content: space-between;
+    gap: 0.6rem;
+}
+
+.pagina-montagem .menuDesktop {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.1rem;
+    padding-right: 2.2rem;
+}
+
+.pagina-montagem .menuDesktop h2 {
+    font-size: 1.09rem;
+    font-family: "Raleway", sans-serif;
+    justify-content: space-between;
+    font-weight: 690;
+}
+
+.pagina-montagem #iconeTemaDesktop {
+    position: relative;
+    left: 90px;
+}
+
+.menuDesktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menuDesktop a {
+    text-decoration: none;
+    color: #452714;
+}
+
+.menuDesktop h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.tema img {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.menuCabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-block: 1rem;
+}
+
+.menuCabecalho h2 {
     color: var(--headerFont);
 }
 
-div.palavras {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    .aberta{
-    color: var(--aberta);
-}
-}
-
-div.cabecalho{
-    display: flex;
-    justify-content: space-between;
-    padding-block: 1rem;
-    align-items: center;
-
-    div.anitrace{
-        display: flex;
-        margin-left: 3rem;
-        align-items: center;
-        
-    }
-
-    .anitrace{
-        display: flex;
-        justify-content: space-between;
-        gap: 0.4rem;
-
-        img{
-            width: 1.5rem;
-            height: 2rem;
-            margin-top: 0;
-        }
-        
-    }
-
-    div.palavras{
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-
-    div.tema{
-        display: flex;
-        margin-right: 3rem;
-        margin-left: 1rem;
-        justify-content: space-between;
-        gap: 0.6rem;
-
-        img{
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
-
+.menuCabecalho button {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    color: var(--headerFont);
+    cursor: pointer;
 }
 
-.manchas {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.manchas img {
-    position: absolute;
-    
-}
-
-.mancha1 {
-    top: -3.9rem;
-    right: 0rem;
-    height: 390px;
-    object-fit: cover;
-    object-position: center bottom;
-
-    clip-path: inset(62px 0 0 0);
-}
-
-.mancha2 {
-    top: 47rem;
-    right: 0rem;
-    width: 12rem;
-}
-
-.mancha3 {
-    top: 20rem;
-    left: 0;
-    width: 15rem;
-}
-
-.mancha4 {
-    width: 30rem;
-    top: 64.5rem;
-    left: 0rem;
-    
-    height: 14rem;
-    object-fit: cover;
-    object-position: center top;
-}
-.imagem{
-    img{
-        width: 100%;
-    }
-}
-
-.instrucoes {
-    position: relative;
-    z-index: 2;
-
-    h1{
-        margin-block: 3rem;
-        margin-left: 20rem;
-        color: var(--instrucoesFont);
-        font-weight: 400;
-    }
-}
-
-.instrucoes .quadrados {
-    position: relative;
-    z-index: 3;
-
-    
-}
-
-.quadrados {
-    display: flex;
-    margin-inline: 4rem;
-    gap: 4rem;
-    justify-content: center;
-
-    .esquerda, .direita{
-        
-        display: flex;
-        flex-direction: column;
-
-        div {
-            background-color: var(--quadrados);
-            margin-bottom: 4rem;
-            padding: 2rem;
-            border-radius: 1.3rem;
-            height: 13rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-           
-            
-            h2{
-                padding-bottom: 1rem;
-                font-size: 1.4rem;
-                font-weight: 400;
-            }
-
-            p{
-                font-size: 1.1rem;
-            }
-        }
-    }
-}
-
-.video {
-    position: relative;
-    z-index: 2;
-    width: 25rem;
-    margin: 0 auto;
-    margin-top: 2rem;
-    margin-bottom: 3.1rem;
-}
-
-.video .foto {
-    width: 100%;
+.menuMobile a {
     display: block;
+    color: var(--headerFont);
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
 }
 
-.video .play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 5rem;
-    z-index: 3;
+.mobile h2 {
+    color: var(--headerFont);
+    font-weight: 400;
 }
 
-   .rodape{
-    display: flex;
-    background-color: var(--rodape);
-    justify-content: space-between;
-    padding-inline: 7rem;
-    padding-block: 3rem;
-
-    .anitrace{
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-
-        h1{
-            font-weight: 400;
-        }
-
-        color: white;
-
-        img{
-            width: 3.5rem;
-        }
-    }
-
-    .links{
-        color: white;
-        font-weight: 300;
-
-        h2{
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-    }
-
-    .redes{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1.5rem;
-        color: white;
-
-        div{
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-    }
-}
 
 .imagem {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 560px;
     overflow: hidden;
 }
 
@@ -353,451 +218,584 @@ div.cabecalho{
     display: block;
 }
 
-.imagem::after {
+/* Camada preta exclusiva da página Montagem */
+
+.pagina-montagem .imagem::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    pointer-events: none;
 }
 
 .imagem .central {
     position: absolute;
     top: 50%;
-    left: 80%;
-    border-radius: 2rem;
+    left: 50%;
     transform: translate(-50%, -50%);
-max-width: 500px;
-    margin: 0 auto;
-    background-color: var(--divMontagem);
-
-    width: 90%;
-    padding: 2rem;
-    padding-block: 3rem;
-
-    text-align: center;
     z-index: 2;
+    width: 90%;
+    max-width: 750px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: none;
+    border-radius: 0;
+    padding: 1rem;
+    margin: 0;
 }
 
 .imagem .central h1 {
+    margin: 0;
     color: white;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.1;
 }
 
 .imagem .central h3 {
+    margin: 0;
     color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 650px;
+}
+
+body.escuro .imagem {
+    background-color: #000;
+}
+
+body.escuro .imagem .central h1 {
+    color: #d3e6d6;
+    text-shadow: 0 0 14px rgba(88, 88, 88, 0.5);
+}
+
+body.escuro .imagem .central h3 {
+    color: #f5fff7;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== TÍTULO DAS INSTRUÇÕES ===== */
+
+.instrucoes > h1 {
+    margin: 2rem 0 3rem;
+    text-align: center;
+    color: var(--instrucoesFont, #000);
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+/* ===== FUNDO DEGRADÊ DA PÁGINA MONTAGEM ===== */
+
+.pagina-montagem {
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #f8e6dd 50%,
+        #cfae9b 100%,
+        #f8d2b9 50%
+    );
+}
+
+body.escuro.pagina-montagem {
+    background: linear-gradient(
+        180deg,
+        #3B3B3B 50%,
+        #151515 100%,
+        #363636 50%
+    );
+}
+
+/* Mantém o degradê visível atrás das instruções */
+.pagina-montagem .instrucoes {
+    background-color: transparent;
+}
+
+/* Título Instruções no modo escuro */
+body.escuro.pagina-montagem .instrucoes > h1 {
+    color: white;
+}
+
+/* ===== POSICIONAMENTO DOS CARTÕES ===== */
+
+.quadrados {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 9rem;
+    margin-inline: auto;
+    max-width: 1100px;
+}
+
+.quadrados .esquerda,
+.quadrados .direita {
+    display: flex;
+    flex-direction: column;
+    gap: 9rem;
+    width: 440px;
+}
+
+/* Deslocamento da coluna direita */
+
+.quadrados .direita {
+    padding-top: 11rem;
+}
+
+/* ===== CARTÕES — MODO CLARO ===== */
+
+.quadrados .etapa {
+    position: relative;
+    width: 100%;
+    min-height: 160px;
+    padding: 0;
+    overflow: visible;
+    border-radius: 14px;
+    background: #d99a32;
+    box-shadow: 0 5px 8px rgba(70, 37, 17, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Cabeçalho dos cartões */
+
+.quadrados .etapa > h2 {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border-radius: 12px 12px 0 0;
+    background: #f4b66d;
+    color: #713b1d;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Texto interno */
+
+.quadrados .etapa .conteudo {
+    padding: 1.2rem 1rem;
+    text-align: center;
+}
+
+.quadrados .etapa .conteudo h3 {
+    margin: 0 0 0.5rem;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.quadrados .etapa .conteudo p {
+    margin: 0;
+    color: #754820;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Círculos numerados */
+
+.quadrados .numero {
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border-color: #9a4b16;
+    background: #f5bd7a;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 800;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.quadrados .direita .numero {
+    left: auto;
+    right: -14px;
+}
+
+.quadrados .etapa2,
+.quadrados .etapa4 {
+    margin-left: 0;
+}
+
+/* ===== CARTÕES — MODO ESCURO ===== */
+
+body.escuro .quadrados .etapa {
+    background: #6f55a8;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+body.escuro .quadrados .etapa > h2 {
+    background: #9178c9;
+    color: #211536;
+}
+
+body.escuro .quadrados .etapa .conteudo h3 {
+    color: #ffffff;
+}
+
+body.escuro .quadrados .etapa .conteudo p {
+    color: #f0eaff;
+}
+
+body.escuro .quadrados .numero {
+    border-color: #49356f;
+    background: #9178c9;
+    color: #ffffff;
+}
+
+/* ===== VÍDEO ===== */
+
+.video {
+    position: relative;
+    z-index: 2;
+    width: 45rem;
+    margin: 9rem auto 0rem;
+    isolation: isolate;
+}
+
+/* Retângulo com gradiente animado */
+.video::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 120%;
+    height: 115%;
+    top: -7.5%;
+    left: -10%;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #1f1e1e,
+        #3b3b3b,
+        #161616,
+        #5a5a5a
+    );
+
+    background-size: 300% 300%;
+    animation: moverGradiente 6s ease infinite;
+}
+
+/* Animação das cores */
+@keyframes moverGradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.escuro.pagina-montagem .video::before {
+    background: linear-gradient(
+        135deg,
+        #5e5e5e,
+        #525252,
+        #4b4b4b,
+        #3d3d3db7
+    );
+
+    background-size: 300% 300%;
+}
+
+.video .foto {
+    width: 100%;
+    display: block;
+    border: 3px solid var(--branco);
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+/* Círculo preto atrás do play */
+.video::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Ícone de play */
+.video .play {
+    position: absolute;
+    top: 50%;
+    left: 50.6%;
+    transform: translate(-50%, -50%);
+    width: 2.3rem;
+    z-index: 3;
+}
+
+/* ===== CENTRAL DE AJUDA ===== */
+
+.central-ajuda {
+position: relative;
+max-width: 850px;
+margin: 4rem auto 2rem;
+padding: 3rem 2rem;
+text-align: center;
+border-radius: 20px;
+}
+
+.ajuda-icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.2rem;
+    border-radius: 50%;
+    background-color: rgba(135, 76, 44, 0.15);
+}
+
+.ajuda-icone img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.central-ajuda h2 {
+    margin: 0 0 1rem;
+    color: #5E3722;
+    font-size: 2rem;
+}
+
+.central-ajuda p { 
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    color: #5E3722;
     font-size: 1.1rem;
-    line-height: 1.4;
-    max-width: 90%;
+    line-height: 1.6;
+}
+
+.botao-ajuda {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: 10px;
+    background: #d99a32;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botao-ajuda {
+    background: #d99a32;
+    transform: translateY(-3px);
+}
+
+.central-ajuda > span {
+    display: block;
+    margin-top: 1rem;
+    color: #754820;
+    font-size: 0.9rem;
+}
+
+/* CENTRAL DE AJUDA — MODO ESCURO */
+
+body.escuro.pagina-montagem .central-ajuda h2,
+body.escuro.pagina-montagem .central-ajuda p {
+    color: #FFFFFF;
+}
+
+body.escuro.pagina-montagem .botao-ajuda {
+    background-color: #6f55a8;
+    color: #ffffff;
+}
+
+body.escuro.pagina-montagem .botao-ajuda {
+    background-color: #9178c9;
+}
+
+body.escuro.pagina-montagem .central-ajuda > span {
+    color: #E0E0E0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+.central-ajuda {
+margin: 4rem 1rem;
+padding: 2.5rem 1.2rem;
+}
+
+.central-ajuda h2 {
+    font-size: 1.7rem;
+}
+
+.central-ajuda p {
+    font-size: 1rem;
+}
+
+.botao-ajuda {
+    padding: 0.8rem 1.5rem;
+}
+
+}
+
+/* ===== RODAPÉ ===== */
+
+.rodape {
+    display: flex;
+    background-color: var(--rodape);
+    justify-content: space-between;
+    padding-inline: 7rem;
+    padding-block: 3rem;
+}
+
+.rodape .anitrace {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: white;
+}
+
+.rodape .anitrace h1 {
     font-weight: 400;
 }
 
+.rodape .anitrace img {
+    width: 3.5rem;
+}
 
+.rodape .links {
+    color: white;
+    font-weight: 300;
+}
 
+.rodape .links h2 {
+    margin-bottom: 0.5rem;
+    color: white;
+}
 
+.rodape .redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    color: white;
+}
 
+.rodape .redes div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* ===== RESPONSIVIDADE ===== */
 
 @media (max-width: 768px) {
-
-
-.pc {
-    display: none;
-}
-  
-
-.mobile{
-    background-color: var(--header);
-
-    .conteudo{
-        display: flex;
-    }
-    .anitrace{
-        display: flex;
-    }
-    .pins{
-        display: flex;
-    }
-
-}
-
-
-.mobile {
-    display: none;
-}
-
-    body{
-        background-color: var(--fundoClaro);
-    }
     .pc {
         display: none;
     }
 
     .mobile {
         display: block;
-        width: 100%;
-        background-color: var(--header);
-        h2{
-            color: white;
-        }
+        background-color: #f7eee7;
     }
 
     .mobile .conteudo {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem;
-        margin: 0;
-        width: 100%;
+        padding: 0.8rem 1rem;
     }
 
+    .mobile .anitrace a,
     .mobile .anitrace {
         display: flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.5rem;
     }
 
     .mobile .anitrace img {
-        width: 1.5rem;
-        height: 2rem;
+        width: 2rem;
+        height: 2.5rem;
+        object-fit: contain;
     }
 
-    .mobile .pins {
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
+    .mobile .anitrace h2 {
+        margin: 0;
+        color: #f07818;
+        font-size: 1.2rem;
     }
 
-    .mobile .pins > img {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-    .mobile .pins .menuBotao {
-        width: 1.5rem;
-        height: 1.5rem;
+    .mobile .menuBotao {
+        width: 1.8rem;
+        height: 1.8rem;
         cursor: pointer;
-    }
-
-
-    /* JANELA DO MENU */
-
-    .menuMobile {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background-color: var(--branco);
-        z-index: 10;
-        padding: 2rem;
-        transition: right 0.3s ease;
     }
 
     .menuMobile.aberto {
-        right: 0;
-    }
-
-    .menuCabecalho {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 3rem;
-    }
-
-    .menuCabecalho h2 {
-        color: var(--headerFont);
-    }
-
-    .menuCabecalho button {
-        border: none;
-        background: none;
-        font-size: 1.5rem;
-        color: var(--headerFont);
-        cursor: pointer;
-    }
-
-    .menuMobile a {
-        display: block;
-        color: var(--headerFont);
-        text-decoration: none;
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-    }
-
-
-    /* TEMA */
-
-    .menuMobile .tema {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background-color: var(--fundoTema);
-        width: fit-content;
-        padding: 0.35rem;
-        border-radius: 2rem;
-    }
-
-    .menuMobile .tema img {
-        width: 1.8rem;
-        height: 1.8rem;
-        padding: 0.3rem;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-
-    .menuMobile .tema .claro {
-        background-color: var(--divsColor);
-        padding: 0.4rem;
-    }
-
-    .menuMobile .tema.escuro .claro {
-        background-color: transparent;
-    }
-
-    .menuMobile .tema.escuro .escuro {
-        background-color: var(--divsColor);
-    }
-
-
-.imagem {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.imagem .topHome {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.imagem::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 1;
-}
-
-.imagem .central {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 3rem;
-    transform: translate(-50%, -50%);
-
-    background-color: var(--divMontagem);
-
-    width: 90%;
-    padding: 1.5rem;
-
-    text-align: center;
-    z-index: 2;
-}
-
-.imagem .central h1 {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.imagem .central h3 {
-    color: white;
-    font-size: 1.1rem;
-    line-height: 1.4;
-    max-width: 90%;
-}
-
-
-.manchas {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.manchas img {
-    position: absolute;
-    
-}
-
-.mancha1 {
-    top: -1.9rem;
-    right: 0rem;
-    height: 200px;
-    object-fit: cover;
-    object-position: center bottom;
-
-    clip-path: inset(30px 0 0 0);
-}
-
-.mancha2 {
-    top: 76rem;
-    right: 0rem;
-    width: 12rem;
-}
-
-.mancha3 {
-    top: 50rem;
-    left: 0;
-    width: 15rem;
-}
-
-.mancha4 {
-    width: 30rem;
-    top: 116.7rem;
-    left: 0rem;
-    
-    height: 14rem;
-    object-fit: cover;
-    object-position: center top;
-}
-
-.instrucoes {
-    position: relative;
-    z-index: 2;
-
-    h1{
-        margin-block: 3rem;
-        margin-left: 2rem;
-    }
-}
-
-.instrucoes .quadrados {
-    position: relative;
-    z-index: 3;
-
-    
-}
-
-.quadrados {
-    display: flex;
-    flex-direction: column;
-    margin-inline: 2rem;
-    gap: 2rem;
-
-    .esquerda, .direita{
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-
-        div {
-            background-color: var(--quadrados);
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            border-radius: 1.3rem;
-            
-            h2{
-                padding-bottom: 1rem;
-                font-size: 1.3rem;
-                font-weight: 400;
-            }
-
-            p{
-                font-size: 1rem;
-            }
-        }
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #f7eee7;
     }
-}
 
-.video {
-    position: relative;
-    z-index: 2;
-    width: 25rem;
-    margin: 0 auto;
-    margin-top: 5rem;
-}
+    .quadrados {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-inline: 1.5rem;
+    }
 
-.video .foto {
-    width: 100%;
-    display: block;
-}
+    .quadrados .esquerda,
+    .quadrados .direita {
+        width: min(100%, 440px);
+        gap: 2rem;
+        padding-top: 0;
+    }
 
-.video .play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 5rem;
-    z-index: 3;
-}
+    .quadrados .etapa {
+        min-height: 145px;
+    }
 
+    .quadrados .etapa > h2 {
+        font-size: 1.15rem;
+    }
 
+    .quadrados .etapa .conteudo h3 {
+        font-size: 1.05rem;
+    }
+
+    .quadrados .etapa .conteudo p {
+        font-size: 0.9rem;
+    }
 
     .rodape {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-margin-top: 10.3rem;
-    padding: 2rem;
-    background-color: var(--rodape);
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
 
-    color: white;
-}
-
-.rodape h1,
-.rodape h2,
-.rodape a {
-    color: white;
-}
-
-.rodape .anitrace {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.rodape .links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.rodape .links h2 {
-    font-size: 1.1rem;
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-.rodape .redes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: white;
-}
-
-
-
-}
-
+    .video {
+        width: min(25rem, 90%);
+    }
 }
