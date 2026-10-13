@@ -509,10 +509,10 @@ body.escuro .quadrados .numero {
 body.escuro.pagina-montagem .video::before {
     background: linear-gradient(
         135deg,
-        #797979,
-        #696969,
+        #5e5e5e,
+        #525252,
         #4b4b4b,
-        #949494b7
+        #3d3d3db7
     );
 
     background-size: 300% 300%;
