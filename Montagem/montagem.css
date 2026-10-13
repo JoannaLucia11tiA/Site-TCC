@@ -351,7 +351,7 @@ body.escuro.pagina-montagem .instrucoes > h1 {
     padding-top: 11rem;
 }
 
-/* ===== CARTÕES ===== */
+/* ===== CARTÕES — MODO CLARO ===== */
 
 .quadrados .etapa {
     position: relative;
@@ -414,7 +414,7 @@ body.escuro.pagina-montagem .instrucoes > h1 {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 3px solid #9a4b16;
+    border-color: #9a4b16;
     background: #f5bd7a;
     color: white;
     font-size: 1.6rem;
@@ -432,13 +432,39 @@ body.escuro.pagina-montagem .instrucoes > h1 {
     margin-left: 0;
 }
 
+/* ===== CARTÕES — MODO ESCURO ===== */
+
+body.escuro .quadrados .etapa {
+    background: #6f55a8;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+body.escuro .quadrados .etapa > h2 {
+    background: #9178c9;
+    color: #211536;
+}
+
+body.escuro .quadrados .etapa .conteudo h3 {
+    color: #ffffff;
+}
+
+body.escuro .quadrados .etapa .conteudo p {
+    color: #f0eaff;
+}
+
+body.escuro .quadrados .numero {
+    border-color: #49356f;
+    background: #9178c9;
+    color: #ffffff;
+}
+
 /* ===== VÍDEO ===== */
 
 .video {
     position: relative;
     z-index: 2;
     width: 45rem;
-    margin: 9rem auto 7rem;
+    margin: 9rem auto 0rem;
     isolation: isolate;
 }
 
@@ -483,130 +509,13 @@ body.escuro.pagina-montagem .instrucoes > h1 {
 body.escuro.pagina-montagem .video::before {
     background: linear-gradient(
         135deg,
-        #D3862B,
-        #CD9233,
-        #e48f26,
-        #e2a543
+        #797979,
+        #696969,
+        #4b4b4b,
+        #949494b7
     );
 
     background-size: 300% 300%;
-}
-
-/* ===== CENTRAL DE AJUDA ===== */
-
-.central-ajuda {
-position: relative;
-max-width: 850px;
-margin: 7rem auto 6rem;
-padding: 3rem 2rem;
-text-align: center;
-border-radius: 20px;
-}
-
-.ajuda-icone {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 70px;
-height: 70px;
-margin: 0 auto 1.2rem;
-border-radius: 50%;
-background-color: rgba(135, 76, 44, 0.15);
-}
-
-.ajuda-icone img {
-width: 35px;
-height: 35px;
-object-fit: contain;
-}
-
-.central-ajuda h2 {
-margin: 0 0 1rem;
-color: #5E3722;
-font-size: 2rem;
-}
-
-.central-ajuda p {
-max-width: 600px;
-margin: 0 auto 1.5rem;
-color: #5E3722;
-font-size: 1.1rem;
-line-height: 1.6;
-}
-
-.botao-ajuda {
-display: inline-block;
-padding: 0.9rem 2rem;
-border-radius: 10px;
-background-color: #874C2C;
-color: white;
-font-size: 1.05rem;
-font-weight: 700;
-text-decoration: none;
-transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.botao-ajuda {
-background-color: #5E3722;
-transform: translateY(-3px);
-}
-
-.central-ajuda > span {
-display: block;
-margin-top: 1rem;
-color: #754820;
-font-size: 0.9rem;
-}
-
-/* CENTRAL DE AJUDA — MODO ESCURO */
-
-body.escuro.pagina-montagem .central-ajuda {
-background: linear-gradient(135deg, #292A38, #3F3F3F);
-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-body.escuro.pagina-montagem .ajuda-icone {
-background-color: rgba(211, 134, 43, 0.18);
-}
-
-body.escuro.pagina-montagem .central-ajuda h2,
-body.escuro.pagina-montagem .central-ajuda p {
-color: #FFFFFF;
-}
-
-body.escuro.pagina-montagem .botao-ajuda {
-background-color: #D3862B;
-color: #151515;
-}
-
-body.escuro.pagina-montagem .botao-ajuda {
-background-color: #CD9233;
-}
-
-body.escuro.pagina-montagem .central-ajuda > span {
-color: #E0E0E0;
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 600px) {
-.central-ajuda {
-margin: 4rem 1rem;
-padding: 2.5rem 1.2rem;
-}
-
-.central-ajuda h2 {
-    font-size: 1.7rem;
-}
-
-.central-ajuda p {
-    font-size: 1rem;
-}
-
-.botao-ajuda {
-    padding: 0.8rem 1.5rem;
-}
-
 }
 
 .video .foto {
@@ -639,6 +548,114 @@ padding: 2.5rem 1.2rem;
     transform: translate(-50%, -50%);
     width: 2.3rem;
     z-index: 3;
+}
+
+/* ===== CENTRAL DE AJUDA ===== */
+
+.central-ajuda {
+position: relative;
+max-width: 850px;
+margin: 4rem auto 2rem;
+padding: 3rem 2rem;
+text-align: center;
+border-radius: 20px;
+}
+
+.ajuda-icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.2rem;
+    border-radius: 50%;
+    background-color: rgba(135, 76, 44, 0.15);
+}
+
+.ajuda-icone img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.central-ajuda h2 {
+    margin: 0 0 1rem;
+    color: #5E3722;
+    font-size: 2rem;
+}
+
+.central-ajuda p { 
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    color: #5E3722;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.botao-ajuda {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: 10px;
+    background: #d99a32;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botao-ajuda {
+    background: #d99a32;
+    transform: translateY(-3px);
+}
+
+.central-ajuda > span {
+    display: block;
+    margin-top: 1rem;
+    color: #754820;
+    font-size: 0.9rem;
+}
+
+/* CENTRAL DE AJUDA — MODO ESCURO */
+
+body.escuro.pagina-montagem .central-ajuda h2,
+body.escuro.pagina-montagem .central-ajuda p {
+    color: #FFFFFF;
+}
+
+body.escuro.pagina-montagem .botao-ajuda {
+    background-color: #6f55a8;
+    color: #ffffff;
+}
+
+body.escuro.pagina-montagem .botao-ajuda {
+    background-color: #9178c9;
+}
+
+body.escuro.pagina-montagem .central-ajuda > span {
+    color: #E0E0E0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+.central-ajuda {
+margin: 4rem 1rem;
+padding: 2.5rem 1.2rem;
+}
+
+.central-ajuda h2 {
+    font-size: 1.7rem;
+}
+
+.central-ajuda p {
+    font-size: 1rem;
+}
+
+.botao-ajuda {
+    padding: 0.8rem 1.5rem;
+}
+
 }
 
 /* ===== RODAPÉ ===== */
