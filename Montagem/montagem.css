@@ -276,7 +276,7 @@ body.escuro .imagem {
 
 body.escuro .imagem .central h1 {
     color: #d3e6d6;
-    text-shadow: 0 0 14px rgba(25, 131, 57, 0.5);
+    text-shadow: 0 0 14px rgba(88, 88, 88, 0.5);
 }
 
 body.escuro .imagem .central h3 {
@@ -300,9 +300,9 @@ body.escuro .imagem .central h3 {
     min-height: 100vh;
     background: linear-gradient(
         180deg,
-        #C5957B 50%,
-        #B47E60 100%,
-        #CDAE99 50%
+        #f8e6dd 50%,
+        #cfae9b 100%,
+        #f8d2b9 50%
     );
 }
 
@@ -455,10 +455,10 @@ body.escuro.pagina-montagem .instrucoes > h1 {
 
     background: linear-gradient(
         135deg,
-        #5E3722,
-        #874C2C,
-        #5E3722,
-        #874C2C
+        #1f1e1e,
+        #3b3b3b,
+        #161616,
+        #5a5a5a
     );
 
     background-size: 300% 300%;
@@ -492,6 +492,122 @@ body.escuro.pagina-montagem .video::before {
     background-size: 300% 300%;
 }
 
+/* ===== CENTRAL DE AJUDA ===== */
+
+.central-ajuda {
+position: relative;
+max-width: 850px;
+margin: 7rem auto 6rem;
+padding: 3rem 2rem;
+text-align: center;
+border-radius: 20px;
+}
+
+.ajuda-icone {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 70px;
+height: 70px;
+margin: 0 auto 1.2rem;
+border-radius: 50%;
+background-color: rgba(135, 76, 44, 0.15);
+}
+
+.ajuda-icone img {
+width: 35px;
+height: 35px;
+object-fit: contain;
+}
+
+.central-ajuda h2 {
+margin: 0 0 1rem;
+color: #5E3722;
+font-size: 2rem;
+}
+
+.central-ajuda p {
+max-width: 600px;
+margin: 0 auto 1.5rem;
+color: #5E3722;
+font-size: 1.1rem;
+line-height: 1.6;
+}
+
+.botao-ajuda {
+display: inline-block;
+padding: 0.9rem 2rem;
+border-radius: 10px;
+background-color: #874C2C;
+color: white;
+font-size: 1.05rem;
+font-weight: 700;
+text-decoration: none;
+transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botao-ajuda {
+background-color: #5E3722;
+transform: translateY(-3px);
+}
+
+.central-ajuda > span {
+display: block;
+margin-top: 1rem;
+color: #754820;
+font-size: 0.9rem;
+}
+
+/* CENTRAL DE AJUDA — MODO ESCURO */
+
+body.escuro.pagina-montagem .central-ajuda {
+background: linear-gradient(135deg, #292A38, #3F3F3F);
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.escuro.pagina-montagem .ajuda-icone {
+background-color: rgba(211, 134, 43, 0.18);
+}
+
+body.escuro.pagina-montagem .central-ajuda h2,
+body.escuro.pagina-montagem .central-ajuda p {
+color: #FFFFFF;
+}
+
+body.escuro.pagina-montagem .botao-ajuda {
+background-color: #D3862B;
+color: #151515;
+}
+
+body.escuro.pagina-montagem .botao-ajuda {
+background-color: #CD9233;
+}
+
+body.escuro.pagina-montagem .central-ajuda > span {
+color: #E0E0E0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+.central-ajuda {
+margin: 4rem 1rem;
+padding: 2.5rem 1.2rem;
+}
+
+.central-ajuda h2 {
+    font-size: 1.7rem;
+}
+
+.central-ajuda p {
+    font-size: 1rem;
+}
+
+.botao-ajuda {
+    padding: 0.8rem 1.5rem;
+}
+
+}
 
 .video .foto {
     width: 100%;
