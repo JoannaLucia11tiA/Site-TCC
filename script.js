@@ -7,26 +7,18 @@ fetch("/Componentes/header.html")
         return resposta.text();
     })
     .then(dados => {
-        const header = document.getElementById("header");
-        if (!header) return;
+    const header = document.getElementById("header");
 
-        header.innerHTML = dados;
+    if (!header) {
+        console.error("Não encontrei o elemento #header");
+        return;
+    }
 
-        const paginaAtual = window.location.pathname
-            .replace(/\/+$/, "")
-            .toLowerCase();
+    header.innerHTML = dados;
 
-        header.querySelectorAll(".linkPagina").forEach(link => {
-            const destino = new URL(link.href).pathname
-                .replace(/\/+$/, "")
-                .toLowerCase();
-
-            if (destino === paginaAtual) {
-                link.classList.add("paginaAtual");
-            }
-        });
-    })
-    .catch(erro => console.error(erro));
+    console.log("HTML do cabeçalho:", header.innerHTML);
+})
+.catch(erro => console.error("Erro ao carregar o cabeçalho:", erro));
 
 function abrirMenu() {
     document.getElementById("menuMobile")?.classList.add("aberto");
@@ -35,7 +27,6 @@ function abrirMenu() {
 function fecharMenu() {
     document.getElementById("menuMobile")?.classList.remove("aberto");
 }
-
 
 const videoHome = document.querySelector(".videoHome");
 

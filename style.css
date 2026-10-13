@@ -838,26 +838,30 @@ body.escuro .menuMobile {
     }
 }
 
-    .problema{
-        flex-direction: column;
-        gap: 0;
+    .problema {
+    flex-direction: column;
+    gap: 0;
 
-        .textoEmPe{
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-top: 0;
-            text-align: center;
-        }
-
-        p {
-            font-size: 0.9rem;
-            text-align: center;
-            margin-inline: auto;
-        }
+    .textoEmPe {
+        margin: 0;
     }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    p {
+    font-size: 0.5rem;
+    text-align: center;
+    max-width: 90%;
+    margin: 0.2rem auto;
+    padding-inline: 0.5rem;
+    box-sizing: border-box;
+}
+}
 
     .divs {
         display: flex;
@@ -912,10 +916,10 @@ body.escuro .menuMobile {
             padding-bottom: 1rem;
 
         .redondos {
-            flex: 0 0 70%;
+            flex: 0 0 67%;
             min-width: 0;
 
-            border-radius: 2.5rem 2.5rem 0 0;
+            border-radius: 9rem 9rem 0 0;
             padding: 0.3rem;
 
             display: flex;
@@ -1045,19 +1049,40 @@ body.escuro .menuMobile {
         }
     }
 
-        .anitrace{
-            display: flex;
-            flex-direction: column;
+    .anitrace {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            object-fit: contain;
+            flex-shrink: 0;
         }
 
-        .redes{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            color: var(--textoSobreCor);
+        h1 {
+            font-size: -2rem;
         }
     }
+
+    .redes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        color: var(--textoSobreCor);
+        font-size: 1.2rem;
+
+        img {
+            width: 2rem;
+            height: 2rem;
+             object-fit: contain;
+        }
+    }
+}
 
     .textoNos {
     width: 100%;
@@ -1086,6 +1111,7 @@ body.escuro .menuMobile {
         right: -4rem;
         bottom: -1rem;
         width: 32rem;
+        height: auto;
         max-width: 55%;
     }
 }
