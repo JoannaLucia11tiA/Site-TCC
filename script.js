@@ -16,6 +16,10 @@ fetch("/Componentes/header.html")
 
     header.innerHTML = dados;
 
+    atualizarIconesTema(
+    localStorage.getItem("tema") === "escuro"
+    );
+
     console.log("HTML do cabeçalho:", header.innerHTML);
 })
 .catch(erro => console.error("Erro ao carregar o cabeçalho:", erro));
@@ -64,8 +68,34 @@ function trocarTema() {
     aplicarTema(!estaEscuro);
 }
 
-// Recupera o tema salvo ao abrir ou recarregar a página
+
+function atualizarIconesTema(escuro) {
+    document.querySelectorAll(".tema img").forEach((img) => {
+        img.src = escuro
+            ? "../images/Lua.png"
+            : "../images/Sol.png";
+
+        img.alt = escuro ? "Tema escuro" : "Tema claro";
+    });
+}
+
+function aplicarTema(escuro) {
+    document.body.classList.toggle("escuro", escuro);
+    localStorage.setItem("tema", escuro ? "escuro" : "claro");
+    atualizarIconesTema(escuro);
+}
+
+function trocarTema() {
+    const escuro = !document.body.classList.contains("escuro");
+    aplicarTema(escuro);
+}
+
+// Recupera o tema salvo ao abrir a página
+aplicarTema(localStorage.getItem("tema") === "escuro");
+
+// Atualiza os ícones depois que o cabeçalho for carregado
 document.addEventListener("DOMContentLoaded", () => {
-    const temaSalvo = localStorage.getItem("tema");
-    aplicarTema(temaSalvo === "escuro");
+    atualizarIconesTema(
+        localStorage.getItem("tema") === "escuro"
+    );
 });

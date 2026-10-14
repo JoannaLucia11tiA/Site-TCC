@@ -636,101 +636,109 @@ body.escuro.pagina-montagem .central-ajuda > span {
     color: #E0E0E0;
 }
 
-/* RESPONSIVIDADE */
-
-@media (max-width: 600px) {
-    .central-ajuda {
-        margin: 2.4rem 1rem 2rem;
-        padding: 1.5rem 1.2rem;
-    }
-
-    .central-ajuda h2 {
-    font-size: 1.7rem;
-    }
-
-    .central-ajuda p {
-    font-size: 1rem;
-    }
-
-    .botao-ajuda {
-    padding: 0.8rem 1.5rem;
-    }
-}
-
-/* ===== RODAPÉ ===== */
-
-.rodape {
-    display: flex;
-    background-color: var(--rodape);
-    justify-content: space-between;
-    padding-inline: 7rem;
-    padding-block: 3rem;
-}
-
-.rodape .anitrace {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: -9rem;
-    color: white;
-}
-
-.rodape .anitrace h1 {
-    margin: 0;
-    font-weight: 400;
-}
-
-.rodape .anitrace img {
-    width: 3rem;
-    height: 3rem;
-    left: 0.2rem;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.rodape .links {
-    color: white;
-    font-weight: 500;
-}
-
-.rodape .links h2 {
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.rodape .redes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem;
-    color: white;
-}
-
-.rodape .redes div {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.menuMobile {
-    display: none;
-}
-
-.mobile {
-    display: none;
-}
 
 /* ===== RESPONSIVIDADE ===== */
 
-@media (max-width: 768px) {
-    .instrucoes > h1 {
-    margin: 2rem 0 3rem;
-    text-align: center;
-    color: var(--instrucoesFont, #000);
-    font-weight: 500;
-    font-size: 2rem;
+/* ===== DESKTOP ===== */
+
+@media (min-width: 769px) {
+    .pagina-montagem .fundoHeader header.pc {
+        display: block !important;
+    }
+
+    .pagina-montagem .fundoHeader header.mobile {
+        display: none !important;
+    }
+
+    .pagina-montagem .quadrados {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 9rem;
+        max-width: 1100px;
+        margin-inline: auto;
+        padding-inline: 0;
+    }
+
+    .pagina-montagem .quadrados .esquerda,
+    .pagina-montagem .quadrados .direita {
+        display: flex;
+        flex-direction: column;
+        gap: 9rem;
+        width: 440px;
+        padding-top: 0;
+    }
+
+    .pagina-montagem .quadrados .direita {
+        padding-top: 11rem;
+    }
+
+    .pagina-montagem .quadrados .etapa {
+        width: 100%;
+        max-width: none;
+        min-height: 160px;
+        margin: 0;
+    }
+
+    .pagina-montagem .quadrados .etapa > h2 {
+        font-size: 1.5rem;
+        padding: 0.85rem 1rem;
+    }
+
+    .pagina-montagem .quadrados .etapa .conteudo {
+        padding: 1.2rem 1rem;
+    }
+
+    .pagina-montagem .quadrados .etapa .conteudo h3 {
+        font-size: 1.3rem;
+    }
+
+    .pagina-montagem .quadrados .etapa .conteudo p {
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
+
+    .pagina-montagem .quadrados .numero {
+        width: 44px;
+        height: 44px;
+        top: -14px;
+        left: -14px;
+        font-size: 1.6rem;
+    }
+
+    .pagina-montagem .quadrados .direita .numero {
+        left: auto;
+        right: -14px;
+    }
+
+    .pagina-montagem .video {
+        width: 45rem;
+        margin: 9rem auto 0;
+        isolation: isolate;
+    }
+
+    .pagina-montagem .video::before {
+        display: block;
+    }
+
+    .pagina-montagem .video::after {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .pagina-montagem .video .foto {
+        border: 3px solid var(--branco);
+        border-radius: 30px;
+    }
 }
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    /* Cabeçalho: mostra somente o mobile */
 
     .pagina-montagem .fundoHeader header.pc {
         display: none !important;
@@ -751,35 +759,35 @@ body.escuro.pagina-montagem .central-ajuda > span {
     }
 
     .pagina-montagem .fundoHeader .mobile .anitrace {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    flex-shrink: 0;
-    transform: none;
-}
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        flex-shrink: 0;
+        transform: none;
+    }
 
     .pagina-montagem .fundoHeader .mobile .anitrace img {
-    display: block;
-    width: 2.3rem;
-    height: 2.3rem;
-    margin: 0;
-    object-fit: contain;
-    flex-shrink: 0;
-    left: 0rem;
+        display: block;
+        width: 2.3rem;
+        height: 2.3rem;
+        margin: 0;
+        left: 0;
+        object-fit: contain;
+        flex-shrink: 0;
     }
 
     .pagina-montagem .fundoHeader .mobile .anitrace h2 {
-    display: block;
-    margin: 0rem;
-    padding: 0;
-    font-family: "Rubik", sans-serif;
-    font-size: 1.45rem;
-    font-weight: 400;
-    line-height: 1;
-    color: var(--headerFont);
-    white-space: nowrap;
-    transform: none;
-}
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.45rem;
+        font-weight: 400;
+        line-height: 1;
+        color: var(--headerFont);
+        white-space: nowrap;
+        transform: none;
+    }
 
     .pagina-montagem .fundoHeader .mobile .pins {
         display: flex;
@@ -797,17 +805,74 @@ body.escuro.pagina-montagem .central-ajuda > span {
         cursor: pointer;
     }
 
+    /* Menu lateral */
+
     .pagina-montagem .fundoHeader .menuMobile {
         display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 350px;
+        height: 100vh;
+        height: 100dvh;
+        padding: 2rem;
+        background: linear-gradient(
+            to right,
+            var(--branco),
+            var(--fundoTema)
+        );
+        z-index: 1000;
+        overflow-y: auto;
+        transition: right 0.3s ease;
     }
 
-    .pagina-montagem .fundoHeader header.pc {
-        display: none !important;
+    .pagina-montagem .fundoHeader .menuMobile.aberto {
+        right: 0;
     }
 
-    .pagina-montagem .fundoHeader header.mobile {
-        display: block !important;
+    .pagina-montagem .fundoHeader .menuMobile .menuCabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-block: 1rem;
+        font-size: 1.2rem;
     }
+
+    .pagina-montagem .fundoHeader .menuMobile .menuCabecalho h2,
+    .pagina-montagem .fundoHeader .menuMobile .menuCabecalho button {
+        color: var(--headerFont);
+    }
+
+    .pagina-montagem .fundoHeader .menuMobile .menuCabecalho button {
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .pagina-montagem .fundoHeader .menuMobile a {
+        display: block;
+        margin-bottom: 1.5rem;
+        color: var(--headerFont);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    body.escuro.pagina-montagem .fundoHeader .menuMobile {
+        background: linear-gradient(to right, #292929, #606060);
+    }
+
+    body.escuro.pagina-montagem .fundoHeader .menuMobile .menuCabecalho h2,
+    body.escuro.pagina-montagem .fundoHeader .menuMobile .menuCabecalho button,
+    body.escuro.pagina-montagem .fundoHeader .menuMobile a {
+        color: #F2F2F2;
+    }
+
+    /* Banner mobile */
 
     .pagina-montagem .imagem {
         height: 400px;
@@ -826,14 +891,47 @@ body.escuro.pagina-montagem .central-ajuda > span {
         gap: 1rem;
     }
 
-    .pagina-montagem .quadrados {
-        gap: 1.5rem;
-        padding-inline: 2rem;
+    .pagina-montagem .imagem .central h1 {
+        font-size: 2.5rem;
     }
+
+    .pagina-montagem .imagem .central h3 {
+        max-width: 100%;
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* Título das instruções */
+
+    .pagina-montagem .instrucoes > h1 {
+        margin: 2rem 0 2rem;
+        font-size: 2rem;
+    }
+
+    /* Instruções: cartões empilhados no mobile */
+
+    .pagina-montagem .quadrados {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        padding-inline: 1.5rem;
+        max-width: 100%;
+    }
+
+    .pagina-montagem .quadrados .esquerda,
+    .pagina-montagem .quadrados .direita {
+        display: contents;
+    }
+
+    .pagina-montagem .quadrados .etapa1 { order: 1; }
+    .pagina-montagem .quadrados .etapa2 { order: 2; }
+    .pagina-montagem .quadrados .etapa3 { order: 3; }
+    .pagina-montagem .quadrados .etapa4 { order: 4; }
+    .pagina-montagem .quadrados .etapa5 { order: 5; }
 
     .pagina-montagem .quadrados .etapa {
         width: 100%;
-        max-width: 340px;
+        max-width: 440px;
         min-height: auto;
         margin: 0 auto;
     }
@@ -868,169 +966,60 @@ body.escuro.pagina-montagem .central-ajuda > span {
         left: auto;
         right: -8px;
     }
-}
 
-    .mobile {
-        display: block;
-        background-color: var(--header);
-    }
+    /* Vídeo mobile */
 
-    .mobile .conteudo {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.8rem 1rem;
-    }
-
-    .mobile .anitrace,
-    .mobile .anitrace a {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .mobile .anitrace img {
-        width: 2rem;
-        height: 2.5rem;
-        object-fit: contain;
-    }
-
-    .mobile .anitrace h2 {
-        margin: 0;
-        color: var(--headerFont);
-        font-size: 1.2rem;
-    }
-
-    .mobile .menuBotao {
-        width: 1.8rem;
-        height: 1.8rem;
-        cursor: pointer;
-    }
-
-    /* Menu lateral */
-    .menuMobile {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        max-width: 350px;
-        height: 100vh;
-        height: 100dvh;
-        padding: 2rem;
-        background: linear-gradient(
-            to right,
-            var(--branco),
-            var(--fundoTema)
-        );
-        z-index: 1000;
-        overflow-y: auto;
-        transition: right 0.3s ease;
-    }
-
-    .menuMobile.aberto {
-        right: 0;
-    }
-
-    .menuMobile .menuCabecalho {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2rem;
-        padding-block: 1rem;
-        font-size: 1.2rem;
-    }
-
-    .menuMobile .menuCabecalho h2,
-    .menuMobile .menuCabecalho button {
-        color: var(--headerFont);
-    }
-
-    .menuMobile .menuCabecalho button {
-        border: none;
-        background: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    .menuMobile a {
-        display: block;
-        margin-bottom: 1.5rem;
-        color: var(--headerFont);
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-
-    .menuBotao {
-    font-weight: 700;
-    }
-
-    .menuMobile a {
-        font-weight: 700;
-    }    
-    
-    /* Cores do menu no modo escuro */
-    body.escuro .mobile {
-        background-color: var(--header);
-    }
-
-    body.escuro .menuMobile {
-        background: linear-gradient(to right, #292929, #606060);
-    }
-
-    body.escuro .menuMobile .menuCabecalho h2,
-    body.escuro .menuMobile .menuCabecalho button,
-    body.escuro .menuMobile a {
-        color: #F2F2F2;
-    }
-
-    body.escuro .menuMobile .tema {
-        background-color: #A55E32;
-    }
-
-    /* Instruções da montagem */
-    .quadrados {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding-inline: 1.5rem;
-    }
-
-    .quadrados .esquerda,
-    .quadrados .direita {
-        display: contents;
-    }
-
-    .quadrados .etapa1 { order: 1; }
-    .quadrados .etapa2 { order: 2; }
-    .quadrados .etapa3 { order: 3; }
-    .quadrados .etapa4 { order: 4; }
-    .quadrados .etapa5 { order: 5; }
-
-    .quadrados .etapa {
-        width: 100%;
-        max-width: 440px;
-        margin: 0 auto;
-    }
-
-    /* Vídeo no mobile */
-    .video {
+    .pagina-montagem .video {
         width: min(25rem, 90%);
         margin: 4rem auto 0;
         isolation: auto;
     }
 
-    .video::before {
+    .pagina-montagem .video::before {
         display: none;
     }
 
-    .video::after {
+    .pagina-montagem .video::after {
         width: 4rem;
         height: 4rem;
     }
 
-    .video .foto {
+    .pagina-montagem .video .foto {
         border: none;
         border-radius: 16px;
     }
+
+    /* Central de ajuda mobile */
+
+    .pagina-montagem .central-ajuda {
+        margin: 2.4rem 1rem 2rem;
+        padding: 1.5rem 1.2rem;
+    }
+
+    .pagina-montagem .central-ajuda h2 {
+        font-size: 1.7rem;
+    }
+
+    .pagina-montagem .central-ajuda p {
+        font-size: 1rem;
+    }
+
+    .pagina-montagem .botao-ajuda {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .rodape .anitrace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    }
+
+    .rodape .anitrace img {
+        margin-right: -2.3rem;
+    }
+
+    .rodape .anitrace h1 {
+        margin-right: -2.3rem;
+    }
+}
