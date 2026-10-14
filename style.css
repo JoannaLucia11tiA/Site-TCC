@@ -159,11 +159,43 @@ div.cabecalho{
         }
     }
 
-    div.palavras{
-        display: flex;
-        justify-content: space-between;
-        gap: 3rem;
-        padding-right: 5rem;
+    div.palavras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding-right: 4rem;
+    transform: translateX(2rem);
+}
+
+div.palavras > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.palavras > a h2 {
+    margin: 0;
+}
+
+.linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 0;
+}
+
+    .linkLogin img {
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        object-fit: contain;
+        transition: transform 0.2s ease;
+    }
+
+    .linkLogin:hover img {
+        transform: scale(1.1);
     }
 
     div.tema{
@@ -636,6 +668,26 @@ body{
         font-size: 1.5rem;
         font-weight: 500;
     }
+}
+
+.linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    text-decoration: none;
+}
+
+.linkLogin img {
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.linkLogin img {
+transform: scale(1.1);
 }
 
 /* RESPONSIVIDADE INICIO */

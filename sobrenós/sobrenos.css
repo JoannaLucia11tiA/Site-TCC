@@ -1,34 +1,33 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     overflow-x: hidden;
-    a{
-            text-decoration: none;
-        }
+}
 
-    body {
+body {
     font-family: "Noto Sans", sans-serif;
+    background-color: var(--fundoClaro);
 }
-body.escuro .pc .anitrace img,
-body.escuro .mobile .anitrace img,
-body.escuro .mobile .pins img,
-body.escuro .flecha img,
-body.escuro .cheks img,
-body.escuro .quadrados .redondos img,
-body.escuro .textoNos img {
-    filter: brightness(0) invert(1);
+
+a {
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
 }
+
 h1 {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     font-size: 2rem;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: "Rubik", sans-serif;
     font-weight: 500;
 }
@@ -38,11 +37,13 @@ p {
     font-weight: 400;
 }
 
-a {
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
+body.escuro .flecha img,
+body.escuro .cheks img,
+body.escuro .quadrados .redondos img,
+body.escuro .textoNos img {
+    filter: brightness(0) invert(1);
 }
-}
+
 .menuMobile {
     display: none;
 }
@@ -66,9 +67,9 @@ a {
 }
 body.escuro {
     --fundoClaro: #03221C;
-    --header: #8C4A10;
+    --header:#A55E32;
     --headerFont: #F6EDE6;
-    --rodape: #8C4A10;
+    --rodape: #A55E32;
     --problemaColor: #F6EDE6;
     --diferencialColor: #F6EDE6;
     --divsColor: #245448;
@@ -86,12 +87,20 @@ body.escuro {
     display: none;
 }
 
+body.escuro .pc .anitrace img,
+body.escuro .mobile .anitrace img {
+    filter: brightness(0) invert(1);
+}
+
+.mobile, .menuMobile {
+    display: none;
+}
+
 body{
     background-color: var(--fundoClaro);
 
-    p{
-        font-size: 1.5rem;
-        font-weight: 500;
+    a{
+        text-decoration: none;
     }
 }
 
@@ -106,59 +115,137 @@ body{
     color: var(--headerFont);
 }
 
-div.palavras {
+/* HEADER / NAVEGAÇÃO */
+
+.pc .cabecalho {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-div.cabecalho{
-    display: flex;
-    justify-content: space-between;
-    padding-block: 1rem;
     align-items: center;
+    justify-content: space-between;
+    min-height: 2rem;
+    padding: 1rem 2rem;
     background-color: var(--header);
-    div.anitrace{
-        display: flex;
-        margin-left: 3rem;
-        align-items: center;
-    }
-
-    .anitrace{
-        display: flex;
-        justify-content: space-between;
-        gap: 0.4rem;
-
-        img{
-            width: 1.5rem;
-            height: 2rem;
-            margin-top: 0;
-        }
-    }
-
-    div.palavras{
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        .aberta{
-    color: var(--aberta);
+    position: relative;
 }
+
+.pc {
+    background-color: var(--header);
+}
+
+/* Logo à esquerda */
+.pc .cabecalho .anitrace {
+    position: relative;
+    left: -2.3rem;
+}
+
+.pc .anitrace .linkPagina {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+}
+
+.pc .cabecalho .anitrace .linkPagina img {
+    width: 2.8rem;
+    height: 2.8rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.pc .cabecalho .anitrace .linkPagina h2 {
+    position: relative;
+    top: 0.11rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--headerFont);
+}
+
+/* Links e ícone centralizados */
+.pc .menuDesktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.pc .menuDesktop a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.pc .menuDesktop h2 {
+    margin: 0;
+    color: var(--headerFont);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+}
+
+/* Ícone de acesso ao aplicativo */
+.pc .menuDesktop .linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.pc .menuDesktop .linkLogin img {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.pc .menuDesktop .linkLogin:hover img {
+    transform: scale(1.1);
+}
+
+/* Tema à direita */
+.pc .tema {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pc .tema img {
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+}
+
+/* Destacar a página Sobre Nós */
+.pc .menuDesktop a[href="/sobrenós/sobrenos.html"] h2 {
+    color: #FC6C1D;
+}
+
+body.escuro .pc .menuDesktop a[href="/sobrenós/sobrenos.html"] h2 {
+    color: #FFA305;
+}
+
+/* Título AniTrace no modo escuro */
+body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
     }
 
-    div.tema{
-        display: flex;
-        margin-right: 3rem;
-        margin-left: 1rem;
-        justify-content: space-between;
-        gap: 0.6rem;
-
-        img{
-            width: 1.5rem;
-            height: 1.5rem;
-        }
+    .mobile {
+        display: block;
     }
+}
 
-
-
+.rodape {
+    background-color: var(--rodape);
 }
 
 .imagem {
@@ -419,42 +506,10 @@ button{
             gap: 0.5rem;
         }
     }
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media (max-width: 768px) {
-    .menuBotao {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
 .imagem .botao {
     position: absolute;
     top: 52%;
@@ -467,83 +522,7 @@ button{
     padding-block: 0.5rem;
     border-radius: 0.7rem;
 }
-
-.menuMobile {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    height: 100vh;
-    background-color: var(--branco);
-    z-index: 10;
-    padding: 2rem;
-    transition: right 0.3s ease;
-
-    .tema {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--fundoTema);
-    width: fit-content;
-    padding: 0.35rem;
-    border-radius: 2rem;
-}
-
-.tema img {
-    width: 1.8rem;
-    height: 1.8rem;
-    padding: 0.3rem;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.tema .claro {
-    background-color: var(--divsColor);
-    padding: 0.4rem;
-}
-.tema.escuro .claro {
-    background-color: transparent;
-}
-
-.tema.escuro .escuro {
-    background-color: var(--divsColor);
-}
-}
-
-.menuMobile.aberto {
-    right: 0;
-}
-
-.menuCabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.menuCabecalho h2 {
-    color: var(--headerFont);
-}
-
-.menuCabecalho button {
-    border: none;
-    background: none;
-    font-size: 1.5rem;
-    color: var(--headerFont);
-    cursor: pointer;
-}
-
-.menuMobile a {
-    display: block;
-    color: var(--headerFont);
-    text-decoration: none;
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-}
-
-    
+  
     .mobile h2{
         color: var(--headerFont);
         font-weight: 400;
@@ -575,52 +554,6 @@ button{
         top: 40%;
     }
     }
-
-    .pc {
-        display: none;
-    }
-    .mobile {
-        display: block;
-        width: 100%;
-        background-color: var(--header);
-    }
-
-    .mobile .conteudo {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-        margin: 0;
-        width: 100%;
-    }
-
-    .mobile .anitrace {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-    }
-
-    .mobile .anitrace img {
-        width: 1.5rem;
-        height: 2rem;
-    }
-
-    .mobile .pins {
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
-    }
-
-    .mobile .pins > img {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.mobile .pins .menuBotao {
-    width: 1.5rem;
-    height: 1.5rem;
-    cursor: pointer;
-}
 
     .problema{
         flex-direction: column;
@@ -688,32 +621,4 @@ button{
                 margin: 0;
             }
         }
-
-body:not(.escuro) .mobile .anitrace h2 {
-    color: #502F1D;
-}
-
-/* Logo */
-body:not(.escuro) .mobile .anitrace img {
-    filter: brightness(0) saturate(100%)
-            invert(20%) sepia(20%) saturate(1000%)
-            hue-rotate(345deg) brightness(88%)
-            contrast(92%);
-}
-
-/* Lupa e 3 tracinhos */
-body:not(.escuro) .mobile .pins img {
-    filter: brightness(0) saturate(100%)
-            invert(20%) sepia(20%) saturate(1000%)
-            hue-rotate(345deg) brightness(88%)
-            contrast(92%);
-}
-
-
-
-
-
-
-
-
 }
