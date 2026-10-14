@@ -228,6 +228,20 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
     }
 }
 
+@media (min-width: 769px) {
+    .fundoHeader .pc .linkLogin {
+        position: relative;
+        left: -20.2rem; /* ajuste para mover mais ou menos à esquerda */
+    }
+}
+
+@media (min-width: 769px) {
+    .fundoHeader .pc .tema {
+        position: relative;
+        left: 37.9rem;
+    }
+}
+
 .rodape {
     background-color: var(--rodape);
 }

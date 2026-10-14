@@ -1,33 +1,38 @@
-function trocarTema() {
-    const body = document.body;
 
-    body.classList.toggle("escuro");
+function atualizarIconesTema(escuro) {
+    // Ícones que alternam entre sol e lua
+    document.querySelectorAll(".tema img").forEach((img) => {
+        img.src = escuro
+            ? "/images/Lua.png"
+            : "/images/Sol.png";
 
-    const iconeDesktop = document.getElementById("iconeTemaDesktop");
-    const iconeMobile = document.getElementById("iconeTemaMobile");
+        img.alt = escuro ? "Tema escuro" : "Tema claro";
+    });
 
-    if (body.classList.contains("escuro")) {
+    // Ícone do link de login
+    const iconeLogin = document.getElementById("iconeLogin");
 
-        if (iconeDesktop) {
-            iconeDesktop.src = "../images/Lua.png";
-            iconeDesktop.alt = "Tema escuro";
-        }
-
-        if (iconeMobile) {
-            iconeMobile.src = "../images/Lua.png";
-            iconeMobile.alt = "Tema escuro";
-        }
-
-    } else {
-
-        if (iconeDesktop) {
-            iconeDesktop.src = "../images/Sol.png";
-            iconeDesktop.alt = "Tema claro";
-        }
-
-        if (iconeMobile) {
-            iconeMobile.src = "../images/Sol.png";
-            iconeMobile.alt = "Tema claro";
-        }
+    if (iconeLogin) {
+        iconeLogin.src = escuro
+            ? "/images/Loginbranco.png"
+            : "/images/Loginpreto.png";
     }
 }
+
+function aplicarTema(escuro) {
+    document.body.classList.toggle("escuro", escuro);
+
+    localStorage.setItem("tema", escuro ? "escuro" : "claro");
+
+    atualizarIconesTema(escuro);
+}
+
+function trocarTema() {
+    const escuro = !document.body.classList.contains("escuro");
+    aplicarTema(escuro);
+}
+
+// Recupera o tema salvo ao abrir a página
+document.addEventListener("DOMContentLoaded", () => {
+    aplicarTema(localStorage.getItem("tema") === "escuro");
+});

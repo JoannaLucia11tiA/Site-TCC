@@ -52,31 +52,6 @@ if (videoHome) {
     });
 }
 
-
-
-function aplicarTema(escuro) {
-    document.body.classList.toggle("escuro", escuro);
-
-    // Salva a preferência no navegador
-    localStorage.setItem("tema", escuro ? "escuro" : "claro");
-}
-
-function trocarTema() {
-    const estaEscuro = document.body.classList.contains("escuro");
-    aplicarTema(!estaEscuro);
-}
-
-
-function atualizarIconesTema(escuro) {
-    document.querySelectorAll(".tema img").forEach((img) => {
-        img.src = escuro
-            ? "/images/Lua.png"
-            : "/images/Sol.png";
-
-        img.alt = escuro ? "Tema escuro" : "Tema claro";
-    });
-}
-
 function aplicarTema(escuro) {
     document.body.classList.toggle("escuro", escuro);
     localStorage.setItem("tema", escuro ? "escuro" : "claro");
