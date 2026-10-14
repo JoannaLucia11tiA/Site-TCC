@@ -570,55 +570,58 @@ body.escuro .publicoAlvo p {
 
 /* ===== RODAPÉ ===== */
 
-.rodape{
+.rodape {
     display: flex;
     background-color: var(--rodape);
     justify-content: space-between;
-    padding-inline: 7rem;
+    /* teste de atualização do Git padding-inline:7rem; */
+    padding-inline:8rem;
     padding-block: 3rem;
 
-    .anitrace{
+    .anitrace {
         display: flex;
         align-items: center;
         gap: 0.6rem;
 
-        h1{
+        h1 {
             font-weight: 400;
+            color: #FFFFFF;
         }
 
-        color: var(--textoSobreCor);
+        color: #FFFFFF;
 
-        img{
+        img {
             width: 3.5rem;
         }
     }
 
-.links{
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 0.5rem;
+    .links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
 
-    a {
-        text-decoration: none;
-        color: var(--branco);
+        a {
+            text-decoration: none;
+            color: #FFFFFF;
 
-        h2 {
-            margin: 0;
-            font-size: 1.1rem;
-            font-weight: 500;
+            h2 {
+                margin: 0;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: #FFFFFF;
+            }
         }
     }
-}
 
-    .redes{
+    .redes {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1.5rem;
-        color: var(--textoSobreCor);
+        color: #FFFFFF;
 
-        div{
+        div {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -712,9 +715,13 @@ body{
 body.escuro .menuMobile {
     background: linear-gradient(
         to right,
-        var(--fundoClaro),
-        var(--header)
+        #292929,
+        #454545
     );
+}
+
+body.escuro .menuMobile .tema {
+    background-color: #A55E32;
 }
 
     .menuCabecalho {
@@ -838,26 +845,30 @@ body.escuro .menuMobile {
     }
 }
 
-    .problema{
-        flex-direction: column;
-        gap: 0;
+    .problema {
+    flex-direction: column;
+    gap: 0;
 
-        .textoEmPe{
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-top: 0;
-            text-align: center;
-        }
-
-        p {
-            font-size: 0.9rem;
-            text-align: center;
-            margin-inline: auto;
-        }
+    .textoEmPe {
+        margin: 0;
     }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    p {
+    font-size: 0.5rem;
+    text-align: center;
+    max-width: 90%;
+    margin: 0.2rem auto;
+    padding-inline: 0.5rem;
+    box-sizing: border-box;
+}
+}
 
     .divs {
         display: flex;
@@ -912,10 +923,10 @@ body.escuro .menuMobile {
             padding-bottom: 1rem;
 
         .redondos {
-            flex: 0 0 70%;
+            flex: 0 0 67%;
             min-width: 0;
 
-            border-radius: 2.5rem 2.5rem 0 0;
+            border-radius: 9rem 9rem 0 0;
             padding: 0.3rem;
 
             display: flex;
@@ -1045,19 +1056,40 @@ body.escuro .menuMobile {
         }
     }
 
-        .anitrace{
-            display: flex;
-            flex-direction: column;
+    .anitrace {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            object-fit: contain;
+            flex-shrink: 0;
         }
 
-        .redes{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            color: var(--textoSobreCor);
+        h1 {
+            font-size: -2rem;
         }
     }
+
+    .redes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        color: var(--textoSobreCor);
+        font-size: 1.2rem;
+
+        img {
+            width: 2rem;
+            height: 2rem;
+             object-fit: contain;
+        }
+    }
+}
 
     .textoNos {
     width: 100%;
@@ -1086,6 +1118,7 @@ body.escuro .menuMobile {
         right: -4rem;
         bottom: -1rem;
         width: 32rem;
+        height: auto;
         max-width: 55%;
     }
 }
