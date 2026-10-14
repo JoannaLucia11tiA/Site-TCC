@@ -1,40 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html, body{
-    overflow-x: hidden;
-    a{
-            text-decoration: none;
-        }
-
-    body {
-    font-family: "Noto Sans", sans-serif;
-}
-
-h1 {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-}
-
-h2, h3 {
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
-}
-
-p {
-    font-family: "Noto Sans", sans-serif;
-    font-weight: 400;
-}
-
-a {
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
-}
-}
 .menuMobile {
     display: none;
 }
@@ -69,25 +32,19 @@ body.escuro {
 }
 
 body.escuro .pc .anitrace img,
-body.escuro .mobile .anitrace img,
-body.escuro .mobile .pins img,
-body.escuro .flecha img,
-body.escuro .cheks img,
-body.escuro .quadrados .redondos img,
-body.escuro .textoNos img {
+body.escuro .mobile .anitrace img {
     filter: brightness(0) invert(1);
 }
 
-.mobile{
+.mobile, .menuMobile {
     display: none;
 }
 
 body{
     background-color: var(--fundoClaro);
 
-    p{
-        font-size: 1.5rem;
-        font-weight: 500;
+    a{
+        text-decoration: none;
     }
 }
 
@@ -100,6 +57,139 @@ body{
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--headerFont);
+}
+
+/* HEADER / NAVEGAÇÃO */
+
+.pc .cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--header);
+    position: relative;
+}
+
+/* Logo à esquerda */
+.pc .cabecalho .anitrace {
+    position: relative;
+    left: -2.3rem;
+}
+
+.pc .anitrace .linkPagina {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+}
+
+.pc .cabecalho .anitrace .linkPagina img {
+    width: 2.8rem;
+    height: 2.8rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.pc .cabecalho .anitrace .linkPagina h2 {
+    position: relative;
+    top: 0.11rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--headerFont);
+}
+
+/* Links e ícone centralizados */
+.pc .menuDesktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.pc .menuDesktop a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.pc .menuDesktop h2 {
+    margin: 0;
+    color: var(--headerFont);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+}
+
+/* Ícone de acesso ao aplicativo */
+.pc .menuDesktop .linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.pc .menuDesktop .linkLogin img {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.pc .menuDesktop .linkLogin:hover img {
+    transform: scale(1.1);
+}
+
+/* Tema à direita */
+.pc .tema {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pc .tema img {
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+}
+
+/* Destacar a página Referências no menu */
+.pc .menuDesktop a[href="/jogo/jogo.html"] h2 {
+    color: #FC6C1D;
+}
+
+/* Cor no modo escuro */
+body.escuro .pc .menuDesktop a[href="/jogo/jogo.html"] h2 {
+    color: #FFA305;
+}
+
+body.escuro {
+    --header: #A55E32;
+}
+
+body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
+
+.rodape {
+    background-color: var(--rodape);
 }
 
 div.palavras {
@@ -152,10 +242,8 @@ div.cabecalho{
             height: 1.5rem;
         }
     }
-
-
-
 }
+
 button{
     padding-block: 1rem;
     padding-inline: 5rem;
@@ -168,6 +256,7 @@ button{
     font-size: 1.6rem;
     color: white;
 }
+
 .imagens {
     position: relative;
     width: 100vw;
@@ -257,34 +346,6 @@ video {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 768px) {
     .menuBotao {

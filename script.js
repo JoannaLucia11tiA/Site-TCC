@@ -7,22 +7,20 @@ fetch("/Componentes/header.html")
         return resposta.text();
     })
     .then(dados => {
-    const header = document.getElementById("header");
+        const header = document.getElementById("header");
 
-    if (!header) {
-        console.error("Não encontrei o elemento #header");
-        return;
-    }
+        if (!header) {
+            console.error("Não encontrei o elemento #header");
+            return;
+        }
 
-    header.innerHTML = dados;
+        header.innerHTML = dados;
 
-    atualizarIconesTema(
-    localStorage.getItem("tema") === "escuro"
-    );
-
-    console.log("HTML do cabeçalho:", header.innerHTML);
-})
-.catch(erro => console.error("Erro ao carregar o cabeçalho:", erro));
+        atualizarIconesTema(
+            localStorage.getItem("tema") === "escuro"
+        );
+    })
+    .catch(erro => console.error("Erro ao carregar o cabeçalho:", erro));
 
 function abrirMenu() {
     document.getElementById("menuMobile")?.classList.add("aberto");
@@ -72,8 +70,8 @@ function trocarTema() {
 function atualizarIconesTema(escuro) {
     document.querySelectorAll(".tema img").forEach((img) => {
         img.src = escuro
-            ? "../images/Lua.png"
-            : "../images/Sol.png";
+            ? "/images/Lua.png"
+            : "/images/Sol.png";
 
         img.alt = escuro ? "Tema escuro" : "Tema claro";
     });

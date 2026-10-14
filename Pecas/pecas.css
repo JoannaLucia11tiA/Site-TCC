@@ -26,8 +26,8 @@
 }
 body.escuro {
     --fundoClaro: #03221C;
-    --headerBg: #8C4A10;
-    --header: #8C4A10;
+    --headerBg: #A55E32;
+    --header: #A55E32;
     --headerFont: #F6EDE6;
     --heroBg: #245448;
     --heroFont: #F6EDE6;
@@ -43,14 +43,20 @@ body.escuro {
     --preto: white;
     --aberta: #FFA305;
 }
-html, body{
-    overflow-x: hidden;
-    a{
-            text-decoration: none;
-        }
 
-    body {
+html, body {
+    overflow-x: hidden;
+}
+
+body {
     font-family: "Noto Sans", sans-serif;
+    background-color: var(--fundoClaro);
+}
+
+a {
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
 }
 
 h1 {
@@ -69,17 +75,15 @@ p {
     font-weight: 400;
 }
 
-a {
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
-}
 body.escuro .pc .anitrace img,
 body.escuro .mobile .anitrace img {
     filter: brightness(0) invert(1);
 }
+
 .mobile, .menuMobile {
     display: none;
 }
+
 body{
     background-color: var(--fundoClaro);
 
@@ -99,14 +103,144 @@ body{
     color: var(--headerFont);
 }
 
+/* HEADER / NAVEGAÇÃO */
+
+.pc .cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--header);
+    position: relative;
+}
+
+/* Logo à esquerda */
+.pc .cabecalho .anitrace {
+    position: relative;
+    left: -2.3rem;
+}
+
+.pc .anitrace .linkPagina {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.pc .cabecalho .anitrace .linkPagina img {
+    width: 2.8rem;
+    height: 2.8rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.pc .cabecalho .anitrace .linkPagina h2 {
+    position: relative;
+    top: 0.11rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--headerFont);
+}
+
+/* Links centralizados */
+.pc .menuDesktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.pc .menuDesktop a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.pc .menuDesktop h2 {
+    margin: 0;
+    color: var(--headerFont);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+}
+
+/* Ícone de acesso ao aplicativo */
+.pc .menuDesktop .linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.pc .menuDesktop .linkLogin img {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.pc .menuDesktop .linkLogin:hover img {
+    transform: scale(1.1);
+}
+
+/* Tema à direita */
+.pc .tema {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pc .tema img {
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+}
+
+/* Destacar a página Peças */
+.pc .menuDesktop a[href="/Pecas/pecas.html"] h2 {
+    color: #FC6C1D;
+}
+
+body.escuro .pc .menuDesktop a[href="/Pecas/pecas.html"] h2 {
+    color: #FFA305;
+}
+
+/* Título AniTrace no modo escuro */
+body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
+
+.rodape {
+    background-color: var(--rodape);
+}
+
 div.palavras {
     display: flex;
     justify-content: space-between;
     gap: 0.1rem;
     .aberta{
     color: var(--aberta);
+    }
 }
-}
+
 div.cabecalho{
     display: flex;
     justify-content: space-between;
@@ -336,7 +470,7 @@ div.cabecalho{
     .mobile {
     display: block;
     width: 100%;
-    background-color: var(--headerBg);
+    background-color: #A55E32;
 
     h2 {
         color: var(--headerFont);
@@ -571,5 +705,4 @@ body.escuro .menuMobile .tema .escuro {
             color: #E5DACA;
         }
     }
-}
 }

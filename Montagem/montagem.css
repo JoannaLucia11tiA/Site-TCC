@@ -83,126 +83,161 @@ body.escuro {
     --sombraImagem: rgba(0, 0, 0, 0.2);
 }
 
-/* ===== CABEÇALHO DESKTOP ===== */
+body.escuro .pc .anitrace img,
+body.escuro .mobile .anitrace img {
+    filter: brightness(0) invert(1);
+}
 
-.fundoHeader {
-    width: 100%;
+.mobile, .menuMobile {
+    display: none;
+}
+
+body{
+    background-color: var(--fundoClaro);
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.pc {
     background-color: var(--header);
 }
 
-.pagina-montagem .menuDesktop a[href="/Montagem/montagem.html"] h2 {
-    color: var(--aberta);
-}
-
-.pagina-montagem .anitrace h2 {
-    font-size: 1.1rem;
+.pc h2 {
     font-family: "Rubik", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--headerFont);
+}
+
+/* HEADER / NAVEGAÇÃO */
+
+.pc .cabecalho {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    font-weight: 690;
-    transform: translateX(-45px);
+    min-height: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--header);
+    position: relative;
 }
 
-.pagina-montagem .pc .anitrace h2.aberta {
-    color: var(--headerFont) !important;
+/* Logo à esquerda */
+.pc .cabecalho .anitrace {
+    position: relative;
+    left: -2.3rem;
 }
 
-.pagina-montagem .anitrace {
-    transform: translateX(-2px);
+.pc .anitrace .linkPagina {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
 }
 
-.pagina-montagem .anitrace img {
-    width: 3rem;
-    height: 3.5rem;
+.pc .cabecalho .anitrace .linkPagina img {
+    width: 2.8rem;
+    height: 2.8rem;
     object-fit: contain;
+    flex-shrink: 0;
+}
+
+.pc .cabecalho .anitrace .linkPagina h2 {
     position: relative;
-    left: -45.3px;
+    top: 0.11rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--headerFont);
 }
 
-.pagina-montagem .cabecalho {
-    display: flex;
-    margin-right: 5.7rem;
-    margin-left: 3rem;
-    justify-content: space-between;
-    gap: 0.6rem;
-}
-
-.pagina-montagem .menuDesktop {
-    display: flex;
-    justify-content: space-between;
-    gap: 3.1rem;
-    padding-right: 2.2rem;
-}
-
-.pagina-montagem .menuDesktop h2 {
-    font-size: 1.09rem;
-    font-family: "Raleway", sans-serif;
-    justify-content: space-between;
-    font-weight: 690;
-}
-
-.pagina-montagem #iconeTemaDesktop {
-    position: relative;
-    left: 90px;
-}
-
-.menuDesktop {
+/* Links e ícone centralizados */
+.pc .menuDesktop {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
-.menuDesktop a {
-    text-decoration: none;
-    color: #452714;
-}
-
-.menuDesktop h2 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.tema img {
-    width: 1.5rem;
-    height: 1.5rem;
-    object-fit: contain;
-    cursor: pointer;
-}
-
-.menuCabecalho {
+.pc .menuDesktop a {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
-    padding-block: 1rem;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.menuCabecalho h2 {
+.pc .menuDesktop h2 {
+    margin: 0;
     color: var(--headerFont);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
 }
 
-.menuCabecalho button {
-    border: none;
-    background: none;
-    font-size: 1.5rem;
-    color: var(--headerFont);
+/* Ícone de acesso ao aplicativo */
+.pc .menuDesktop .linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.pc .menuDesktop .linkLogin img {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.pc .menuDesktop .linkLogin:hover img {
+    transform: scale(1.1);
+}
+
+/* Tema à direita */
+.pc .tema {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pc .tema img {
+    width: 1.8rem;
+    height: 1.8rem;
     cursor: pointer;
 }
 
-.menuMobile a {
-    display: block;
-    color: var(--headerFont);
-    text-decoration: none;
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+/* Destacar a página Montagem */
+.pc .menuDesktop a[href="/Montagem/montagem.html"] h2 {
+    color: #FC6C1D;
 }
 
-.mobile h2 {
-    color: var(--headerFont);
-    font-weight: 400;
+body.escuro .pc .menuDesktop a[href="/Montagem/montagem.html"] h2 {
+    color: #FFA305;
 }
 
+body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
+
+.rodape {
+    background-color: var(--rodape);
+}
 
 .imagem {
     position: relative;
