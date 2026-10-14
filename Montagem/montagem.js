@@ -1,23 +1,17 @@
- function abrirMenu() {
-        document.getElementById("menuMobile").classList.add("aberto")
-    }
+function aplicarTema(escuro) {
+    document.body.classList.toggle("escuro", escuro);
 
-    function fecharMenu() {
-        document.getElementById("menuMobile").classList.remove("aberto")
-    }
-
-function temaClaro() {
-    document.body.classList.remove("escuro");
-
-    document.querySelectorAll(".tema").forEach(tema => {
-        tema.classList.remove("escuro");
-    });
+    // Salva a preferência no navegador
+    localStorage.setItem("tema", escuro ? "escuro" : "claro");
 }
 
-function temaEscuro() {
-    document.body.classList.add("escuro");
-
-    document.querySelectorAll(".tema").forEach(tema => {
-        tema.classList.add("escuro");
-    });
+function trocarTema() {
+    const estaEscuro = document.body.classList.contains("escuro");
+    aplicarTema(!estaEscuro);
 }
+
+// Recupera o tema salvo ao abrir ou recarregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    const temaSalvo = localStorage.getItem("tema");
+    aplicarTema(temaSalvo === "escuro");
+});
