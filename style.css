@@ -574,7 +574,8 @@ body.escuro .publicoAlvo p {
     display: flex;
     background-color: var(--rodape);
     justify-content: space-between;
-    padding-inline: 7rem;
+    /* teste de atualização do Git padding-inline:7rem; */
+    padding-inline:8rem;
     padding-block: 3rem;
 
     .anitrace {
