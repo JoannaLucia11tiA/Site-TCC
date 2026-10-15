@@ -1,5 +1,4 @@
-
-    function abrirMenu() {
+function abrirMenu() {
         document.getElementById("menuMobile").classList.add("aberto")
     }
 

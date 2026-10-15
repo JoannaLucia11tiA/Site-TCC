@@ -103,6 +103,134 @@ body{
     color: var(--headerFont);
 }
 
+/* HOME / BANNER */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    min-height: 24rem;
+    padding: 4.7rem 7%;
+    overflow: hidden;
+
+    position: relative;
+    background-image: url("./Imgs/Vacapasto.png");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+
+    color: var(--heroFont);
+}
+
+/* Retângulo de conteúdo */
+
+.heroTexto {
+    position: relative;
+    z-index: 1;
+    margin-left: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    width: fit-content;
+    max-width: 30rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/* Textos */
+
+.heroEtiqueta {
+    color: var(--branco);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.heroTexto h1 {
+    margin: 0;
+    max-width: 11ch;
+
+    font-size: clamp(2.4rem, 3.5vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+}
+
+.heroTexto p {
+    max-width: 31rem;
+    margin: 0;
+
+    color: var(--heroFont);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.heroBotao:hover {
+    background-color: var(--heroFont);
+    color: var(--heroBg);
+}
+
+/* Sombra no modo claro */
+.heroEtiqueta,
+.heroTexto h1,
+.heroTexto p {
+    color: #FFFFFF;
+    text-shadow: 0 0 8px rgba(130, 221, 168, 0.658);
+}
+
+/* Sombra no modo escuro */
+body.escuro .heroEtiqueta,
+body.escuro .heroTexto h1,
+body.escuro .heroTexto p {
+    text-shadow: 0 0 8px rgba(20, 65, 45, 0.95);
+}
+
+body.escuro .heroTexto h1 {
+    color: #e2fce2;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.322);
+    z-index: 0;
+}
+
+/* Responsividade */
+
+@media (max-width: 800px) {
+    .hero {
+        min-height: auto;
+        padding: 3rem 6%;
+        background-position: center;
+    }
+
+    .heroTexto {
+        max-width: 100%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero {
+        padding: 2rem 5%;
+    }
+
+    .heroTexto {
+        padding: 1.5rem;
+    }
+
+    .heroTexto h1 {
+        font-size: 2.3rem;
+    }
+}
+
 /* HEADER / NAVEGAÇÃO */
 
 .pc .cabecalho {
@@ -228,6 +356,20 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
     }
 }
 
+@media (min-width: 769px) {
+    .fundoHeader .pc .linkLogin {
+        position: relative;
+        left: -24.7rem; /* Ajuste a posição do ícone */
+    }
+}
+
+@media (min-width: 769px) {
+    .fundoHeader .pc .tema {
+        position: relative;
+        left: 42.5rem;
+    }
+}
+
 .rodape {
     background-color: var(--rodape);
 }
@@ -287,127 +429,344 @@ div.cabecalho{
     }
 }
 
-.hero{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: 4.5rem;
-    padding-block: 4rem;
-    background-color: var(--heroBg);
+/* SELEÇÃO DOS EQUIPAMENTOS */
+
+.selecaoEquipamentos {
+    padding: 7rem 5% 5rem;
+    background-color: var(--branco);
+    padding-top: 3rem;
 }
 
-.heroTexto{
-    max-width: 34rem;
-
-    h1{
-        font-family: "Raleway", sans-serif;
-        font-size: 5rem;
-        font-weight: 400;
-        color: var(--heroFont);
-        margin-bottom: 1.5rem;
-    }
-
-    p{
-        font-family: "Noto Sans", sans-serif;
-        font-size: 1.35rem;
-        color: var(--heroFont);
-        line-height: 1.6;
-    }
+.selecaoIntroducao {
+    margin: 0 auto 2.5rem;
+    text-align: center;
 }
 
-.heroImagem{
-    width: 24rem;
-    max-width: 40%;
+.selecaoIntroducao > span {
+    color: var(--catAtivo);
 }
 
-.categorias{
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 1.5rem;
+.selecaoIntroducao h2 {
+    margin-bottom: 0.7rem;
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--heroFont);
+}
+
+.selecaoIntroducao p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--cardTexto);
+}
+
+.equipamentosGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
-    padding-block: 2.2rem;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.equipamentoCard {
+    min-width: 0;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: var(--cardBg);
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.equipamentoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2.5rem rgb(0 0 0 / 10%);
+}
+
+.cardColeira {
+    background: linear-gradient(
+        135deg,
+        var(--cardBg),
+        var(--fundoClaro)
+    );
+}
+
+.cardPorteira {
+    background: linear-gradient(
+        135deg,
+        var(--cardBg),
+        var(--heroBg)
+    );
+}
+
+.equipamentoImagem {
+    position: relative;
+    height: 14rem;
+    margin-bottom: 1.8rem;
+    overflow: hidden;
+    border-radius: 1rem;
     background-color: var(--branco);
 }
 
-.categoriaBotao{
-    width: 11.4rem;
-    height: 3.1rem;
+.equipamentoImagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.35s ease;
+}
+
+.equipamentoCard:hover .equipamentoImagem img {
+    transform: scale(1.04);
+}
+
+.equipamentoNumero {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: grid;
+    place-items: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    background-color: var(--heroBg);
+    color: var(--heroFont);
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 700;
+}
+
+.equipamentoInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.equipamentoCategoria {
+    margin-bottom: 0.6rem;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    color: var(--catAtivo);
+}
+
+.equipamentoInfo h2 {
+    margin-bottom: 0.6rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.9rem;
+    color: var(--cardTitulo);
+}
+
+.equipamentoInfo p {
+    min-height: 5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--cardTexto);
+}
+
+.cardBotao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    max-width: 19rem;
+    min-height: 3.5rem;
+    padding: 0.8rem 1.3rem;
     border: none;
     border-radius: 999px;
     background-color: var(--catInativo);
     color: var(--branco);
     font-family: "Instrument Sans", sans-serif;
-    font-size: 1.19rem;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.categoriaBotao.ativo{
+.cardBotao.ativo,
+.cardBotao:hover {
     background-color: var(--catAtivo);
 }
 
-.produtos{
+.cardBotao span {
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.cardBotao:hover span {
+    transform: translateX(4px);
+}
+
+/* LISTA DE PRODUTOS */
+
+#listaProdutos {
+    scroll-margin-top: 2rem;
+    background-color: var(--fundoClaro);
+    margin-top: 3rem;
+}
+
+.produtosCabecalho {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.produtosCabecalho > span {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--catAtivo);
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+}
+
+.produtosCabecalho h2 {
+    margin-bottom: 0.7rem;
+    color: var(--cardTitulo);
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.produtosCabecalho p {
+    color: var(--cardTexto);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.produtosGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 74rem;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+.produtoCard {
     display: flex;
     flex-direction: column;
-    gap: 2.6rem;
-    max-width: 74.6rem;
-    margin-inline: auto;
-    padding: 2.6rem 1rem 4rem;
-}
-
-.produtoCard{
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1.2rem;
     background-color: var(--cardBg);
-    color: var(--cardTitulo);
-    border-radius: 1.9rem;
-    padding: 2rem 2.4rem;
-
-    h2{
-        font-family: "Noto Sans", sans-serif;
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin-bottom: 1.4rem;
-    }
+    border: 1px solid rgb(0 0 0 / 7%);
+    box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 5%);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.produtoConteudo{
+.produtoCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.8rem 1.8rem rgb(0 0 0 / 10%);
+}
+
+.produtoImagem {
     display: flex;
     align-items: center;
-    gap: 3rem;
-
-    img{
-        width: 22rem;
-        height: 14rem;
-        object-fit: contain;
-        background-color: white;
-        border-radius: 0.6rem;
-        padding: 0.8rem;
-    }
+    justify-content: center;
+    height: 12rem;
+    padding: 1rem;
+    background-color: white;
 }
 
-.produtoInfo{
+.produtoImagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.produtoDetalhes {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    flex: 1;
+    align-items: flex-start;
+    padding: 1.3rem;
+}
 
-    p{
-        font-family: "Noto Sans", sans-serif;
-        font-size: 1.2rem;
-        color: var(--cardTexto);
-        line-height: 1.7;
+.produtoDetalhes h3 {
+    min-height: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--cardTitulo);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.produtoPreco {
+    margin-bottom: 0.9rem;
+    color: var(--catAtivo);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.produtoDescricao {
+    flex: 1;
+    margin-bottom: 1.3rem;
+    color: var(--cardTexto);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.comprarBotao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2.9rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--catInativo);
+    color: var(--preto);
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.comprarBotao:hover {
+    background-color: var(--catInativo);
+}
+
+.comprarBotao span {
+    font-size: 1.3rem;
+}
+
+.botaoInformativo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  text-decoration: none;
+}
+
+body.escuro .produtoCard {
+    border-color: rgb(255 255 255 / 12%);
+}
+
+@media (max-width: 900px) {
+    .produtosGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-.comprarBotao{
-    width: 17.6rem;
-    height: 4.7rem;
-    border: none;
-    border-radius: 1rem;
-    background-color: var(--comprarBg);
-    color: var(--comprarTexto);
-    font-family: "Noto Sans", sans-serif;
-    font-size: 1.6rem;
-    cursor: pointer;
-    align-self: flex-start;
+@media (max-width: 540px) {
+    .produtosGrid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .produtoImagem {
+        height: 13rem;
+    }
+
+    .produtoDetalhes h3 {
+        min-height: auto;
+    }
 }
 
 .rodape{
@@ -603,66 +962,50 @@ body.escuro .menuMobile .tema .claro {
 body.escuro .menuMobile .tema .escuro {
     background-color: #245448;
 }
-    .hero{
-        flex-direction: column;
-        text-align: center;
-        padding-inline: 1.5rem;
-        padding-block: 2.5rem;
-        gap: 1.5rem;
+
+    .selecaoEquipamentos {
+        padding: 2.8rem 1.2rem 3rem;
     }
 
-    .heroTexto{
-        max-width: 100%;
-
-        h1{
-            font-size: 2.6rem;
-        }
-
-        p{
-            font-size: 1rem;
-        }
+    .selecaoIntroducao {
+        margin-bottom: 1.8rem;
     }
 
-    .heroImagem{
-        width: 12rem;
-        max-width: 60%;
+    .selecaoIntroducao h2 {
+        font-size: 1.8rem;
     }
 
-    .categorias{
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+    .selecaoIntroducao p {
+        font-size: 0.95rem;
     }
 
-    .categoriaBotao{
-        width: 100%;
-        max-width: 20rem;
-        height: 3.4rem;
-        font-size: 1.2rem;
+    .equipamentosGrid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
     }
 
-    .produtos{
-        padding: 2rem 1.2rem;
-        gap: 1.6rem;
+    .equipamentoCard {
+        padding: 1rem;
+        border-radius: 1.4rem;
     }
 
-    .produtoCard{
-        padding: 1.4rem;
+    .equipamentoImagem {
+        height: 13rem;
+        margin-bottom: 1.3rem;
     }
 
-    .produtoConteudo{
-        flex-direction: column;
-
-        img{
-            width: 100%;
-            height: 11rem;
-        }
+    .equipamentoInfo h2 {
+        font-size: 1.65rem;
     }
 
-    .comprarBotao{
-        width: 100%;
-        height: 3.2rem;
-        font-size: 1.1rem;
+    .equipamentoInfo p {
+        min-height: auto;
+        font-size: 0.95rem;
+    }
+
+    .cardBotao {
+        max-width: none;
+        min-height: 3.3rem;
     }
 
     .rodape{

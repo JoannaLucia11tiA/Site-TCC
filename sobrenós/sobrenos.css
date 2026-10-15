@@ -48,7 +48,7 @@ body.escuro .textoNos img {
     display: none;
 }
 :root {
-    --fundoClaro: #E5DACA;
+    --fundoClaro: #fdf9f5;
     --header: #F6EDE6;
     --headerFont: #5D3722;
     --rodape: #5D3722;
@@ -244,6 +244,20 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
     }
 }
 
+@media (min-width: 769px) {
+    .fundoHeader .pc .linkLogin {
+        position: relative;
+        left: -24.7rem; /* Ajuste a posição do ícone */
+    }
+}
+
+@media (min-width: 769px) {
+    .fundoHeader .pc .tema {
+        position: relative;
+        left: 41.2rem;
+    }
+}
+
 .rodape {
     background-color: var(--rodape);
 }
@@ -305,152 +319,439 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
         
     }
 }
-.quemsomos{
-    margin-inline: 4rem;
-    margin-top: 3rem;
-}
-.texto{
-    h2{
-        color: var(--quadrados);
-        font-weight: 600 ;
-        text-align: center;
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-    }
-    p{
-        color: var(--preto);
-    }
-    margin-bottom: 2rem;
-}
-.meninas{
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    .tamanho{
-        width: 272px;
-    }
 
-    div{
-    background-color: var(--quadrados);
-    padding: 2rem;
-    text-align: center;
-    border-radius: 2rem;
-    h3{
-        margin-top: 0.6rem;
-        color: #E5DACA;
-        font-size: 2rem;
-    }
-        .foto{
-            width: 13rem;
-        }
-    }
-    .insta{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.4rem;
-        padding-block: 0;
-        
-
-        a{
-            text-decoration: none;
-            color: #E5DACA;
-            font-size: 1.1rem;
-        }
-    }
-    
-}
-.meninos{
-    display: flex;
-    justify-content: space-between;
-    margin-inline: 18rem;
-    margin-top: 3rem;
-    gap: 2rem;
-    
-    .tamanho{
-        width: 272px;
-    }
-    div{
-    background-color: var(--quadrados);
-    padding: 2rem;
-    text-align: center;
-    border-radius: 2rem;
-    
-    
-    h3{
-        margin-top: 0.6rem;
-        color: #E5DACA;
-        font-size: 2rem;
-    }
-        .foto{
-            width: 13rem;
-        }
-    }
-    
-    .insta{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.4rem;
-        padding-block: 0;
-        
-
-        a{
-            text-decoration: none;
-            color: #E5DACA;
-            font-size: 1.1rem;
-        }
-    }
-    
+/* INTRODUÇÃO DA EQUIPE */
+.sobreEquipe {
+    width: min(92%, 1400px);
+    margin: 5rem auto 6rem;
 }
 
+.equipeIntro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.equipeTitulo span{
+    display: block;
+    color: var(--quadrados);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.7rem;
+}
+
+.equipeTitulo h1 {
+    max-width: 13ch;
+    color: var(--preto);
+    font-family: "Raleway", sans-serif;
+    font-size: 3.2rem;
+    line-height: 1.12;
+}
+
+.equipeIntro > p {
+    max-width: 38rem;
+    color: var(--preto);
+    font-size: 1.2rem;
+    line-height: 1.9;
+}
+
+/* ========================================
+   CARTÕES DOS INTEGRANTES
+======================================== */
+
+.equipeCards {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.2rem;
+    align-items: start;
+}
+
+.equipeCard {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+
+    --corCard1: #C4AD96;
+    --corCard2: #E8D8C5;
+    --corCard3: #AD9278;
+
+    background: linear-gradient(
+        120deg,
+        var(--corCard1),
+        var(--corCard2),
+        var(--corCard3),
+        var(--corCard1)
+    );
+
+    background-size: 300% 300%;
+    animation: movimentoCard 8s ease infinite;
+}
+
+/* CARDS DA EQUIPE — MODO ESCURO */
+body.escuro .equipeCard {
+    --corCard1: #245448;
+    --corCard2: #397966;
+    --corCard3: #163B32;
+}
+
+/* ANIMAÇÃO DO DEGRADÊ */
+@keyframes movimentoCard {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* REDUZIR ANIMAÇÃO SE PREFERIDO */
+@media (prefers-reduced-motion: reduce) {
+    .equipeCard {
+        animation: none;
+    }
+}
+
+/* Movimento contínuo do degradê */
+@keyframes movimentoCores {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Efeito ao passar o mouse */
+.equipeCard:hover {
+    transform: translateY(-5px);
+}
+
+/* Respeita a preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    .equipeCard {
+        animation: none;
+    }
+}
+
+.equipeCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.equipeCard .foto {
+    display: block;
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: 0.8rem auto;
+}
+
+.equipeInfo {
+    padding: 0.8rem 0.9rem 1rem;
+}
+
+.equipeInfo span {
+    display: block;
+    color: var(--headerFont);
+    opacity: 0.8;
+    font-size: 0.7rem;
+    margin-bottom: 0.35rem;
+}
+
+.equipeInfo h2 {
+    color: var(--headerFont);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.equipeInfo a {
+    display: inline-block;
+    margin-top: 0.54rem;
+    color: var(--headerFont);
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.equipeInfo a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ========================================
+   FORMULÁRIO DE CONTATO
+======================================== */
+
+.contato {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 4rem;
+
+    padding: 5rem max(4%, calc((100% - 1200px) / 2));
+    background-color: var(--formulario);
+}
+
+/* FORMULÁRIO — MODO ESCURO */
+body.escuro {
+    --formulario: #2d4940;
+    --areaEscrever: #15352D;
+}
+
+/* TÍTULOS E TEXTOS */
+body.escuro .formulario h2,
+body.escuro .formulario label,
+body.escuro .formulario p {
+    color: #F6EDE6;
+}
+
+/* CAMPOS DE TEXTO */
+body.escuro .formulario input,
+body.escuro .formulario textarea {
+    background-color: #15352D;
+    color: #F6EDE6;
+    border: 1px solid #829B8B;
+}
+
+/* TEXTO DE EXEMPLO DOS CAMPOS */
+body.escuro .formulario input::placeholder,
+body.escuro .formulario textarea::placeholder {
+    color: #C3D0C7;
+}
+
+/* BOTÃO ENVIAR */
+body.escuro .formulario button {
+    background-color: #9191E9;
+    color: #03221C;
+    border: none;
+}
+
+body.escuro .formulario button:hover {
+    background-color: #B0B0F2;
+}
 
 .formulario {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    background-color: var(--formulario);
-    padding-inline: 4rem;
-    padding-top: 3rem;
-    margin-top: 6rem;
-    padding-bottom: 4rem;
-    h2{
-        text-align: center;
-        font-weight: 600;
-        font-size: 2.3rem;
-        margin-bottom: 1rem;
-    }
+    gap: 1.3rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.formulario .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formulario label {
+    color: var(--preto);
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .formulario input,
 .formulario textarea {
     width: 100%;
-    box-sizing: border-box;
+    padding: 1rem 1.1rem;
 
+    border: 1.5px solid var(--quadrados);
+    border-radius: 0.7rem;
     background-color: var(--areaEscrever);
-    border: 8px solid #087c29;
-    border-radius: 16px;
+    color: var(--preto);
 
-    padding: 15px 22px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
 
-    font-size: 18px;
-    font-weight: bold;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .formulario input {
-    height: 65px;
+    min-height: 3.3rem;
 }
 
 .formulario textarea {
-    height: 220px;
-    resize: none;
+    min-height: 9rem;
+    resize: vertical;
 }
 
 .formulario input::placeholder,
 .formulario textarea::placeholder {
-    color: #b5b9bb;
-    font-weight: bold;
+    color: var(--preto);
+    opacity: 0.55;
+    font-weight: 400;
 }
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--quadrados);
+    box-shadow: 0 0 0 3px rgba(207, 145, 42, 0.2);
+}
+
+.formulario button {
+    align-self: flex-start;
+    width: auto;
+    min-width: 12rem;
+    margin-top: 0.2rem;
+    padding: 0.9rem 1.5rem;
+
+    border: none;
+    border-radius: 0.7rem;
+    background-color: var(--quadrados);
+    color: var(--branco);
+
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.formulario button:hover {
+    filter: brightness(0.95);
+    transform: translateY(-2px);
+}
+
+.avisoFormulario {
+    color: var(--preto);
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   TEMA ESCURO
+======================================== */
+
+body.escuro .equipeCard {
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+body.escuro .formulario input,
+body.escuro .formulario textarea {
+    border-color: var(--quadrados);
+}
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 1000px) {
+    .sobreEquipe {
+        margin-block: 3.5rem 4rem;
+    }
+
+    .equipeIntro {
+        gap: 2rem;
+    }
+
+    .equipeCards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .contato {
+        gap: 2rem;
+        padding-block: 4rem;
+    }
+}
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+    .sobreEquipe {
+        width: calc(100% - 2rem);
+        margin-block: 2.5rem 3rem;
+    }
+
+    .equipeIntro {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .equipeTitulo h1 {
+        max-width: 16ch;
+        font-size: 2.2rem;
+    }
+
+    .equipeIntro > p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .equipeCards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+    }
+
+    .equipeInfo {
+        padding: 0.7rem;
+    }
+
+    .equipeTitulo span {
+        font-size: 0.9rem;
+    }
+
+    .equipeTitulo h2 {
+        font-size: 1.8rem;
+        max-width: 100%;
+    }
+
+    .equipeInfo h2 {
+        font-size: 1rem;
+    }
+
+    .equipeInfo a {
+        font-size: 0.72rem;
+    }
+
+    .contato {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 1rem;
+    }
+
+    .contatoIntro h2 {
+        font-size: 2rem;
+    }
+
+    .formulario button {
+        align-self: stretch;
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .equipeCards {
+         grid-template-columns: 1fr;
+    }
+}
+
+
 button{
     background-color: var(--quadrados);
     padding: 1rem;
