@@ -187,14 +187,14 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
 @media (min-width: 769px) {
     .fundoHeader .pc .linkLogin {
         position: relative;
-        left: -20.2rem; /* ajuste para mover mais ou menos à esquerda */
+        left: -24.7rem; /* Ajuste a posição do ícone */
     }
 }
 
 @media (min-width: 769px) {
     .fundoHeader .pc .tema {
         position: relative;
-        left: 36.45rem;
+        left: 41.1rem;
     }
 }
 
