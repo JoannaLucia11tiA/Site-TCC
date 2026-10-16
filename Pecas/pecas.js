@@ -153,3 +153,52 @@ document.querySelectorAll(".categoriaBotao").forEach((botao) => {
     });
 });
 
+// BOTÃO DE COMPRA DO ANITRACE
+
+const botaoComprarAniTrace = document.querySelector(".comprarAniTrace");
+
+if (botaoComprarAniTrace) {
+    botaoComprarAniTrace.addEventListener("click", () => {
+        const titulo = document.getElementById("tituloEstoque");
+        const mensagem = document.getElementById("mensagemEstoque");
+
+        titulo.textContent = "Produto indisponível";
+
+        mensagem.textContent =
+            "No momento, o AniTrace ainda não está disponível para compra. Agradecemos pelo seu interesse!";
+
+        abrirModalEstoque();
+    });
+}
+
+
+// MODAL DE INDISPONIBILIDADE
+
+const modalEstoque = document.getElementById("modalEstoque");
+const fecharModal = document.getElementById("fecharModal");
+const botaoEntendi = document.getElementById("botaoEntendi");
+
+function abrirModalEstoque() {
+    modalEstoque.hidden = false;
+    fecharModal.focus();
+}
+
+function fecharModalEstoque() {
+    modalEstoque.hidden = true;
+}
+
+fecharModal.addEventListener("click", fecharModalEstoque);
+
+botaoEntendi.addEventListener("click", fecharModalEstoque);
+
+modalEstoque.addEventListener("click", (evento) => {
+    if (evento.target === modalEstoque) {
+        fecharModalEstoque();
+    }
+});
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape" && !modalEstoque.hidden) {
+        fecharModalEstoque();
+    }
+});

@@ -194,7 +194,7 @@ div.cabecalho{
         cursor: pointer;
         transition: transform 0.2s ease;
         position: relative;
-        left: 18.5rem;
+        left: 18rem;
     }
 
     .linkLogin:hover img {
@@ -346,6 +346,50 @@ body.escuro .imagem .central h3 {
     text-shadow: 0 0 10px rgba(2, 139, 43, 0.25);
 }
 
+/* BOTÃO DA HOME */
+
+.botaoConhecerAniTrace {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    margin-top: 1.8rem;
+    padding: 0.9rem 1.8rem;
+
+    background-color: #285638;
+    color: #ffffff;
+
+    border: 2px solid #285638;
+    border-radius: 0.7rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.botaoConhecerAniTrace:hover {
+    background-color: #1e422b;
+    border-color: #1e422b;
+    transform: translateY(-2px);
+}
+
+.botaoConhecerAniTrace:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
 /* ===== CONTEÚDO PRINCIPAL ===== */
 
@@ -679,6 +723,28 @@ body{
 /* RESPONSIVIDADE INICIO */
 
 @media (max-width: 768px) {
+    .mobile .pins .linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 0;
+    }
+
+    .mobile .pins .linkLogin img {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    }
+
+    .mobile .pins .linkLogin:hover img {
+        transform: scale(1.1);
+    }
+
     .menuBotao {
     background: none;
     border: none;

@@ -786,6 +786,15 @@ body.escuro.pagina-montagem .central-ajuda > span {
 /* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
+    body:not(.escuro) .menuMobile a[href="/Montagem/montagem.html"] {
+    color: #FC6C1D;
+    font-weight: 700;
+    }
+
+    body.escuro .menuMobile a[href="/Montagem/montagem.html"] {
+    color: #FFA305;
+    font-weight: 700;
+    }
 
     /* Cabeçalho: mostra somente o mobile */
 

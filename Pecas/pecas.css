@@ -347,6 +347,25 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
 }
 
 @media (max-width: 768px) {
+    .menuMobile a {
+    display: block;
+    color: var(--headerFont);
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    }
+
+    body:not(.escuro) .menuMobile a[href="/Pecas/pecas.html"] {
+    color: #FC6C1D;
+    font-weight: 700;
+    }
+
+    body.escuro .menuMobile a[href="/Pecas/pecas.html"] {
+    color: #FFA305;
+    font-weight: 700;
+    }
+
     .pc {
         display: none;
     }
@@ -354,6 +373,27 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
     .mobile {
         display: block;
     }
+
+    .mobile, 
+    .mobile .conteudo {
+        background-color: #F6EDE6;
+    }
+
+    body.escuro .mobile,
+    body.escuro .mobile .conteudo {
+    background-color: #A55E32;
+    }
+
+    /* Texto do banner mais à esquerda */
+    .heroTexto {
+        margin-left: 0;
+        margin-right: auto;
+        width: 78%;
+        padding-left: 1rem;
+        padding-right: 0;
+        text-align: left;
+    }
+
 }
 
 @media (min-width: 769px) {
@@ -746,6 +786,239 @@ div.cabecalho{
 
 body.escuro .produtoCard {
     border-color: rgb(255 255 255 / 12%);
+}
+
+.secaoComprarAniTrace {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    background-color: var(--fundoClaro);
+}
+
+.conteudoComprarAniTrace {
+    width: 100%;
+    max-width: 42rem;
+    text-align: center;
+}
+
+.etiquetaAniTrace {
+    color: var(--catAtivo);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.12rem;
+}
+
+.conteudoComprarAniTrace h2 {
+    margin: 0.8rem 0;
+    color: var(--cardTitulo);
+    font-size: 1.8rem;
+}
+
+.conteudoComprarAniTrace p {
+    margin: 0 auto 1.5rem;
+    font-size: 1.3rem;
+    max-width: 34rem;
+    color: var(--cardTexto);
+    line-height: 1.7;
+}
+
+.comprarAniTrace {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 999px;
+
+    background-color: var(--catAtivo);
+    color: var(--branco);
+
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.comprarAniTrace:hover {
+    opacity: 0.85;
+}
+
+.comprarAniTrace span {
+    font-size: 1.3rem;
+}
+
+/* MODAL DE INDISPONIBILIDADE */
+
+.modalEstoque[hidden] {
+    display: none;
+}
+
+.modalEstoque {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.modalEstoqueConteudo {
+    position: relative;
+    width: 100%;
+    max-width: 28rem;
+
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+
+    background-color: var(--cardBg, #ffffff);
+    color: var(--cardTexto, #222222);
+
+    text-align: center;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+
+    animation: aparecerModal 0.25s ease;
+}
+
+/* BOTÃO DE FECHAR */
+
+.fecharModal {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+
+    border: none;
+    background: transparent;
+    color: inherit;
+
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* ÍCONE DE AVISO */
+
+.iconeEstoque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1rem;
+
+    border-radius: 50%;
+    background-color: #c9c8c7;
+    color: #b80000;
+
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* TÍTULO */
+
+.modalEstoqueConteudo h2 {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* MENSAGEM */
+
+.modalEstoqueConteudo p {
+    margin: 0 0 1.8rem;
+
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* BOTÃO ENTENDI */
+
+.botaoEntendi {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.7rem;
+
+    background-color: #285638;
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.botaoEntendi:hover {
+    background-color: #1e422b;
+    transform: translateY(-2px);
+}
+
+.fecharModal:focus-visible,
+.botaoEntendi:focus-visible {
+    outline: 3px solid #70a77d;
+    outline-offset: 4px;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 480px) {
+    .modalEstoqueConteudo {
+        padding: 2.5rem 1.5rem 1.8rem;
+    }
+
+    .modalEstoqueConteudo h2 {
+        font-size: 1.35rem;
+    }
+
+    .modalEstoqueConteudo p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modalEstoqueConteudo {
+        animation: none;
+    }
+
+    .botaoEntendi {
+        transition: none;
+    }
+}
+
+body.escuro .comprarAniTrace {
+    color: var(--preto);
+}
+
+@media (max-width: 480px) {
+    .secaoComprarAniTrace {
+        padding: 3rem 1.2rem;
+    }
+
+    .conteudoComprarAniTrace p {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 900px) {

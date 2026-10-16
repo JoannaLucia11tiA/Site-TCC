@@ -100,6 +100,52 @@
 
     <div class="produtos" id="listaProdutos"></div>
 
+    <section class="secaoComprarAniTrace">
+        <div class="conteudoComprarAniTrace">
+            <span class="etiquetaAniTrace">GESTÃO INTELIGENTE</span>
+
+            <h2>Leve o AniTrace para sua fazenda</h2>
+
+            <p>
+                Tenha mais controle e segurança no monitoramento do seu rebanho
+                com o AniTrace.
+            </p>
+
+            <button class="comprarAniTrace" type="button">
+                Comprar
+                <span aria-hidden="true">→</span>
+            </button>
+        </div>
+    </section>
+
+    <div class="modalEstoque" id="modalEstoque"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="tituloEstoque"
+     aria-describedby="mensagemEstoque"
+     hidden>
+
+        <div class="modalEstoqueConteudo">
+            <button class="fecharModal" id="fecharModal"
+                    type="button" aria-label="Fechar">
+                &times;
+            </button>
+
+            <span class="iconeEstoque" aria-hidden="true">!</span>
+
+            <h2 id="tituloEstoque">Produto indisponível</h2>
+
+            <p id="mensagemEstoque">
+                No momento, este produto não está disponível para compra.
+                Agradecemos pelo seu interesse!
+            </p>
+
+            <button class="botaoEntendi" id="botaoEntendi" type="button">
+                Entendi
+            </button>
+        </div>
+    </div>
+
     <div class="rodape">
 
         <div class="anitrace">
