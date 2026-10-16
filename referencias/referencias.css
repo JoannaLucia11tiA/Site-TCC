@@ -701,10 +701,6 @@ transition: none;
         align-items: center;
         gap: 0.6rem;
 
-        h1{
-            font-weight: 400;
-        }
-
         color: white;
 
         img{
@@ -714,7 +710,6 @@ transition: none;
 
     .links a{
         color: white;
-        font-weight: 300;
 
         h2{
             margin-bottom: 0.5rem;
@@ -930,7 +925,6 @@ transition: none;
 
         h2 {
         font-size: 1.1rem;
-        font-weight: 400;
         white-space: nowrap;
     }
     }
