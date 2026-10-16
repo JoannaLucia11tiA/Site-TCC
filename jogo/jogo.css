@@ -258,61 +258,6 @@ div.cabecalho{
     }
 }
 
-button{
-    padding-block: 1rem;
-    padding-inline: 5rem;
-     display: block;
-    margin: 0 auto;
-    margin-top: 4rem;
-    background-color: var(--quadrados);
-    border-radius: 1rem;
-    border: none;
-    font-size: 1.6rem;
-    color: white;
-}
-
-.imagens {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-}
-
-.fundo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.por-cima {
-   position: absolute;
-    bottom: 80px;
-    right: 90px;
-}
-
-.gosma{
-    margin-left: 1rem;
-    position: relative;
-    top: -10px;
-}
-.textao{
-    background-color: #567958;
-    margin-inline: 12rem;
-    padding: 5rem;
-    margin-bottom: 2rem;
-    transform: translateY(-130px); 
-    
-}
-
-video {
-    width: 94rem;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-
-    display: block;
-    margin: 0 auto;
-}
-
 .rodape{
     display: flex;
     background-color: var(--rodape);
@@ -367,19 +312,6 @@ video {
     border: none;
     padding: 0;
     cursor: pointer;
-}
-
-.imagem .botao {
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    background-color: var(--quadrados);
-    font-size: 1.6rem;
-    padding-inline: 2rem;
-    padding-block: 0.5rem;
-    border-radius: 0.7rem;
 }
 
 .menuMobile {
@@ -602,20 +534,167 @@ body:not(.escuro) .mobile .pins img {
             hue-rotate(345deg) brightness(88%)
             contrast(92%);
 }
-
-.textao{
-    margin-inline: 4rem
 }
 
-video{
-    width: 34rem;
+/* ================================
+   JOGO — AURIN
+================================ */
+
+/* Capa e personagem */
+
+.imagens {
+    position: relative;
+    width: 100%;
+    height: clamp(400px, 70vh, 720px);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.imagens .fundo {
+    display: block;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    position: relative;
-
-    display: block;
-    margin: 0 auto;
+    object-position: center;
 }
 
+.imagens .por-cima {
+    position: absolute;
+    right: clamp(1rem, 7vw, 6rem);
+    bottom: 0rem;
+    width: auto;
+    max-width: 38%;
+    max-height: 82%;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 0.8rem 1.2rem rgba(0, 0, 0, 0.25));
+}
 
+.gosma {
+    display: block;
+    width: 65px;
+    height: auto;
+    margin: -0.5rem auto 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* História */
+.textao {
+    box-sizing: border-box;
+    width: min(750px, calc(100% - 2rem));
+    margin: 0 auto 2rem;
+    padding: 1.5rem 2rem;
+    background-color: #567958;
+    color: white;
+    border-left: 4px solid var(--quadrados);
+    border-radius: 0.8rem;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.12);
+    font-family: "Nunito", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.textao p {
+    margin: 0;
+    white-space: normal;
+}
+/* Vídeo */
+
+body:has(.textao) video {
+    display: block;
+    width: min(900px, calc(100% - 3rem));
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    object-fit: contain;
+    border: 3px solid var(--quadrados);
+    border-radius: 1rem;
+    background-color: #000;
+    box-shadow: 0 0.6rem 1.8rem rgba(0, 0, 0, 0.15);
+}
+
+/* Botão Jogar */
+
+body:has(.textao) > button {
+    display: block;
+    margin: 2rem auto 4rem;
+    padding: 0.9rem 3rem;
+
+    background-color: var(--quadrados);
+    color: var(--preto);
+    border: 2px solid transparent;
+    border-radius: 0.8rem;
+
+    font-family: "Rubik", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+body:has(.textao) > button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+}
+
+/* Tema escuro */
+
+body.escuro .textao {
+    background-color: #163D32;
+    color: white;
+}
+
+body.escuro .textao,
+body.escuro:has(.textao) video {
+    border-color: var(--quadrados);
+}
+
+/* Celular */
+
+@media (max-width: 768px) {
+    .imagens {
+        height: 55vh;
+        min-height: 320px;
+        max-height: 500px;
+    }
+
+    .imagens .por-cima {
+        right: 1rem;
+        bottom: 1rem;
+        max-width: 48%;
+        max-height: 75%;
+    }
+
+    .gosma {
+        width: 90px;
+        margin: -1rem auto 1rem 1rem;
+    }
+
+    .textao {
+        width: calc(100% - 2rem);
+        margin-bottom: 2.5rem;
+        padding: 1.4rem;
+        font-size: 1rem;
+        line-height: 1.8;
+        border-left-width: 4px;
+    }
+
+    body:has(.textao) video {
+        width: calc(100% - 2rem);
+        border-radius: 0.7rem;
+    }
+
+    body:has(.textao) > button {
+        margin: 1.5rem auto 3rem;
+        padding: 0.8rem 2.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(.textao) > button {
+        transition: none;
+    }
 }
