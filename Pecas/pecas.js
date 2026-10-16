@@ -14,11 +14,11 @@ const produtosColeira = [
         descricao: "Capta energia do sol e a armazena, garantindo alimentação elétrica mesmo em locais sem rede."
     },
     {
-        nome: "PCB perfurada",
-        preco: "R$ 16,63",
-        imagem: "./Imgs/Peb.png",
-        link: "https://www.mercadolivre.com.br/placa-circuito-impresso-ilhada-432-furos-dupla-face-5x7cm/p/MLB53890190?pdp_filters=item_id:MLB5580305930&sid=purchases",
-        descricao: "Placa universal usada para montar protótipos eletrônicos de forma prática, conectando componentes com fios."
+        nome: "Protoboard",
+        preco: "R$ 13,99",
+        imagem: "./Imgs/Protoboard.png",
+        link: "https://www.mercadolivre.com.br/protoboard-breadboard-400-pontos-furos-pinos-arduino-pic-arm/p/MLB36151188?pdp_filters=item_id%3AMLB4974315552&from=gshop&matt_tool=38545640&matt_word=&matt_source=google&matt_campaign_id=22090354508&matt_ad_group_id=194474657034&matt_match_type=&matt_network=g&matt_device=c&matt_creative=792396419935&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128188&matt_product_id=MLB36151188-product&matt_product_partition_id=2499513569492&matt_target_id=pla-2499513569492&cq_src=google_ads&cq_cmp=22090354508&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354508&gbraid=0AAAAAD93qcCKkW5qMqrs4BAb8iq9fWyq1&gclid=CjwKCAjw88HWBhA3EiwAo2Zd6CyPHC3RdbjlpTYI132PDkpcgYK_fX6A_npeFHIG0lUl7f5shtueUBoC9_kQAvD_BwE",
+        descricao: "Placa de prototipagem utilizada para montar e testar circuitos eletrônicos sem solda, permitindo conectar e reorganizar componentes de forma prática."
     },
     {
         nome: "Carregador de bateria - Micro USB-C",
