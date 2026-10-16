@@ -307,6 +307,25 @@ div.cabecalho{
 }
 
 @media (max-width: 768px) {
+    .menuMobile a {
+    display: block;
+    color: var(--headerFont);
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    }
+
+    body:not(.escuro) .menuMobile a[href="/jogo/jogo.html"] {
+    color: #FC6C1D;
+    font-weight: 700;   
+    }
+
+    body.escuro .menuMobile a[href="/jogo/jogo.html"] {
+        color: #FFA305;
+        font-weight: 700;
+    }
+
     .menuBotao {
     background: none;
     border: none;

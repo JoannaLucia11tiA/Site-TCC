@@ -738,12 +738,19 @@ transition: none;
 
 
 @media (max-width: 768px) {
+    body:not(.escuro) .menuMobile a[href="/referencias/referencias.html"] {
+        color: #FC6C1D;
+    }
+
+    body.escuro .menuMobile a[href="/referencias/referencias.html"] {
+        color: #FFA305;
+    }
     .menuBotao {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
 
 .imagem .botao {
     position: absolute;

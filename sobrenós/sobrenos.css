@@ -92,10 +92,6 @@ body.escuro .mobile .anitrace img {
     filter: brightness(0) invert(1);
 }
 
-.mobile, .menuMobile {
-    display: none;
-}
-
 body{
     background-color: var(--fundoClaro);
 
@@ -454,14 +450,13 @@ body.escuro .equipeCard {
 }
 
 .equipeCard .foto {
-    display: block;
-    width: 75%;
-    aspect-ratio: 1 / 1;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    margin: 0.8rem auto;
+    width: 100%;
+        max-width: 12rem;
+        height: 12rem;
+        object-fit: cover;
+        border-radius: 1rem;
+        display: block;
+        margin: 0 auto;
 }
 
 .equipeInfo {
@@ -666,11 +661,6 @@ body.escuro .formulario textarea {
         gap: 2rem;
     }
 
-    .equipeCards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-    }
-
     .contato {
         gap: 2rem;
         padding-block: 4rem;
@@ -682,34 +672,83 @@ body.escuro .formulario textarea {
 ======================================== */
 
 @media (max-width: 650px) {
+    .equipeCards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+        width: 100%;
+        margin-inline: auto;
+        margin: 2rem auto 3rem;
+        align-items: stretch;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .equipeCard {
+        width: 100%;
+        max-width: 22rem;
+        margin-inline: auto;
+        padding-top: 0.8rem;
+    }
+
+    .equipeCard .foto {
+        width: 8.5rem;
+        height: 8.5rem;
+        max-width: 8.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    .equipeInfo {
+        padding: 0.8rem 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .equipeInfo h2 {
+        font-size: 1.3rem;
+    }
+
+    .equipeInfo a {
+        font-size: 0.8rem;
+    }
+
     .sobreEquipe {
         width: calc(100% - 2rem);
         margin-block: 2.5rem 3rem;
     }
 
     .equipeIntro {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-bottom: 2rem;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .equipeTitulo span {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
     }
 
     .equipeTitulo h1 {
-        max-width: 16ch;
-        font-size: 2.2rem;
+        max-width: 17ch;
+        font-size: 2rem;
+        line-height: 1.15;
     }
 
     .equipeIntro > p {
-        font-size: 0.95rem;
-        line-height: 1.75;
+        max-width: 100%;
+        margin-top: 0.3rem;
+        font-size: 0.9rem;
+        line-height: 1.7;
     }
 
     .equipeCards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.9rem;
-    }
-
-    .equipeInfo {
-        padding: 0.7rem;
     }
 
     .equipeTitulo span {
@@ -719,14 +758,6 @@ body.escuro .formulario textarea {
     .equipeTitulo h2 {
         font-size: 1.8rem;
         max-width: 100%;
-    }
-
-    .equipeInfo h2 {
-        font-size: 1rem;
-    }
-
-    .equipeInfo a {
-        font-size: 0.72rem;
     }
 
     .contato {
@@ -747,12 +778,24 @@ body.escuro .formulario textarea {
 
 @media (max-width: 380px) {
     .equipeCards {
-         grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
+    }
+
+    .equipeCard .foto {
+        width: 7rem;
+        height: 7rem;
+        max-width: 7rem;
+    }
+
+    .equipeInfo a {
+        font-size: 0.62rem;
     }
 }
 
 
-button{
+.sobreEquipe button,
+.contato button {
     background-color: var(--quadrados);
     padding: 1rem;
     border-radius: 3rem;
@@ -811,6 +854,7 @@ button{
 
 
 @media (max-width: 768px) {
+    
 .imagem .botao {
     position: absolute;
     top: 52%;
@@ -823,17 +867,37 @@ button{
     padding-block: 0.5rem;
     border-radius: 0.7rem;
 }
+
+    .menuMobile {
+        display: none;
+    }
+
+    .menuMobile.aberto {
+        display: flex;
+        flex-direction: column;
+    }
+
+     .menuMobile > a {
+        font-weight: 700;
+    }
   
     .mobile h2{
         color: var(--headerFont);
         font-weight: 400;
     }
+
+    .menuMobile > a[href="/sobrenós/sobrenos.html"] {
+        color: #FC6C1D;
+    }
+
+    body.escuro .menuMobile > a[href="/sobrenós/sobrenos.html"] {
+        color: #FFA305;
+    }
+
     /* Imagem principal */
     .topHome {
         height: 500px;
-        object-fit: cover;
-
-        
+        object-fit: cover;        
     }
     .imagem h3 {
         top: 40%;
@@ -883,25 +947,29 @@ button{
         gap: 1rem;
         flex-direction: column;
         background-color: var(--rodape);
+            
         h1, h2, a{
             color: white;
         }
+            
         .links {
         display: flex;
         gap: 0.5rem;
         justify-content: center;
         width: 100%;
 
-        h2 {
-        font-size: 1.1rem;
-        font-weight: 400;
-        white-space: nowrap;
-    }
-    }
+            h2 {
+                font-size: 1.1rem;
+                font-weight: 400;
+                    white-space: nowrap;
+            }
+        }
+        
         .anitrace{
             display: flex;
             flex-direction: column;
         }
+        
         .redes{
             display: flex;
             align-items: center;
@@ -910,16 +978,20 @@ button{
             color: white;
         }
     }
- .textoNos{
-            margin-left: 4rem;
-            p{
-                margin-block: 3rem;
-            }
+    
+    .textoNos{
+    margin-left: 4rem;
+        
+        p{
+            margin-block: 3rem;
         }
-        .objetivo{
-            padding-inline: 2rem;
-            p{
-                margin: 0;
-            }
+    }
+        
+    .objetivo{
+        padding-inline: 2rem;
+        
+        p{
+            margin: 0;
         }
+    }
 }
