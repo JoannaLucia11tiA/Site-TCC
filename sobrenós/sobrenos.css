@@ -363,6 +363,19 @@ body.escuro .pc .cabecalho .anitrace .linkPagina h2 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1.2rem;
     align-items: start;
+    width: 100%;
+}
+
+.equipeInfo {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.equipeCard .foto {
+    display: block;
+    margin-top: 1rem !important;
 }
 
 .equipeCard {
@@ -673,15 +686,13 @@ body.escuro .formulario textarea {
 
 @media (max-width: 650px) {
     .equipeCards {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.8rem;
-        width: 100%;
-        margin-inline: auto;
-        margin: 2rem auto 3rem;
-        align-items: stretch;
-        gap: 1rem;
-        text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+    margin: 2rem auto 3rem;
+    align-items: stretch;
+    text-align: center;
     }
 
     .equipeCard {
