@@ -755,9 +755,17 @@ body.escuro .paginaJogo {
 }
 
 .imagemHistoria {
-    width: 100%;
-    min-height: 31rem;
+    width: 33.5rem;
+    height: 31rem;
+    overflow: hidden;
     border-radius: 0.3rem;
+}
+
+.imagemHistoria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 
@@ -845,6 +853,13 @@ body.escuro .paginaJogo {
     min-height: 15rem;
 }
 
+.imagemPersonagem img {
+    width: 65.2%;
+    height: 90%;
+    object-fit: contain;
+    transform: scale(3.1);
+}
+
 .personagemPrincipal .imagemPersonagem {
     background-color: #C5C8B8;
 }
@@ -902,9 +917,41 @@ body.escuro .paginaJogo {
     min-width: 0;
 }
 
+
+.imagemBalde {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+}
+
+.imagemBalde img {
+    width: 90%;
+    height: 500%;
+    object-fit: contain;
+    transform: scale(1.1);
+}
+
 .imagemDestaque {
     width: 100%;
     aspect-ratio: 16 / 10;
+}
+
+.imagemDestaque img {
+    width: 95%;
+    height: 90%;
+    object-fit: contain;
+    transform: scale(1.1);
+}
+
+.imagemCeleiro {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+}
+
+.imagemCeleiro img {
+    width: 95%;
+    height: 286px;
+    object-fit: contain;
+    transform: scale(1.1);
 }
 
 .textoDestaque {
@@ -936,6 +983,12 @@ body.escuro .paginaJogo {
 
 .imagemChamada {
     min-height: 27rem;
+}
+
+.imagemChamada img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .conteudoChamada {
@@ -1036,6 +1089,7 @@ body.escuro .paginaJogo {
     .imagemHistoria {
         min-height: 19rem;
     }
+
 
     .textoHistoria h2,
     .tituloSecao h2 {

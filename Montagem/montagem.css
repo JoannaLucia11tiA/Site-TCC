@@ -513,8 +513,19 @@ body.escuro .quadrados .numero {
     position: relative;
     z-index: 2;
     width: 45rem;
-    margin: 9rem auto 0rem;
+    aspect-ratio: 16 / 9;
+    margin: 9rem auto 0;
     isolation: isolate;
+}
+
+.video iframe {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
 }
 
 /* Retângulo com gradiente animado */
@@ -573,20 +584,6 @@ body.escuro.pagina-montagem .video::before {
     border: 3px solid var(--branco);
     border-radius: 30px;
     box-sizing: border-box;
-}
-
-/* Círculo preto atrás do play */
-.video::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 5rem;
-    height: 5rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    z-index: 2;
 }
 
 /* Ícone de play */
@@ -1031,20 +1028,6 @@ body.escuro.pagina-montagem .central-ajuda > span {
         width: min(25rem, 90%);
         margin: 4rem auto 0;
         isolation: auto;
-    }
-
-    .pagina-montagem .video::before {
-        display: none;
-    }
-
-    .pagina-montagem .video::after {
-        width: 4rem;
-        height: 4rem;
-    }
-
-    .pagina-montagem .video .foto {
-        border: none;
-        border-radius: 16px;
     }
 
     /* Central de ajuda mobile */
