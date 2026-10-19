@@ -696,14 +696,14 @@ body.escuro .publicoAlvo p {
         }
     }
 
-    .redes {
+    .redes{
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1.5rem;
-        color: #FFFFFF;
+        color: white;
 
-        div {
+        div{
             display: flex;
             align-items: center;
             gap: 0.5rem;
